@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloud Foundation Inc. — $5 feeds one person in Cali, $20,000 builds a school</title>
+<meta name="description" content="A US 501(c)(3) funding food, schooling and training in Colombia. A hot meal costs $5. A complete Transformation Center costs $20,000. See exactly what your gift buys.">
+<link rel="canonical" href="https://cloudfoundation.us/">
+<meta property="og:title" content="Cloud Foundation Inc. — $5 feeds one person in Cali, $20,000 builds a school">
+<meta property="og:description" content="A US 501(c)(3) funding food, schooling and training in Colombia. A hot meal costs $5. A complete Transformation Center costs $20,000. See exactly what your gift buys.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cloudfoundation.us/">
+<style>
+:root{
+  --navy:#0D1F3C; --teal:#00D4AB; --teal-light:#A8F0E2; --teal-deep:#00A98A;
+  --ink:#0D1F3C; --ink-soft:#44526b; --ink-faint:#717d94;
+  --bg:#fff; --bg-alt:#f4fbf9; --line:#dbe5e5; --accent:#00806a;
+  --max:70rem;
+}
+@media (prefers-color-scheme:dark){:root{
+  --ink:#eaf1f4; --ink-soft:#b3c1cf; --ink-faint:#8d9aab;
+  --bg:#0D1F3C; --bg-alt:#132a4c; --line:#26405f; --accent:#00D4AB; --teal-light:#153d3a;}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ -webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:.6rem 1rem;z-index:100}
+.skip:focus{left:0}
+
+/* header */
+.site-head{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:50}
+.site-head .wrap{display:flex;align-items:center;gap:1.25rem;padding:.8rem 1.5rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--ink);flex:0 0 auto}
+.brand img{width:42px;mix-blend-mode:multiply}
+@media (prefers-color-scheme:dark){.brand img{mix-blend-mode:screen;filter:invert(1)}}
+.brand b{font-size:.92rem;line-height:1.2;letter-spacing:.01em}
+.brand span{display:block;font-size:.7rem;color:var(--ink-faint);font-weight:400}
+nav{margin-left:auto;display:flex;gap:1.1rem;align-items:center;flex-wrap:wrap}
+nav a{color:var(--ink-soft);text-decoration:none;font-size:.92rem}
+nav a:hover,nav a.here{color:var(--ink)}
+nav a.here{font-weight:600}
+nav .nav-give{background:var(--teal);color:var(--navy)!important;padding:.45rem 1.1rem;border-radius:2rem;font-weight:700}
+nav .nav-give:hover{background:var(--teal-deep)}
+
+/* hero + sections */
+.hero{padding:3.4rem 0 2.8rem;border-bottom:1px solid var(--line)}
+.hero.navy{background:var(--navy);color:#fff;border-bottom:5px solid var(--teal)}
+.hero.navy .lede{color:#c7d3e4}.hero.navy .eyebrow{color:var(--teal)}
+.hero.navy .crumb,.hero.navy .crumb a{color:#93a6c0}
+.eyebrow{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);font-weight:700;margin:0 0 .8rem}
+h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.1;letter-spacing:-.02em;margin:0 0 1rem;max-width:24ch}
+.lede{font-size:clamp(1.03rem,2vw,1.24rem);color:var(--ink-soft);margin:0;max-width:42rem}
+section{padding:3rem 0;border-bottom:1px solid var(--line)}
+section.alt{background:var(--bg-alt)}
+h2{font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-.012em;margin:0 0 1rem}
+h3{font-size:1.04rem;margin:0 0 .4rem}
+p{margin:0 0 1.05rem;max-width:42rem}
+.muted{color:var(--ink-soft)}.small{font-size:.9rem}
+.crumb{font-size:.84rem;color:var(--ink-faint);margin:0 0 .7rem}
+.crumb a{color:var(--ink-faint);text-decoration:none}
+
+/* buttons */
+.btn{display:inline-block;background:var(--teal);color:var(--navy);text-decoration:none;
+ padding:.8rem 1.6rem;border-radius:2rem;font-weight:700;border:none;cursor:pointer;font-size:1rem}
+.btn:hover{background:var(--teal-deep)}
+.btn-quiet{background:transparent;color:var(--accent);border:1px solid var(--line);font-weight:600}
+.btn-quiet:hover{background:var(--teal-light);color:var(--navy)}
+.hero.navy .btn-quiet{color:#fff;border-color:#33507a}
+.hero.navy .btn-quiet:hover{background:#17325a;color:#fff}
+.cta-row{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin-top:1.6rem}
+.cta-note{font-size:.87rem;color:var(--ink-faint)}
+.hero.navy .cta-note{color:#9fb0c8}
+
+/* ctas banner */
+.cta-band{background:var(--navy);color:#fff;padding:2.6rem 0;border:none}
+.cta-band h2{color:#fff;margin-bottom:.6rem}
+.cta-band p{color:#c7d3e4}
+
+/* cards, grids, facts, tiers */
+.grid{display:grid;gap:1.15rem;margin:1.4rem 0 0;padding:0;list-style:none}
+.g2{grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+.card{border:1px solid var(--line);border-radius:.75rem;padding:1.25rem 1.35rem;background:var(--bg)}
+.card p{margin:0;font-size:.94rem;color:var(--ink-soft)}
+.card .tag{font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-deep);font-weight:700;display:block;margin-bottom:.45rem}
+.facts{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));margin:1.5rem 0 0;padding:0;list-style:none}
+.facts div{border-left:4px solid var(--teal);padding-left:.9rem}
+.facts b{display:block;font-size:1.8rem;line-height:1.1;letter-spacing:-.02em}
+.facts span{font-size:.86rem;color:var(--ink-soft)}
+.tiers{display:grid;gap:.85rem;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));margin:1.4rem 0 0;padding:0;list-style:none}
+.tier{background:var(--bg);border:1px solid var(--line);border-radius:.7rem;padding:1.05rem 1.15rem}
+.tier b{display:block;font-size:1.35rem;letter-spacing:-.02em}
+.tier span{font-size:.89rem;color:var(--ink-soft)}
+.tier.feature{border-color:var(--teal);background:var(--teal-light)}
+.tier.feature b,.tier.feature span{color:var(--navy)}
+@media (prefers-color-scheme:dark){.tier.feature b,.tier.feature span{color:var(--ink)}}
+
+/* steps + faq */
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:1.4rem 0 0;max-width:44rem}
+ol.steps li{counter-increment:s;position:relative;padding-left:2.6rem;margin-bottom:1.15rem}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:.05rem;width:1.8rem;height:1.8rem;
+ border-radius:50%;background:var(--teal);color:var(--navy);font-weight:700;font-size:.9rem;
+ display:grid;place-items:center}
+ol.steps b{display:block}
+.faq{margin:1.4rem 0 0;max-width:44rem}
+.faq details{border-bottom:1px solid var(--line);padding:.85rem 0}
+.faq summary{cursor:pointer;font-weight:600;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+ ";color:var(--teal-deep);font-weight:700}
+.faq details[open] summary::before{content:"– "}
+.faq p{margin:.7rem 0 0;font-size:.95rem;color:var(--ink-soft)}
+
+/* photography */
+.band{margin:0;padding:0}
+.band img{width:100%;height:clamp(14rem,38vw,25rem);object-fit:cover}
+.band figcaption{background:var(--navy);color:#9fb0c8;font-size:.81rem;padding:.7rem 1.5rem;text-align:center;line-height:1.5}
+.band figcaption b{color:var(--teal);font-weight:600}
+.band.strip img{height:clamp(7rem,15vw,10rem)}
+figure.inset{margin:1.6rem 0 0;max-width:44rem}
+figure.inset img{width:100%;border-radius:.75rem}
+figure.inset figcaption{font-size:.85rem;color:var(--ink-faint);margin-top:.55rem;line-height:1.55}
+figure.portrait{float:right;width:12rem;margin:0 0 1.1rem 1.6rem;max-width:40%}
+figure.portrait img{width:100%;border-radius:.75rem}
+figure.portrait figcaption{font-size:.77rem;color:var(--ink-faint);margin-top:.45rem;line-height:1.45}
+@media (max-width:34rem){figure.portrait{float:none;width:100%;max-width:14rem;margin:0 0 1.1rem}}
+
+/* onward links */
+.nextpages{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin:1.5rem 0 0;padding:0;list-style:none}
+.nextpages a{display:block;border:1px solid var(--line);border-radius:.75rem;padding:1.05rem 1.2rem;text-decoration:none;color:var(--ink)}
+.nextpages a:hover{border-color:var(--teal-deep);background:var(--bg-alt)}
+.nextpages b{display:block;font-size:.98rem;margin-bottom:.2rem}
+.nextpages span{font-size:.88rem;color:var(--ink-soft)}
+
+/* forms */
+form{max-width:34rem;margin-top:1.4rem}
+label{display:block;font-size:.9rem;font-weight:600;margin:1rem 0 .3rem}
+input,select,textarea{width:100%;padding:.68rem .8rem;border:1px solid var(--line);border-radius:.5rem;
+ background:var(--bg);color:var(--ink);font:inherit;font-size:.97rem}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--teal-deep);outline-offset:1px}
+textarea{min-height:7.5rem;resize:vertical}
+.hp{position:absolute;left:-9999px}
+.form-note{font-size:.85rem;color:var(--ink-faint);margin-top:.9rem}
+
+/* footer */
+footer{padding:2.8rem 0;font-size:.87rem;color:#9fb0c8;background:var(--navy)}
+footer .cols{display:grid;gap:1.6rem;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));margin-bottom:1.8rem}
+footer h4{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);margin:0 0 .6rem}
+footer a{color:#c7d3e4;text-decoration:none;display:block;margin-bottom:.32rem}
+footer a:hover{color:#fff}
+footer p{max-width:46rem;margin:0 0 .65rem;color:#9fb0c8}
+footer .legal{border-top:1px solid #24406b;padding-top:1.4rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class='brand' href='/'>
+      <img src="img/logo.jpg" width="180" height="119" alt="Cloud Foundation Inc.">
+      <b>Cloud Foundation Inc.<span>501(c)(3) &middot; EIN 88-2337360</span></b>
+    </a>
+    <nav aria-label="Main">
+      <a href='/about'>About</a>
+      <a href='/kitchen'>Street Kitchen</a>
+      <a href='/centers'>Transformation Centers</a>
+      <a href='/colombia'>Colombia</a>
+      <a href='/serve'>Serve</a>
+      <a href='/contact'>Contact</a>
+      <a class='nav-give' href='/give'>Give</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="hero navy">
+  <div class="wrap">
+    <p class="eyebrow">United States 501(c)(3) &middot; working in Colombia</p>
+    <h1>Every gift buys something we can name.</h1>
+    <p class="lede">Cloud Foundation Inc. funds food, schooling, training and shelter in some of the hardest places in Colombia &mdash; and tells you exactly what each dollar bought. A hot meal costs $5. A complete school building costs $20,000.</p>
+    <div class="cta-row">
+      <a class='btn' href='/give'>See what your gift buys</a>
+      <a class='btn btn-quiet' href='/about'>How we work</a>
+    </div>
+  </div>
+</div>
+
+<figure class="band">
+  <img src="img/circle.jpg" width="1100" height="825" alt="Children and volunteers in matching caps walking hand in hand in a circle on a concrete court, with a hillside neighbourhood behind them.">
+  <figcaption>A community day on the court. Volunteers in caps, everyone else just there.</figcaption>
+</figure>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">What we do</p>
+    <h2>Four things, in four places</h2>
+    <p>We are a small United States charity that moves money to Colombian programmes run by people who live there. We do not run parallel operations from Florida. Every programme below is delivered on the ground by <b>Fundaci&oacute;n Cloud</b>, our Colombian entity, constituted in 2018.</p>
+    <ul class="nextpages">
+      <li><a href='/kitchen'><b>The street kitchen &middot; El Calvario, Cali</b><span>A hot meal for 150 people, three days a week. $5 a meal.</span></a></li>
+      <li><a href='/centers'><b>Transformation Centers &middot; La Guajira and Cali</b><span>A complete building with desks and supplies: $20,000.</span></a></li>
+      <li><a href='/colombia'><b>Earthquake response &middot; Risaralda and Choc&oacute;</b><span>Family relief packages. $50 each.</span></a></li>
+      <li><a href='/serve'><b>Serve with us</b><span>Grant writing, translation, distribution teams, teaching.</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>The whole programme list</h2>
+    <p class="muted">Delivered in Colombia through Fundaci&oacute;n Cloud.</p>
+    <ul class="grid g3">
+      <li class="card"><span class="tag">Three days a week</span><h3>Street kitchen</h3><p>A hot meal for 150 people in El Calvario, Cali. <a href='/kitchen'>More &rarr;</a></p></li>
+      <li class="card"><span class="tag">Community</span><h3>Transformation Centers</h3><p>A school, a feeding point and a leadership hub in one building. <a href='/centers'>More &rarr;</a></p></li>
+      <li class="card"><span class="tag">Church planting</span><h3>New congregations</h3><p>Funding and supporting the planting and strengthening of churches across Colombia.</p></li>
+      <li class="card"><span class="tag">Ministry training</span><h3>Leadership formation</h3><p>Twelve-week Catalyst Leader cohorts, beginning in Manrique, Medell&iacute;n in October 2026 with forty young leaders.</p></li>
+      <li class="card"><span class="tag">Restoration</span><h3>Prison ministry</h3><p>Working inside eight prisons across Colombia with men and women preparing to return to their communities.</p></li>
+      <li class="card"><span class="tag">Protection</span><h3>Anti-trafficking</h3><p>Supporting women who have come out of sex trafficking, and minors in trafficking situations. Confidential by design.</p></li>
+      <li class="card"><span class="tag">Economic empowerment</span><h3>Startup training</h3><p>Practical business formation for young entrepreneurs who have the ability but not the access.</p></li>
+      <li class="card"><span class="tag">Emergency</span><h3>Disaster response</h3><p>Food, medicine and construction supplies after the Colombia earthquake. <a href='/colombia'>More &rarr;</a></p></li>
+    </ul>
+  </div>
+</section>
+
+<figure class="band">
+  <img src="img/center.jpg" width="1100" height="822" alt="A completed open-air community building with cane walls, a red metal roof, a concrete floor, desks and chairs." loading="lazy" decoding="async">
+  <figcaption><b>La Guajira.</b> A finished Transformation Center: cane walls, a corrugated metal roof, a poured slab and desks. The building and every education supply inside it, <b>$20,000</b>.</figcaption>
+</figure>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Flagship</p>
+    <h2>The Real Transformation Center, Medell&iacute;n</h2>
+    <p>A permanent ministry campus in Medell&iacute;n &mdash; a home for discipleship, leadership training and community programmes that does not depend on rented rooms and borrowed time. We are raising a <b>$500,000 down payment</b> toward a property of approximately <b>$3 million</b>.</p>
+    <p class="muted">This is not temporary relief. It is permanent infrastructure: a place that will still be training leaders in Medell&iacute;n in twenty years, long after any single campaign has closed.</p>
+    <div class="cta-row">
+      <a class='btn' href='/give#centers'>Give toward the campus</a>
+      <a class='btn btn-quiet' href='/contact'>Talk to us about a major gift</a>
+    </div>
+  </div>
+</section>
+
+<figure class="band strip">
+  <img src="img/guapi.jpg" width="1100" height="338" alt="A dugout canoe pulled up on a gravel bank beside a jungle river, with stilt-house posts and a wooden ladder." loading="lazy" decoding="async">
+  <figcaption><b>Guapi, Pacific coast.</b> Some of the places we go are reached by river and nothing else.</figcaption>
+</figure>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Why the numbers on this site are small and specific</h2>
+    <p>Most charity websites lead with a big round figure &mdash; lives changed, people reached &mdash; and no way to check it. We would rather publish the unit costs we actually know and let you do the arithmetic yourself.</p>
+    <p>A meal in El Calvario costs $5, and we serve 150 people three days a week. That is 450 meals a week. A complete rural Transformation Center cost $20,000, including every exercise book inside it, and that is what the next one costs. A family relief package costs $50 and weighs ten kilos.</p>
+    <p>Where we cannot count something yet, we say so rather than estimating. That is a slower way to raise money and a better way to keep a donor.</p>
+    <div class="cta-row">
+      <a class='btn btn-quiet' href='/about#accountability'>Read our accountability commitments</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>$5 puts a hot meal in front of someone tonight</h2>
+    <p>Or $50 sends a family relief package, or $20,000 builds a school. Every option is on one page, with the price attached.</p>
+    <div class="cta-row">
+      <a class='btn' href='/give'>See the giving options</a>
+      <a class='btn btn-quiet' href='/contact' style='color:#fff;border-color:#33507a'>Ask us a question</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Elsewhere on this site</h2>
+    <ul class="nextpages">
+      <li><a href='/about'><b>Who we are</b><span>Leadership, entities, and how we handle money</span></a></li>
+      <li><a href='/kitchen'><b>The street kitchen</b><span>150 meals a day in El Calvario, three days a week</span></a></li>
+      <li><a href='/give'><b>Ways to give</b><span>Zelle, cheque, card, or a written proposal</span></a></li>
+    </ul>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Our work</h4>
+        <a href='/kitchen'>The street kitchen</a>
+        <a href='/centers'>Transformation Centers</a>
+        <a href='/colombia'>Colombia response</a>
+        <a href='/serve'>Serve with us</a>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href='/about'>Who we are</a>
+        <a href='/about#accountability'>Accountability</a>
+        <a href='/give'>Ways to give</a>
+        <a href='/give#faq'>Donor questions</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href='/contact'>Contact us</a>
+        <a href="mailto:director@cloudfoundation.us">director@cloudfoundation.us</a>
+        <a href="tel:+19549001982">(786) 205-8800</a>
+      </div>
+      <div>
+        <h4>Mailing address</h4>
+        <p>Cloud Foundation Inc.<br>16969 NW 67th Avenue, Suite 208<br>Hialeah, FL 33015<br>United States</p>
+      </div>
+    </div>
+    <div class="footer-links">
+        <a href="/privacy">Privacy Policy</a>
+      </div>
+      <div class="legal">
+      <p><b>Cloud Foundation Inc.</b> is a tax-exempt organisation under section 501(c)(3) of the Internal Revenue Code, EIN 88-2337360, incorporated in Florida. Gifts from United States taxpayers are tax-deductible to the extent allowed by law. We hold the Candid Silver Transparency Seal.</p>
+      <p>Assistance is provided on the basis of need. No one is required to attend or take part in any religious activity in order to receive help from this organisation.</p>
+      <p>All amounts on this site are in United States dollars. &copy; 2026 Cloud Foundation Inc.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
+
+<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="f25b0563-5f01-447c-9d8c-b83175c08183" data-app-host="app.netlify.com"></script>
