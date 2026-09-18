@@ -1,0 +1,33 @@
+# Netlify configuration for Cloud Foundation website
+
+[build]
+  publish = "."
+  command = "echo 'Static site - no build needed'"
+
+# Cache control
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+    
+# Redirects
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Error pages
+[[redirects]]
+  from = "/404.html"
+  to = "/404"
+  status = 404
