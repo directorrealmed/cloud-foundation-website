@@ -5,9 +5,9 @@
  * loads and nothing is sent.
  *
  * Conversions this file reports (import them into Google Ads from GA4):
- *   donate_click     click to a donation form (Zeffy) or the Zelle address   — PRIMARY
- *   donation_complete Zeffy redirected here after payment (/thanks/?d=1) — PRIMARY, best
- *   generate_lead    contact / volunteer form submitted (fires on /thanks/)  — PRIMARY
+ *   donate_click     click to a Stripe donation link, or copying the Zelle address — PRIMARY
+ *   donation_complete Stripe redirected here after payment (/thanks?d=1)          — PRIMARY, best
+ *   generate_lead    contact / volunteer form submitted (fires on /thanks)         — PRIMARY
  *   contact_click    mailto: or tel: link clicked                            — SECONDARY
  *   view_give_page   reached /give                                           — SECONDARY (observe only)
  * Ad Grants policy: page views and time on site must never be primary

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://cloudfoundation.us/</loc></url>
-  <url><loc>https://cloudfoundation.us/give/</loc></url>
-  <url><loc>https://cloudfoundation.us/kitchen/</loc></url>
-  <url><loc>https://cloudfoundation.us/centers/</loc></url>
-  <url><loc>https://cloudfoundation.us/colombia/</loc></url>
-  <url><loc>https://cloudfoundation.us/serve/</loc></url>
-  <url><loc>https://cloudfoundation.us/about/</loc></url>
-  <url><loc>https://cloudfoundation.us/contact/</loc></url>
-  <url><loc>https://cloudfoundation.us/privacy/</loc></url>
+  <url><loc>https://cloudfoundation.us/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://cloudfoundation.us/about</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://cloudfoundation.us/give</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://cloudfoundation.us/kitchen</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://cloudfoundation.us/centers</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://cloudfoundation.us/colombia</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://cloudfoundation.us/serve</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://cloudfoundation.us/contact</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://cloudfoundation.us/privacy</loc><lastmod>2026-10-13</lastmod></url>
 </urlset>

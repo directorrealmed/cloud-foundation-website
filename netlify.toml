@@ -27,14 +27,10 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000"
 
-# Old .html addresses (used in earlier canonical tags) go to the real pages.
-# Unknown URLs fall through to 404.html with a real 404 status — no catch-all
-# rewrite to the home page, which Google treats as a soft 404 and which hurts
-# ad landing-page quality.
-[[redirects]]
-  from = "/:page.html"
-  to = "/:page/"
-  status = 301
+# Pages are flat files (about.html) served at /about. Unknown URLs fall
+# through to 404.html with a real 404 status, with no catch-all rewrite to
+# the home page (Google treats that as a soft 404 and it hurts ad
+# landing-page quality).
 
 # The ads/ folder is internal (playbook, scripts, campaign files): never serve it.
 [[redirects]]

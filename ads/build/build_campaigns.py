@@ -50,7 +50,7 @@ CAMPAIGNS = [
             },
             {
                 "name": "Brand - Fundacion Cloud",
-                "url": "/about/",
+                "url": "/about",
                 "path": ("About", "Fundacion"),
                 "keywords": ['"fundacion cloud"', '[fundacioncloud]', '"fundacion cloud colombia"',
                              '"fundación cloud"', '"fundacion cloud medellin"'],
@@ -69,7 +69,7 @@ CAMPAIGNS = [
         "groups": [
             {
                 "name": "Feed the Hungry Colombia",
-                "url": "/kitchen/",
+                "url": "/kitchen",
                 "path": ("Kitchen", "Cali"),
                 "keywords": ['"feed the hungry in colombia"', '"hunger in colombia charity"', '"help hungry people colombia"',
                              '"feed hungry children colombia"', '[donate food to colombia]', '"colombia hunger relief"',
@@ -83,7 +83,7 @@ CAMPAIGNS = [
             },
             {
                 "name": "Donate Meals",
-                "url": "/kitchen/",
+                "url": "/kitchen",
                 "path": ("Kitchen", "Donate-Meals"),
                 "keywords": ['"donate a meal"', '"sponsor a meal for the hungry"', '"donate meals to the homeless"',
                              '"buy a meal for someone in need"', '"feed a hungry child"', '"donate meals overseas"',
@@ -97,7 +97,7 @@ CAMPAIGNS = [
             },
             {
                 "name": "Soup Kitchen Abroad",
-                "url": "/kitchen/",
+                "url": "/kitchen",
                 "path": ("Kitchen", "Street"),
                 "keywords": ['"support a soup kitchen"', '"donate to a soup kitchen"', '"street kitchen charity"',
                              '"soup kitchen in colombia"', '"international soup kitchen donation"'],
@@ -116,7 +116,7 @@ CAMPAIGNS = [
         "groups": [
             {
                 "name": "Build a School",
-                "url": "/centers/",
+                "url": "/centers",
                 "path": ("Centers", "Build-School"),
                 "keywords": ['"build a school in colombia"', '"donate to build a school"', '"fund a school building"',
                              '"build a school abroad"', '"sponsor a school in colombia"', '"help build a school"',
@@ -130,7 +130,7 @@ CAMPAIGNS = [
             },
             {
                 "name": "Education Charity Colombia",
-                "url": "/centers/",
+                "url": "/centers",
                 "path": ("Centers", "Education"),
                 "keywords": ['"education charity colombia"', '"help children in colombia"', '"children education colombia"',
                              '"donate school supplies colombia"', '"colombia children charity"',
@@ -150,7 +150,7 @@ CAMPAIGNS = [
         "groups": [
             {
                 "name": "Colombia Earthquake Relief",
-                "url": "/colombia/",
+                "url": "/colombia",
                 "path": ("Colombia", "Earthquake"),
                 "keywords": ['"colombia earthquake relief"', '"donate colombia earthquake"', '"help colombia earthquake victims"',
                              '"pereira earthquake relief"', '"risaralda earthquake donation"', '"colombia earthquake charity"',
@@ -164,7 +164,7 @@ CAMPAIGNS = [
             },
             {
                 "name": "Family Relief Packages",
-                "url": "/colombia/",
+                "url": "/colombia",
                 "path": ("Colombia", "Relief"),
                 "keywords": ['"family relief package"', '"send food to colombia"', '"disaster relief colombia donation"',
                              '"emergency food colombia"', '"sponsor a family in colombia"', '"humanitarian aid colombia"'],
@@ -173,7 +173,7 @@ CAMPAIGNS = [
                 "b": ["Feed a Family This Week", "Ten Kilos of Staples", "Disaster Relief in Colombia",
                       "Delivered by Local Teams", "Quibdó & Pereira Families"],
                 "d": ["1,000 family packages for villages around Pereira; 120 families already reached in Quibdó.",
-                      "Each package is ten kilos of staples delivered by local teams. $50, by secure card form."],
+                      "Each package is ten kilos of staples delivered by local teams. $50, by card."],
             },
         ],
     },
@@ -183,7 +183,7 @@ CAMPAIGNS = [
         "groups": [
             {
                 "name": "Volunteer in Colombia",
-                "url": "/serve/",
+                "url": "/serve",
                 "path": ("Serve", "Colombia"),
                 "keywords": ['"volunteer in colombia"', '"volunteer opportunities colombia"', '"mission trip colombia"',
                              '"volunteer abroad colombia"', '"teach in colombia volunteer"', '"volunteer medellin"',
@@ -197,7 +197,7 @@ CAMPAIGNS = [
             },
             {
                 "name": "Remote Skilled Volunteering",
-                "url": "/serve/",
+                "url": "/serve",
                 "path": ("Serve", "Remote"),
                 "keywords": ['"remote volunteer nonprofit"', '"grant writing volunteer"', '"volunteer translator spanish"',
                              '"virtual volunteer opportunities"', '"skilled volunteer nonprofit"', '"volunteer from home nonprofit"'],
@@ -216,7 +216,7 @@ CAMPAIGNS = [
         "groups": [
             {
                 "name": "Christian Charity Colombia",
-                "url": "/about/",
+                "url": "/about",
                 "path": ("About", "Mission"),
                 "keywords": ['"christian charity colombia"', '"christian missions colombia"', '"support missions in colombia"',
                              '"church planting colombia"', '"christian nonprofit latin america"', '"missionary work colombia"'],
@@ -229,7 +229,7 @@ CAMPAIGNS = [
             },
             {
                 "name": "Prison & Leadership Ministry",
-                "url": "/about/",
+                "url": "/about",
                 "path": ("About", "Ministry"),
                 "keywords": ['"prison ministry colombia"', '"support prison ministry"', '"youth leadership training colombia"',
                              '"leadership training latin america"', '"donate to prison ministry"'],
@@ -245,12 +245,12 @@ CAMPAIGNS = [
 ]
 
 SITELINKS = [  # inner pages, unique URLs (Ad Grants: at least 2 per campaign; we attach all at account level)
-    ("Feed Someone for $5", "A hot meal in Cali", "150 people, 3 days a week", "/kitchen/"),
-    ("Build a School", "$20,000, complete", "Desks, roof and supplies", "/centers/"),
-    ("Earthquake Relief", "$50 family package", "Pereira and Chocó", "/colombia/"),
-    ("Volunteer With Us", "In Colombia or remote", "Reply within a week", "/serve/"),
-    ("Ways to Give", "Card, Zelle or cheque", "Every option priced", "/give/"),
-    ("How We Handle Money", "Six commitments", "Candid transparency seal", "/about/"),
+    ("Feed Someone for $5", "A hot meal in Cali", "150 people, 3 days a week", "/kitchen"),
+    ("Build a School", "$20,000, complete", "Desks, roof and supplies", "/centers"),
+    ("Earthquake Relief", "$50 family package", "Pereira and Chocó", "/colombia"),
+    ("Volunteer With Us", "In Colombia or remote", "Reply within a week", "/serve"),
+    ("Ways to Give", "Card, Zelle or cheque", "Every option priced", "/give"),
+    ("How We Handle Money", "Six commitments", "Candid transparency seal", "/about"),
 ]
 CALLOUTS = ["Tax-Deductible", "501(c)(3) Charity", "Candid Transparency Seal", "Run Locally in Colombia",
             "Prices Published", "Since 2018"]

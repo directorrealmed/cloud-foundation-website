@@ -7,79 +7,79 @@ Campaign,Ad group,Keyword,Criterion Type,Final URL,Status
 01 Brand | Cloud Foundation,Brand - Core,cloud foundation donate,Phrase,https://cloudfoundation.us/,Enabled
 01 Brand | Cloud Foundation,Brand - Core,cloud foundation hialeah,Phrase,https://cloudfoundation.us/,Enabled
 01 Brand | Cloud Foundation,Brand - Core,cloud foundation 501c3,Phrase,https://cloudfoundation.us/,Enabled
-01 Brand | Cloud Foundation,Brand - Fundacion Cloud,fundacion cloud,Phrase,https://cloudfoundation.us/about/,Enabled
-01 Brand | Cloud Foundation,Brand - Fundacion Cloud,fundacioncloud,Exact,https://cloudfoundation.us/about/,Enabled
-01 Brand | Cloud Foundation,Brand - Fundacion Cloud,fundacion cloud colombia,Phrase,https://cloudfoundation.us/about/,Enabled
-01 Brand | Cloud Foundation,Brand - Fundacion Cloud,fundación cloud,Phrase,https://cloudfoundation.us/about/,Enabled
-01 Brand | Cloud Foundation,Brand - Fundacion Cloud,fundacion cloud medellin,Phrase,https://cloudfoundation.us/about/,Enabled
-02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,feed the hungry in colombia,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,hunger in colombia charity,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,help hungry people colombia,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,feed hungry children colombia,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,donate food to colombia,Exact,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,colombia hunger relief,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,food charity colombia,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,feed the poor in colombia,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Donate Meals,donate a meal,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Donate Meals,sponsor a meal for the hungry,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Donate Meals,donate meals to the homeless,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Donate Meals,buy a meal for someone in need,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Donate Meals,feed a hungry child,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Donate Meals,donate meals overseas,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Donate Meals,donate a meal to a child,Exact,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Soup Kitchen Abroad,support a soup kitchen,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Soup Kitchen Abroad,donate to a soup kitchen,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Soup Kitchen Abroad,street kitchen charity,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Soup Kitchen Abroad,soup kitchen in colombia,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-02 Hunger | Street Kitchen Cali,Soup Kitchen Abroad,international soup kitchen donation,Phrase,https://cloudfoundation.us/kitchen/,Enabled
-03 Education | Transformation Centers,Build a School,build a school in colombia,Phrase,https://cloudfoundation.us/centers/,Enabled
-03 Education | Transformation Centers,Build a School,donate to build a school,Phrase,https://cloudfoundation.us/centers/,Enabled
-03 Education | Transformation Centers,Build a School,fund a school building,Phrase,https://cloudfoundation.us/centers/,Enabled
-03 Education | Transformation Centers,Build a School,build a school abroad,Phrase,https://cloudfoundation.us/centers/,Enabled
-03 Education | Transformation Centers,Build a School,sponsor a school in colombia,Phrase,https://cloudfoundation.us/centers/,Enabled
-03 Education | Transformation Centers,Build a School,help build a school,Phrase,https://cloudfoundation.us/centers/,Enabled
-03 Education | Transformation Centers,Build a School,build a school charity,Exact,https://cloudfoundation.us/centers/,Enabled
-03 Education | Transformation Centers,Education Charity Colombia,education charity colombia,Phrase,https://cloudfoundation.us/centers/,Enabled
-03 Education | Transformation Centers,Education Charity Colombia,help children in colombia,Phrase,https://cloudfoundation.us/centers/,Enabled
-03 Education | Transformation Centers,Education Charity Colombia,children education colombia,Phrase,https://cloudfoundation.us/centers/,Enabled
-03 Education | Transformation Centers,Education Charity Colombia,donate school supplies colombia,Phrase,https://cloudfoundation.us/centers/,Enabled
-03 Education | Transformation Centers,Education Charity Colombia,colombia children charity,Phrase,https://cloudfoundation.us/centers/,Enabled
-03 Education | Transformation Centers,Education Charity Colombia,education for poor children in colombia,Phrase,https://cloudfoundation.us/centers/,Enabled
-03 Education | Transformation Centers,Education Charity Colombia,la guajira children,Phrase,https://cloudfoundation.us/centers/,Enabled
-04 Relief | Colombia Earthquake,Colombia Earthquake Relief,colombia earthquake relief,Phrase,https://cloudfoundation.us/colombia/,Enabled
-04 Relief | Colombia Earthquake,Colombia Earthquake Relief,donate colombia earthquake,Phrase,https://cloudfoundation.us/colombia/,Enabled
-04 Relief | Colombia Earthquake,Colombia Earthquake Relief,help colombia earthquake victims,Phrase,https://cloudfoundation.us/colombia/,Enabled
-04 Relief | Colombia Earthquake,Colombia Earthquake Relief,pereira earthquake relief,Phrase,https://cloudfoundation.us/colombia/,Enabled
-04 Relief | Colombia Earthquake,Colombia Earthquake Relief,risaralda earthquake donation,Phrase,https://cloudfoundation.us/colombia/,Enabled
-04 Relief | Colombia Earthquake,Colombia Earthquake Relief,colombia earthquake charity,Phrase,https://cloudfoundation.us/colombia/,Enabled
-04 Relief | Colombia Earthquake,Colombia Earthquake Relief,how to help colombia earthquake,Exact,https://cloudfoundation.us/colombia/,Enabled
-04 Relief | Colombia Earthquake,Family Relief Packages,family relief package,Phrase,https://cloudfoundation.us/colombia/,Enabled
-04 Relief | Colombia Earthquake,Family Relief Packages,send food to colombia,Phrase,https://cloudfoundation.us/colombia/,Enabled
-04 Relief | Colombia Earthquake,Family Relief Packages,disaster relief colombia donation,Phrase,https://cloudfoundation.us/colombia/,Enabled
-04 Relief | Colombia Earthquake,Family Relief Packages,emergency food colombia,Phrase,https://cloudfoundation.us/colombia/,Enabled
-04 Relief | Colombia Earthquake,Family Relief Packages,sponsor a family in colombia,Phrase,https://cloudfoundation.us/colombia/,Enabled
-04 Relief | Colombia Earthquake,Family Relief Packages,humanitarian aid colombia,Phrase,https://cloudfoundation.us/colombia/,Enabled
-05 Volunteer | Serve,Volunteer in Colombia,volunteer in colombia,Phrase,https://cloudfoundation.us/serve/,Enabled
-05 Volunteer | Serve,Volunteer in Colombia,volunteer opportunities colombia,Phrase,https://cloudfoundation.us/serve/,Enabled
-05 Volunteer | Serve,Volunteer in Colombia,mission trip colombia,Phrase,https://cloudfoundation.us/serve/,Enabled
-05 Volunteer | Serve,Volunteer in Colombia,volunteer abroad colombia,Phrase,https://cloudfoundation.us/serve/,Enabled
-05 Volunteer | Serve,Volunteer in Colombia,teach in colombia volunteer,Phrase,https://cloudfoundation.us/serve/,Enabled
-05 Volunteer | Serve,Volunteer in Colombia,volunteer medellin,Phrase,https://cloudfoundation.us/serve/,Enabled
-05 Volunteer | Serve,Volunteer in Colombia,volunteer cali colombia,Phrase,https://cloudfoundation.us/serve/,Enabled
-05 Volunteer | Serve,Remote Skilled Volunteering,remote volunteer nonprofit,Phrase,https://cloudfoundation.us/serve/,Enabled
-05 Volunteer | Serve,Remote Skilled Volunteering,grant writing volunteer,Phrase,https://cloudfoundation.us/serve/,Enabled
-05 Volunteer | Serve,Remote Skilled Volunteering,volunteer translator spanish,Phrase,https://cloudfoundation.us/serve/,Enabled
-05 Volunteer | Serve,Remote Skilled Volunteering,virtual volunteer opportunities,Phrase,https://cloudfoundation.us/serve/,Enabled
-05 Volunteer | Serve,Remote Skilled Volunteering,skilled volunteer nonprofit,Phrase,https://cloudfoundation.us/serve/,Enabled
-05 Volunteer | Serve,Remote Skilled Volunteering,volunteer from home nonprofit,Phrase,https://cloudfoundation.us/serve/,Enabled
-06 Faith | Missions Colombia,Christian Charity Colombia,christian charity colombia,Phrase,https://cloudfoundation.us/about/,Enabled
-06 Faith | Missions Colombia,Christian Charity Colombia,christian missions colombia,Phrase,https://cloudfoundation.us/about/,Enabled
-06 Faith | Missions Colombia,Christian Charity Colombia,support missions in colombia,Phrase,https://cloudfoundation.us/about/,Enabled
-06 Faith | Missions Colombia,Christian Charity Colombia,church planting colombia,Phrase,https://cloudfoundation.us/about/,Enabled
-06 Faith | Missions Colombia,Christian Charity Colombia,christian nonprofit latin america,Phrase,https://cloudfoundation.us/about/,Enabled
-06 Faith | Missions Colombia,Christian Charity Colombia,missionary work colombia,Phrase,https://cloudfoundation.us/about/,Enabled
-06 Faith | Missions Colombia,Prison & Leadership Ministry,prison ministry colombia,Phrase,https://cloudfoundation.us/about/,Enabled
-06 Faith | Missions Colombia,Prison & Leadership Ministry,support prison ministry,Phrase,https://cloudfoundation.us/about/,Enabled
-06 Faith | Missions Colombia,Prison & Leadership Ministry,youth leadership training colombia,Phrase,https://cloudfoundation.us/about/,Enabled
-06 Faith | Missions Colombia,Prison & Leadership Ministry,leadership training latin america,Phrase,https://cloudfoundation.us/about/,Enabled
-06 Faith | Missions Colombia,Prison & Leadership Ministry,donate to prison ministry,Phrase,https://cloudfoundation.us/about/,Enabled
+01 Brand | Cloud Foundation,Brand - Fundacion Cloud,fundacion cloud,Phrase,https://cloudfoundation.us/about,Enabled
+01 Brand | Cloud Foundation,Brand - Fundacion Cloud,fundacioncloud,Exact,https://cloudfoundation.us/about,Enabled
+01 Brand | Cloud Foundation,Brand - Fundacion Cloud,fundacion cloud colombia,Phrase,https://cloudfoundation.us/about,Enabled
+01 Brand | Cloud Foundation,Brand - Fundacion Cloud,fundación cloud,Phrase,https://cloudfoundation.us/about,Enabled
+01 Brand | Cloud Foundation,Brand - Fundacion Cloud,fundacion cloud medellin,Phrase,https://cloudfoundation.us/about,Enabled
+02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,feed the hungry in colombia,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,hunger in colombia charity,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,help hungry people colombia,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,feed hungry children colombia,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,donate food to colombia,Exact,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,colombia hunger relief,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,food charity colombia,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Feed the Hungry Colombia,feed the poor in colombia,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Donate Meals,donate a meal,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Donate Meals,sponsor a meal for the hungry,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Donate Meals,donate meals to the homeless,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Donate Meals,buy a meal for someone in need,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Donate Meals,feed a hungry child,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Donate Meals,donate meals overseas,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Donate Meals,donate a meal to a child,Exact,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Soup Kitchen Abroad,support a soup kitchen,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Soup Kitchen Abroad,donate to a soup kitchen,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Soup Kitchen Abroad,street kitchen charity,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Soup Kitchen Abroad,soup kitchen in colombia,Phrase,https://cloudfoundation.us/kitchen,Enabled
+02 Hunger | Street Kitchen Cali,Soup Kitchen Abroad,international soup kitchen donation,Phrase,https://cloudfoundation.us/kitchen,Enabled
+03 Education | Transformation Centers,Build a School,build a school in colombia,Phrase,https://cloudfoundation.us/centers,Enabled
+03 Education | Transformation Centers,Build a School,donate to build a school,Phrase,https://cloudfoundation.us/centers,Enabled
+03 Education | Transformation Centers,Build a School,fund a school building,Phrase,https://cloudfoundation.us/centers,Enabled
+03 Education | Transformation Centers,Build a School,build a school abroad,Phrase,https://cloudfoundation.us/centers,Enabled
+03 Education | Transformation Centers,Build a School,sponsor a school in colombia,Phrase,https://cloudfoundation.us/centers,Enabled
+03 Education | Transformation Centers,Build a School,help build a school,Phrase,https://cloudfoundation.us/centers,Enabled
+03 Education | Transformation Centers,Build a School,build a school charity,Exact,https://cloudfoundation.us/centers,Enabled
+03 Education | Transformation Centers,Education Charity Colombia,education charity colombia,Phrase,https://cloudfoundation.us/centers,Enabled
+03 Education | Transformation Centers,Education Charity Colombia,help children in colombia,Phrase,https://cloudfoundation.us/centers,Enabled
+03 Education | Transformation Centers,Education Charity Colombia,children education colombia,Phrase,https://cloudfoundation.us/centers,Enabled
+03 Education | Transformation Centers,Education Charity Colombia,donate school supplies colombia,Phrase,https://cloudfoundation.us/centers,Enabled
+03 Education | Transformation Centers,Education Charity Colombia,colombia children charity,Phrase,https://cloudfoundation.us/centers,Enabled
+03 Education | Transformation Centers,Education Charity Colombia,education for poor children in colombia,Phrase,https://cloudfoundation.us/centers,Enabled
+03 Education | Transformation Centers,Education Charity Colombia,la guajira children,Phrase,https://cloudfoundation.us/centers,Enabled
+04 Relief | Colombia Earthquake,Colombia Earthquake Relief,colombia earthquake relief,Phrase,https://cloudfoundation.us/colombia,Enabled
+04 Relief | Colombia Earthquake,Colombia Earthquake Relief,donate colombia earthquake,Phrase,https://cloudfoundation.us/colombia,Enabled
+04 Relief | Colombia Earthquake,Colombia Earthquake Relief,help colombia earthquake victims,Phrase,https://cloudfoundation.us/colombia,Enabled
+04 Relief | Colombia Earthquake,Colombia Earthquake Relief,pereira earthquake relief,Phrase,https://cloudfoundation.us/colombia,Enabled
+04 Relief | Colombia Earthquake,Colombia Earthquake Relief,risaralda earthquake donation,Phrase,https://cloudfoundation.us/colombia,Enabled
+04 Relief | Colombia Earthquake,Colombia Earthquake Relief,colombia earthquake charity,Phrase,https://cloudfoundation.us/colombia,Enabled
+04 Relief | Colombia Earthquake,Colombia Earthquake Relief,how to help colombia earthquake,Exact,https://cloudfoundation.us/colombia,Enabled
+04 Relief | Colombia Earthquake,Family Relief Packages,family relief package,Phrase,https://cloudfoundation.us/colombia,Enabled
+04 Relief | Colombia Earthquake,Family Relief Packages,send food to colombia,Phrase,https://cloudfoundation.us/colombia,Enabled
+04 Relief | Colombia Earthquake,Family Relief Packages,disaster relief colombia donation,Phrase,https://cloudfoundation.us/colombia,Enabled
+04 Relief | Colombia Earthquake,Family Relief Packages,emergency food colombia,Phrase,https://cloudfoundation.us/colombia,Enabled
+04 Relief | Colombia Earthquake,Family Relief Packages,sponsor a family in colombia,Phrase,https://cloudfoundation.us/colombia,Enabled
+04 Relief | Colombia Earthquake,Family Relief Packages,humanitarian aid colombia,Phrase,https://cloudfoundation.us/colombia,Enabled
+05 Volunteer | Serve,Volunteer in Colombia,volunteer in colombia,Phrase,https://cloudfoundation.us/serve,Enabled
+05 Volunteer | Serve,Volunteer in Colombia,volunteer opportunities colombia,Phrase,https://cloudfoundation.us/serve,Enabled
+05 Volunteer | Serve,Volunteer in Colombia,mission trip colombia,Phrase,https://cloudfoundation.us/serve,Enabled
+05 Volunteer | Serve,Volunteer in Colombia,volunteer abroad colombia,Phrase,https://cloudfoundation.us/serve,Enabled
+05 Volunteer | Serve,Volunteer in Colombia,teach in colombia volunteer,Phrase,https://cloudfoundation.us/serve,Enabled
+05 Volunteer | Serve,Volunteer in Colombia,volunteer medellin,Phrase,https://cloudfoundation.us/serve,Enabled
+05 Volunteer | Serve,Volunteer in Colombia,volunteer cali colombia,Phrase,https://cloudfoundation.us/serve,Enabled
+05 Volunteer | Serve,Remote Skilled Volunteering,remote volunteer nonprofit,Phrase,https://cloudfoundation.us/serve,Enabled
+05 Volunteer | Serve,Remote Skilled Volunteering,grant writing volunteer,Phrase,https://cloudfoundation.us/serve,Enabled
+05 Volunteer | Serve,Remote Skilled Volunteering,volunteer translator spanish,Phrase,https://cloudfoundation.us/serve,Enabled
+05 Volunteer | Serve,Remote Skilled Volunteering,virtual volunteer opportunities,Phrase,https://cloudfoundation.us/serve,Enabled
+05 Volunteer | Serve,Remote Skilled Volunteering,skilled volunteer nonprofit,Phrase,https://cloudfoundation.us/serve,Enabled
+05 Volunteer | Serve,Remote Skilled Volunteering,volunteer from home nonprofit,Phrase,https://cloudfoundation.us/serve,Enabled
+06 Faith | Missions Colombia,Christian Charity Colombia,christian charity colombia,Phrase,https://cloudfoundation.us/about,Enabled
+06 Faith | Missions Colombia,Christian Charity Colombia,christian missions colombia,Phrase,https://cloudfoundation.us/about,Enabled
+06 Faith | Missions Colombia,Christian Charity Colombia,support missions in colombia,Phrase,https://cloudfoundation.us/about,Enabled
+06 Faith | Missions Colombia,Christian Charity Colombia,church planting colombia,Phrase,https://cloudfoundation.us/about,Enabled
+06 Faith | Missions Colombia,Christian Charity Colombia,christian nonprofit latin america,Phrase,https://cloudfoundation.us/about,Enabled
+06 Faith | Missions Colombia,Christian Charity Colombia,missionary work colombia,Phrase,https://cloudfoundation.us/about,Enabled
+06 Faith | Missions Colombia,Prison & Leadership Ministry,prison ministry colombia,Phrase,https://cloudfoundation.us/about,Enabled
+06 Faith | Missions Colombia,Prison & Leadership Ministry,support prison ministry,Phrase,https://cloudfoundation.us/about,Enabled
+06 Faith | Missions Colombia,Prison & Leadership Ministry,youth leadership training colombia,Phrase,https://cloudfoundation.us/about,Enabled
+06 Faith | Missions Colombia,Prison & Leadership Ministry,leadership training latin america,Phrase,https://cloudfoundation.us/about,Enabled
+06 Faith | Missions Colombia,Prison & Leadership Ministry,donate to prison ministry,Phrase,https://cloudfoundation.us/about,Enabled
