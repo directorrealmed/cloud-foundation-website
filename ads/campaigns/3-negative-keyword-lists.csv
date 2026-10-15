@@ -1,0 +1,73 @@
+Shared set name,Keyword,Match type
+Brand collisions,vmware,Phrase
+Brand collisions,vcf,Phrase
+Brand collisions,broadcom,Phrase
+Brand collisions,vsphere,Phrase
+Brand collisions,vcenter,Phrase
+Brand collisions,nsx,Phrase
+Brand collisions,vsan,Phrase
+Brand collisions,aria,Phrase
+Brand collisions,tanzu,Phrase
+Brand collisions,cloud foundry,Phrase
+Brand collisions,software,Phrase
+Brand collisions,download,Phrase
+Brand collisions,license,Phrase
+Brand collisions,certification,Phrase
+Brand collisions,aws,Phrase
+Brand collisions,azure,Phrase
+Brand collisions,google cloud,Phrase
+Brand collisions,openstack,Phrase
+Brand collisions,kubernetes,Phrase
+Brand collisions,linux foundation,Phrase
+Brand collisions,cncf,Phrase
+Brand collisions,saas,Phrase
+Brand collisions,hosting,Phrase
+Brand collisions,storage,Phrase
+Brand collisions,computing,Phrase
+Brand collisions,server,Phrase
+Brand collisions,api,Phrase
+Brand collisions,devops,Phrase
+Brand collisions,architecture,Phrase
+Brand collisions,cloudflare,Phrase
+Not a donor,jobs,Phrase
+Not a donor,job,Phrase
+Not a donor,salary,Phrase
+Not a donor,careers,Phrase
+Not a donor,hiring,Phrase
+Not a donor,internship,Phrase
+Not a donor,paid,Phrase
+Not a donor,scholarship,Phrase
+Not a donor,grant application,Phrase
+Not a donor,apply for grant,Phrase
+Not a donor,loan,Phrase
+Not a donor,free food near me,Phrase
+Not a donor,food bank near me,Phrase
+Not a donor,food stamps,Phrase
+Not a donor,snap,Phrase
+Not a donor,wic,Phrase
+Not a donor,homework,Phrase
+Not a donor,essay,Phrase
+Not a donor,pdf,Phrase
+Not a donor,wikipedia,Phrase
+Not a donor,statistics,Phrase
+Wrong Colombia intent,travel,Phrase
+Wrong Colombia intent,flights,Phrase
+Wrong Colombia intent,hotel,Phrase
+Wrong Colombia intent,visa,Phrase
+Wrong Colombia intent,tour,Phrase
+Wrong Colombia intent,vacation,Phrase
+Wrong Colombia intent,dating,Phrase
+Wrong Colombia intent,girls,Phrase
+Wrong Colombia intent,cartel,Phrase
+Wrong Colombia intent,narcos,Phrase
+Wrong Colombia intent,map,Phrase
+Wrong Colombia intent,weather,Phrase
+Wrong Colombia intent,coffee,Phrase
+Wrong Colombia intent,football,Phrase
+Wrong Colombia intent,soccer,Phrase
+Wrong Colombia intent,news,Phrase
+Wrong Colombia intent,magnitude,Phrase
+Wrong Colombia intent,usgs,Phrase
+Wrong Colombia intent,live,Phrase
+Wrong Colombia intent,real estate,Phrase
+Wrong Colombia intent,nomad,Phrase
