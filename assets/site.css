@@ -180,6 +180,8 @@ footer .legal{border:0;padding:0}
 .tile .prices li{display:grid;grid-template-columns:5.4rem 1fr;gap:.6rem;align-items:baseline}
 .tile .prices li:not(:has(b)){display:block}
 .tile .prices b{font-weight:700}
+.tile .prices a{display:contents;color:inherit;text-decoration:none}
+.tile .prices a b{color:var(--link);text-decoration:underline;text-underline-offset:2px}
 .tile .cta-row{margin-top:auto;padding-top:1rem}
 
 /* impact feature rows */
