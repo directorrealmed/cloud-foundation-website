@@ -6,28 +6,35 @@
 
 # Cache control
 [[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=3600"
 
 [[headers]]
-  for = "/css/*"
+  for = "/js/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000"
+    Cache-Control = "public, max-age=3600"
 
 [[headers]]
   for = "/img/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
-    
-# Redirects
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
 
-# Error pages
+# Pages are flat files (about.html) served at /about. Unknown URLs fall
+# through to 404.html with a real 404 status, with no catch-all rewrite to
+# the home page (Google treats that as a soft 404 and it hurts ad
+# landing-page quality).
+
+# The ads/ folder is internal (playbook, scripts, campaign files): never serve it.
 [[redirects]]
-  from = "/404.html"
-  to = "/404"
+  from = "/ads/*"
+  to = "/404.html"
   status = 404
+  force = true

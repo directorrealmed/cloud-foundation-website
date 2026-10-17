@@ -10,151 +10,19 @@
 <meta property="og:description" content="A US 501(c)(3) funding food, schooling and training in Colombia. A hot meal costs $5. A complete Transformation Center costs $20,000. See exactly what your gift buys.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cloudfoundation.us/">
-<style>
-:root{
-  --navy:#0D1F3C; --teal:#00D4AB; --teal-light:#A8F0E2; --teal-deep:#00A98A;
-  --ink:#0D1F3C; --ink-soft:#44526b; --ink-faint:#717d94;
-  --bg:#fff; --bg-alt:#f4fbf9; --line:#dbe5e5; --accent:#00806a;
-  --max:70rem;
-}
-@media (prefers-color-scheme:dark){:root{
-  --ink:#eaf1f4; --ink-soft:#b3c1cf; --ink-faint:#8d9aab;
-  --bg:#0D1F3C; --bg-alt:#132a4c; --line:#26405f; --accent:#00D4AB; --teal-light:#153d3a;}}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);
- font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
- -webkit-font-smoothing:antialiased}
-img{max-width:100%;height:auto;display:block}
-a{color:var(--accent)}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
-.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:.6rem 1rem;z-index:100}
-.skip:focus{left:0}
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
 
-/* header */
-.site-head{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:50}
-.site-head .wrap{display:flex;align-items:center;gap:1.25rem;padding:.8rem 1.5rem;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--ink);flex:0 0 auto}
-.brand img{width:42px;mix-blend-mode:multiply}
-@media (prefers-color-scheme:dark){.brand img{mix-blend-mode:screen;filter:invert(1)}}
-.brand b{font-size:.92rem;line-height:1.2;letter-spacing:.01em}
-.brand span{display:block;font-size:.7rem;color:var(--ink-faint);font-weight:400}
-nav{margin-left:auto;display:flex;gap:1.1rem;align-items:center;flex-wrap:wrap}
-nav a{color:var(--ink-soft);text-decoration:none;font-size:.92rem}
-nav a:hover,nav a.here{color:var(--ink)}
-nav a.here{font-weight:600}
-nav .nav-give{background:var(--teal);color:var(--navy)!important;padding:.45rem 1.1rem;border-radius:2rem;font-weight:700}
-nav .nav-give:hover{background:var(--teal-deep)}
-
-/* hero + sections */
-.hero{padding:3.4rem 0 2.8rem;border-bottom:1px solid var(--line)}
-.hero.navy{background:var(--navy);color:#fff;border-bottom:5px solid var(--teal)}
-.hero.navy .lede{color:#c7d3e4}.hero.navy .eyebrow{color:var(--teal)}
-.hero.navy .crumb,.hero.navy .crumb a{color:#93a6c0}
-.eyebrow{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);font-weight:700;margin:0 0 .8rem}
-h1{font-size:clamp(1.9rem,5vw,3rem);line-height:1.1;letter-spacing:-.02em;margin:0 0 1rem;max-width:24ch}
-.lede{font-size:clamp(1.03rem,2vw,1.24rem);color:var(--ink-soft);margin:0;max-width:42rem}
-section{padding:3rem 0;border-bottom:1px solid var(--line)}
-section.alt{background:var(--bg-alt)}
-h2{font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-.012em;margin:0 0 1rem}
-h3{font-size:1.04rem;margin:0 0 .4rem}
-p{margin:0 0 1.05rem;max-width:42rem}
-.muted{color:var(--ink-soft)}.small{font-size:.9rem}
-.crumb{font-size:.84rem;color:var(--ink-faint);margin:0 0 .7rem}
-.crumb a{color:var(--ink-faint);text-decoration:none}
-
-/* buttons */
-.btn{display:inline-block;background:var(--teal);color:var(--navy);text-decoration:none;
- padding:.8rem 1.6rem;border-radius:2rem;font-weight:700;border:none;cursor:pointer;font-size:1rem}
-.btn:hover{background:var(--teal-deep)}
-.btn-quiet{background:transparent;color:var(--accent);border:1px solid var(--line);font-weight:600}
-.btn-quiet:hover{background:var(--teal-light);color:var(--navy)}
-.hero.navy .btn-quiet{color:#fff;border-color:#33507a}
-.hero.navy .btn-quiet:hover{background:#17325a;color:#fff}
-.cta-row{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin-top:1.6rem}
-.cta-note{font-size:.87rem;color:var(--ink-faint)}
-.hero.navy .cta-note{color:#9fb0c8}
-
-/* ctas banner */
-.cta-band{background:var(--navy);color:#fff;padding:2.6rem 0;border:none}
-.cta-band h2{color:#fff;margin-bottom:.6rem}
-.cta-band p{color:#c7d3e4}
-
-/* cards, grids, facts, tiers */
-.grid{display:grid;gap:1.15rem;margin:1.4rem 0 0;padding:0;list-style:none}
-.g2{grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
-.card{border:1px solid var(--line);border-radius:.75rem;padding:1.25rem 1.35rem;background:var(--bg)}
-.card p{margin:0;font-size:.94rem;color:var(--ink-soft)}
-.card .tag{font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-deep);font-weight:700;display:block;margin-bottom:.45rem}
-.facts{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));margin:1.5rem 0 0;padding:0;list-style:none}
-.facts div{border-left:4px solid var(--teal);padding-left:.9rem}
-.facts b{display:block;font-size:1.8rem;line-height:1.1;letter-spacing:-.02em}
-.facts span{font-size:.86rem;color:var(--ink-soft)}
-.tiers{display:grid;gap:.85rem;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));margin:1.4rem 0 0;padding:0;list-style:none}
-.tier{background:var(--bg);border:1px solid var(--line);border-radius:.7rem;padding:1.05rem 1.15rem}
-.tier b{display:block;font-size:1.35rem;letter-spacing:-.02em}
-.tier span{font-size:.89rem;color:var(--ink-soft)}
-.tier.feature{border-color:var(--teal);background:var(--teal-light)}
-.tier.feature b,.tier.feature span{color:var(--navy)}
-@media (prefers-color-scheme:dark){.tier.feature b,.tier.feature span{color:var(--ink)}}
-
-/* steps + faq */
-ol.steps{counter-reset:s;list-style:none;padding:0;margin:1.4rem 0 0;max-width:44rem}
-ol.steps li{counter-increment:s;position:relative;padding-left:2.6rem;margin-bottom:1.15rem}
-ol.steps li::before{content:counter(s);position:absolute;left:0;top:.05rem;width:1.8rem;height:1.8rem;
- border-radius:50%;background:var(--teal);color:var(--navy);font-weight:700;font-size:.9rem;
- display:grid;place-items:center}
-ol.steps b{display:block}
-.faq{margin:1.4rem 0 0;max-width:44rem}
-.faq details{border-bottom:1px solid var(--line);padding:.85rem 0}
-.faq summary{cursor:pointer;font-weight:600;list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::before{content:"+ ";color:var(--teal-deep);font-weight:700}
-.faq details[open] summary::before{content:"– "}
-.faq p{margin:.7rem 0 0;font-size:.95rem;color:var(--ink-soft)}
-
-/* photography */
-.band{margin:0;padding:0}
-.band img{width:100%;height:clamp(14rem,38vw,25rem);object-fit:cover}
-.band figcaption{background:var(--navy);color:#9fb0c8;font-size:.81rem;padding:.7rem 1.5rem;text-align:center;line-height:1.5}
-.band figcaption b{color:var(--teal);font-weight:600}
-.band.strip img{height:clamp(7rem,15vw,10rem)}
-figure.inset{margin:1.6rem 0 0;max-width:44rem}
-figure.inset img{width:100%;border-radius:.75rem}
-figure.inset figcaption{font-size:.85rem;color:var(--ink-faint);margin-top:.55rem;line-height:1.55}
-figure.portrait{float:right;width:12rem;margin:0 0 1.1rem 1.6rem;max-width:40%}
-figure.portrait img{width:100%;border-radius:.75rem}
-figure.portrait figcaption{font-size:.77rem;color:var(--ink-faint);margin-top:.45rem;line-height:1.45}
-@media (max-width:34rem){figure.portrait{float:none;width:100%;max-width:14rem;margin:0 0 1.1rem}}
-
-/* onward links */
-.nextpages{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin:1.5rem 0 0;padding:0;list-style:none}
-.nextpages a{display:block;border:1px solid var(--line);border-radius:.75rem;padding:1.05rem 1.2rem;text-decoration:none;color:var(--ink)}
-.nextpages a:hover{border-color:var(--teal-deep);background:var(--bg-alt)}
-.nextpages b{display:block;font-size:.98rem;margin-bottom:.2rem}
-.nextpages span{font-size:.88rem;color:var(--ink-soft)}
-
-/* forms */
-form{max-width:34rem;margin-top:1.4rem}
-label{display:block;font-size:.9rem;font-weight:600;margin:1rem 0 .3rem}
-input,select,textarea{width:100%;padding:.68rem .8rem;border:1px solid var(--line);border-radius:.5rem;
- background:var(--bg);color:var(--ink);font:inherit;font-size:.97rem}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--teal-deep);outline-offset:1px}
-textarea{min-height:7.5rem;resize:vertical}
-.hp{position:absolute;left:-9999px}
-.form-note{font-size:.85rem;color:var(--ink-faint);margin-top:.9rem}
-
-/* footer */
-footer{padding:2.8rem 0;font-size:.87rem;color:#9fb0c8;background:var(--navy)}
-footer .cols{display:grid;gap:1.6rem;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));margin-bottom:1.8rem}
-footer h4{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;color:var(--teal);margin:0 0 .6rem}
-footer a{color:#c7d3e4;text-decoration:none;display:block;margin-bottom:.32rem}
-footer a:hover{color:#fff}
-footer p{max-width:46rem;margin:0 0 .65rem;color:#9fb0c8}
-footer .legal{border-top:1px solid #24406b;padding-top:1.4rem}
-</style>
   <meta name="netlify" content="no-badge">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NGO","name":"Cloud Foundation Inc.","url":"https://cloudfoundation.us/",
+ "logo":"https://cloudfoundation.us/img/logo.jpg","taxID":"88-2337360","nonprofitStatus":"Nonprofit501c3",
+ "email":"director@cloudfoundation.us","telephone":"+1-305-513-1382",
+ "address":{"@type":"PostalAddress","streetAddress":"16969 NW 67th Avenue, Suite 208","addressLocality":"Hialeah","addressRegion":"FL","postalCode":"33015","addressCountry":"US"},
+ "areaServed":"Colombia","description":"A US 501(c)(3) funding food, schooling, training and disaster relief in Colombia through Fundación Cloud."}
+</script>
+<script src="/js/track.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -176,138 +44,266 @@ footer .legal{border-top:1px solid #24406b;padding-top:1.4rem}
   </div>
 </header>
 <main id="main">
-<div class="hero navy">
-  <div class="wrap">
-    <p class="eyebrow">United States 501(c)(3) &middot; working in Colombia</p>
-    <h1>Every gift buys something we can name.</h1>
-    <p class="lede">Cloud Foundation Inc. funds food, schooling, training and shelter in some of the hardest places in Colombia &mdash; and tells you exactly what each dollar bought. A hot meal costs $5. A complete school building costs $20,000.</p>
-    <div class="cta-row">
-      <a class='btn' href='/give'>See what your gift buys</a>
-      <a class='btn btn-quiet' href='/about'>How we work</a>
+
+  <!-- Hero -->
+  <section class="home-hero" style="padding-bottom:0">
+    <div class="wrap">
+      <p class="eyebrow">United States 501(c)(3) &middot; working in Colombia</p>
+      <h1>Every gift buys something we can name.</h1>
+      <p class="lede">Food, schooling, training and shelter in some of the hardest places in Colombia &mdash; and a clear account of exactly what each dollar bought.</p>
+      <p class="mission"><b>Our mission:</b> Mobilizing people and resources to equip local transformation through young leaders. Cloud Foundation Inc. is a United States 501(c)(3) nonprofit funding hot meals, community schools, disaster relief and leadership training in Colombia, delivered on the ground by our Colombian partner, Fundaci&oacute;n Cloud.</p>
+      <div class="cta-row">
+        <a class="btn" href="/give">Give</a>
+        <a class="btn" href="/serve">Serve with us</a>
+      </div>
     </div>
-  </div>
-</div>
+    <figure class="hero-photo">
+      <img src="img/pereira-distribution.jpg" width="877" height="1280" style="object-position:50% 40%" alt="Families gathered in a Pereira street to receive earthquake relief from a Cloud Foundation truck.">
+    </figure>
+  </section>
 
-<figure class="band">
-  <img src="img/community-gathering.jpg" width="1100" height="825" alt="Children and volunteers in matching caps walking hand in hand in a circle on a concrete court, with a hillside neighbourhood behind them.">
-  <figcaption>A community day on the court. Volunteers in caps, everyone else just there.</figcaption>
-</figure>
-
-<section style="background: #fff5e6; border-left: 4px solid #ff6b35;">
-  <div class="wrap">
-    <p class="eyebrow" style="color: #ff6b35;">🚨 Urgent Update</p>
-    <h2 style="margin-top: 0;">Pereira earthquake relief — September 11, 2026</h2>
-    <p><b>11 tons of food and medication</b> distributed to earthquake-affected families in Pereira, Risaralda.</p>
-    
-    <div style="display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 2rem;">
-      <figure class="inset" style="margin: 0;">
-        <img src="img/pereira-warehouse.jpg" alt="Warehouse with relief supplies - 11 tons of food and medication">
-        <figcaption><b>The supplies:</b> 11 tons ready for distribution</figcaption>
-      </figure>
-      <figure class="inset" style="margin: 0;">
-        <img src="img/pereira-distribution.jpg" alt="Relief distribution to families in Pereira">
-        <figcaption><b>The impact:</b> Families receiving emergency support</figcaption>
-      </figure>
+  <!-- Where we've been -->
+  <section id="recent">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow">Latest from the field</p>
+        <h2>Where we&rsquo;ve been lately.</h2>
+        <p class="lede">The most recent places our teams have worked, newest first.</p>
+      </div>
+      <ul class="visits">
+        <li>
+          <img src="img/leaders.jpg" width="820" height="615" loading="lazy" decoding="async" alt="Four local pastors and volunteers standing together outside a church building.">
+          <div class="body">
+            <span class="badge">Starting now</span>
+            <p class="date">October 2026 &middot; Manrique, Medell&iacute;n</p>
+            <h3>40 young leaders</h3>
+            <p>The first twelve-week Catalyst Leader cohort begins this month.</p>
+            <a class="textlink" href="/about">How we work</a>
+          </div>
+        </li>
+        <li>
+          <img src="img/pereira-warehouse.jpg" width="828" height="1280" loading="lazy" decoding="async" alt="Boxes of food and medication stacked in a warehouse in Pereira, ready for distribution.">
+          <div class="body">
+            <span class="badge">Earthquake relief</span>
+            <p class="date">September 11, 2026 &middot; Pereira, Risaralda</p>
+            <h3>11 tons of food and medication</h3>
+            <p>750 family relief packages for earthquake-affected families, with Misi&oacute;n Paz Pereira and the Pereira municipal government.</p>
+            <a class="textlink" href="/colombia">Pereira response</a>
+          </div>
+        </li>
+        <li>
+          <img src="img/packages.jpg" width="820" height="801" loading="lazy" decoding="async" alt="Family food packages bagged and stacked on a table: cooking oil, rice, pasta, beans and panela.">
+          <div class="body">
+            <span class="badge">Relief</span>
+            <p class="date">August 2026 &middot; Quibd&oacute;, Choc&oacute;</p>
+            <h3>120 families reached</h3>
+            <p>Family food packages handed out with Iglesia Centro de Fe y Esperanza, counted household by household.</p>
+            <a class="textlink" href="/colombia#choco">Choc&oacute; response</a>
+          </div>
+        </li>
+        <li>
+          <div class="noimg"><b>Aug 11</b><span>2026 &middot; the day after the earthquake</span></div>
+          <div class="body">
+            <span class="badge">First response</span>
+            <p class="date">August 11, 2026 &middot; Chiminangos, Cali</p>
+            <h3>A feeding center in a day</h3>
+            <p>The day after the earthquake we mobilised all our teams in Cali, built a feeding center in Chiminangos, one of the hardest-hit barrios, and helped pull people out from under the rubble.</p>
+            <a class="textlink" href="/colombia#cali">Cali response</a>
+          </div>
+        </li>
+        <li>
+          <img src="img/plates.jpg" width="820" height="583" loading="lazy" decoding="async" alt="Plates of food set out on a table at the El Calvario street kitchen in Cali.">
+          <div class="body">
+            <span class="badge">Every week</span>
+            <p class="date">Three days a week &middot; El Calvario, Cali</p>
+            <h3>450 hot meals a week</h3>
+            <p>Our street kitchen feeds 150 people each serving day, with a clothing bank alongside.</p>
+            <a class="textlink" href="/kitchen">The street kitchen</a>
+          </div>
+        </li>
+      </ul>
     </div>
-    
-    <ul style="margin: 1.5rem 0; color: var(--ink-soft); line-height: 1.8;">
-      <li><b>Date:</b> September 11, 2026</li>
-      <li><b>Location:</b> Pereira, Risaralda, Colombia</li>
-      <li><b>Impact:</b> 11 metric tons food + emergency medication</li>
-      <li><b>Partners:</b> Cloud Foundation + Misión Paz Pereira + Pereira municipal government</li>
-    </ul>
-    <p style="font-size: 0.9rem; color: var(--ink-faint); margin-top: 1.5rem;">This is the kind of work we do — rapid response to crisis, on the ground, with verified impact.</p>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="wrap">
-    <p class="eyebrow">What we do</p>
-    <h2>Four things, in four places</h2>
-    <p>We are a small United States charity that moves money to Colombian programmes run by people who live there. We do not run parallel operations from Florida. Every programme below is delivered on the ground by <b>Fundaci&oacute;n Cloud</b>, our Colombian entity, constituted in 2018.</p>
-    <ul class="nextpages">
-      <li><a href='/kitchen'><b>The street kitchen &middot; El Calvario, Cali</b><span>A hot meal for 150 people, three days a week. $5 a meal.</span></a></li>
-      <li><a href='/centers'><b>Transformation Centers &middot; La Guajira and Cali</b><span>A complete building with desks and supplies: $20,000.</span></a></li>
-      <li><a href='/colombia'><b>Earthquake response &middot; Risaralda and Choc&oacute;</b><span>Family relief packages. $50 each.</span></a></li>
-      <li><a href='/serve'><b>Serve with us</b><span>Grant writing, translation, distribution teams, teaching.</span></a></li>
-    </ul>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <h2>The whole programme list</h2>
-    <p class="muted">Delivered in Colombia through Fundaci&oacute;n Cloud.</p>
-    <ul class="grid g3">
-      <li class="card"><span class="tag">Three days a week</span><h3>Street kitchen</h3><p>A hot meal for 150 people in El Calvario, Cali. <a href='/kitchen'>More &rarr;</a></p></li>
-      <li class="card"><span class="tag">Community</span><h3>Transformation Centers</h3><p>A school, a feeding point and a leadership hub in one building. <a href='/centers'>More &rarr;</a></p></li>
-      <li class="card"><span class="tag">Church planting</span><h3>New congregations</h3><p>Funding and supporting the planting and strengthening of churches across Colombia.</p></li>
-      <li class="card"><span class="tag">Ministry training</span><h3>Leadership formation</h3><p>Twelve-week Catalyst Leader cohorts, beginning in Manrique, Medell&iacute;n in October 2026 with forty young leaders.</p></li>
-      <li class="card"><span class="tag">Restoration</span><h3>Prison ministry</h3><p>Working inside eight prisons across Colombia with men and women preparing to return to their communities.</p></li>
-      <li class="card"><span class="tag">Protection</span><h3>Anti-trafficking</h3><p>Supporting women who have come out of sex trafficking, and minors in trafficking situations. Confidential by design.</p></li>
-      <li class="card"><span class="tag">Economic empowerment</span><h3>Startup training</h3><p>Practical business formation for young entrepreneurs who have the ability but not the access.</p></li>
-      <li class="card"><span class="tag">Emergency</span><h3>Disaster response</h3><p>Food, medicine and construction supplies after the Colombia earthquake. <a href='/colombia'>More &rarr;</a></p></li>
-    </ul>
-  </div>
-</section>
-
-<figure class="band">
-  <img src="img/construction.jpg" width="1100" height="822" alt="A completed open-air community building with cane walls, a red metal roof, a concrete floor, desks and chairs." loading="lazy" decoding="async">
-  <figcaption><b>La Guajira.</b> A finished Transformation Center: cane walls, a corrugated metal roof, a poured slab and desks. The building and every education supply inside it, <b>$20,000</b>.</figcaption>
-</figure>
-
-<section>
-  <div class="wrap">
-    <p class="eyebrow">Flagship</p>
-    <h2>The Real Transformation Center, Medell&iacute;n</h2>
-    <p>A permanent ministry campus in Medell&iacute;n &mdash; a home for discipleship, leadership training and community programmes that does not depend on rented rooms and borrowed time. We are raising a <b>$500,000 down payment</b> toward a property of approximately <b>$3 million</b>.</p>
-    <p class="muted">This is not temporary relief. It is permanent infrastructure: a place that will still be training leaders in Medell&iacute;n in twenty years, long after any single campaign has closed.</p>
-    <div class="cta-row">
-      <a class='btn' href='/give#centers'>Give toward the campus</a>
-      <a class='btn btn-quiet' href='/contact'>Talk to us about a major gift</a>
+  <!-- Next steps -->
+  <section class="alt" id="next-steps">
+    <div class="wrap">
+      <div class="center">
+        <h2>Three ways to be part of it.</h2>
+        <p class="lede">Pick the one that fits. Every option has a clear next step.</p>
+      </div>
+      <div class="steps3">
+        <article class="tile">
+          <img src="img/partnership.jpg" width="959" height="1280" style="object-position:50% 30%" alt="A Fundación Cloud team member with a woman from the community.">
+          <div class="body">
+            <h3>Give</h3>
+            <p>Every gift has a price attached, so you know what it buys.</p>
+            <ul class="prices">
+              <li><b>$5</b>a hot meal in El Calvario, Cali</li>
+              <li><b>$50</b>a family relief package</li>
+              <li><b>$20,000</b>a complete Transformation Center</li>
+            </ul>
+            <p class="small muted">By card, Zelle or cheque. Tax-deductible in the US.</p>
+            <div class="cta-row"><a class="btn" href="/give">See giving options</a></div>
+          </div>
+        </article>
+        <article class="tile">
+          <img src="img/volunteer-community.jpg" width="1280" height="718" alt="A Fundación Cloud volunteer in a white shirt holds up a ball, surrounded by a crowd of children and teenagers.">
+          <div class="body">
+            <h3>Serve</h3>
+            <p>Bring a skill we need, from home or on the ground in Colombia.</p>
+            <ul class="prices">
+              <li>Grant writing</li>
+              <li>Translation</li>
+              <li>Distribution teams</li>
+              <li>Teaching</li>
+            </ul>
+            <div class="cta-row"><a class="btn" href="/serve">Serve with us</a></div>
+          </div>
+        </article>
+        <article class="tile">
+          <img src="img/community-gathering.jpg" width="1280" height="960" alt="A long line of children gathered outdoors for a community day, seen from a distance.">
+          <div class="body">
+            <h3>Partner</h3>
+            <p>Fund a whole building, or help raise the $500,000 down payment for the Real Transformation Center in Medell&iacute;n.</p>
+            <div class="cta-row">
+              <a class="btn" href="/contact">Talk to us about a major gift</a>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<figure class="band strip">
-  <img src="img/partnership.jpg" width="1100" height="338" alt="A dugout canoe pulled up on a gravel bank beside a jungle river, with stilt-house posts and a wooden ladder." loading="lazy" decoding="async">
-  <figcaption><b>Guapi, Pacific coast.</b> Some of the places we go are reached by river and nothing else.</figcaption>
-</figure>
+  <!-- Recent impact -->
+  <section id="impact">
+    <div class="wrap">
+      <div class="center">
+        <h2>Recent impact.</h2>
+        <p class="lede">Small, specific numbers we can stand behind.</p>
+      </div>
 
-<section class="alt">
-  <div class="wrap">
-    <h2>Why the numbers on this site are small and specific</h2>
-    <p>Most charity websites lead with a big round figure &mdash; lives changed, people reached &mdash; and no way to check it. We would rather publish the unit costs we actually know and let you do the arithmetic yourself.</p>
-    <p>A meal in El Calvario costs $5, and we serve 150 people three days a week. That is 450 meals a week. A complete rural Transformation Center cost $20,000, including every exercise book inside it, and that is what the next one costs. A family relief package costs $50 and weighs ten kilos.</p>
-    <p>Where we cannot count something yet, we say so rather than estimating. That is a slower way to raise money and a better way to keep a donor.</p>
-    <div class="cta-row">
-      <a class='btn btn-quiet' href='/about#accountability'>Read our accountability commitments</a>
+      <div class="impact">
+        <div class="pics one">
+          <img src="img/pereira-warehouse.jpg" width="828" height="1280" alt="Warehouse with stacked boxes of food and medication: 11 tons ready for distribution.">
+        </div>
+        <div>
+          <span class="badge">Disaster response</span>
+          <p class="date">September 11, 2026 &middot; Pereira, Risaralda</p>
+          <h3>11 tons of food and medication for earthquake-affected families.</h3>
+          <p class="muted">Rapid response to crisis, on the ground, with verified impact.</p>
+          <ul>
+            <li><b>11 metric tons</b> of food plus emergency medication</li>
+            <li><b>750 family relief packages</b>, ten kilos each</li>
+            <li><b>Partners:</b> Cloud Foundation, Misi&oacute;n Paz Pereira, Pereira municipal government</li>
+          </ul>
+          <div class="cta-row"><a class="textlink" href="/colombia">Colombia response</a></div>
+        </div>
+      </div>
+
+      <div class="impact">
+        <div>
+          <p class="date">Three days a week &middot; El Calvario, Cali</p>
+          <h3>450 hot meals a week from the street kitchen.</h3>
+          <p class="muted">A hot meal for 150 people, three days a week. Each meal costs $5.</p>
+          <div class="cta-row"><a class="textlink" href="/kitchen">The street kitchen</a></div>
+        </div>
+        <div class="stat"><b>450</b><span>hot meals a week in El Calvario, Cali</span></div>
+      </div>
+
+      <div class="impact">
+        <div class="pics one">
+          <img src="img/center.jpg" width="1100" height="822" alt="A finished Transformation Center in La Guajira: cane walls, a red corrugated metal roof, a poured slab and desks.">
+        </div>
+        <div>
+          <p class="date">La Guajira and Cali</p>
+          <h3>A finished Transformation Center: $20,000, every exercise book included.</h3>
+          <p class="muted">A school, a feeding point and a leadership hub in one building. That is what the next one costs.</p>
+          <div class="cta-row"><a class="textlink" href="/centers">Transformation Centers</a></div>
+        </div>
+      </div>
+
+      <div class="impact">
+        <div>
+          <p class="date">October 2026 &middot; Manrique, Medell&iacute;n</p>
+          <h3>Forty young leaders begin the twelve-week Catalyst Leader cohort.</h3>
+          <p class="muted">Leadership formation for the next generation, starting this month.</p>
+          <div class="cta-row"><a class="textlink" href="/about">How we work</a></div>
+        </div>
+        <div class="stat"><b>40</b><span>young leaders in the first Catalyst Leader cohort</span></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="cta-band">
-  <div class="wrap">
-    <h2>$5 puts a hot meal in front of someone tonight</h2>
-    <p>Or $50 sends a family relief package, or $20,000 builds a school. Every option is on one page, with the price attached.</p>
-    <div class="cta-row">
-      <a class='btn' href='/give'>See the giving options</a>
-      <a class='btn btn-quiet' href='/contact' style='color:#fff;border-color:#33507a'>Ask us a question</a>
+  <!-- Programmes -->
+  <section class="alt" id="programmes">
+    <div class="wrap">
+      <div class="center">
+        <h2>Everything we fund.</h2>
+        <p class="lede">Colombian programmes led by people who live there, delivered on the ground by Fundaci&oacute;n Cloud, our Colombian entity, constituted in 2018.</p>
+      </div>
+      <ul class="programs">
+        <li><span class="tag">Three days a week</span><h3>Street kitchen</h3><p>A hot meal for 150 people in El Calvario, Cali.</p><a class="textlink" href="/kitchen">Learn more</a></li>
+        <li><span class="tag">Community</span><h3>Transformation Centers</h3><p>A school, a feeding point and a leadership hub in one building.</p><a class="textlink" href="/centers">Learn more</a></li>
+        <li><span class="tag">Emergency</span><h3>Disaster response</h3><p>Food, medicine and construction supplies after the Colombia earthquake. Family relief packages, $50 each.</p><a class="textlink" href="/colombia">Learn more</a></li>
+        <li><span class="tag">Ministry training</span><h3>Leadership formation</h3><p>Twelve-week Catalyst Leader cohorts, beginning in Manrique, Medell&iacute;n in October 2026 with forty young leaders.</p></li>
+        <li><span class="tag">Church planting</span><h3>New congregations</h3><p>Funding and supporting the planting and strengthening of churches across Colombia.</p></li>
+        <li><span class="tag">Restoration</span><h3>Prison ministry</h3><p>Working inside eight prisons across Colombia with men and women preparing to return to their communities.</p></li>
+        <li><span class="tag">Protection</span><h3>Anti-trafficking</h3><p>Supporting women who have come out of sex trafficking, and minors in trafficking situations. Confidential by design.</p></li>
+        <li><span class="tag">Economic empowerment</span><h3>Startup training</h3><p>Practical business formation for young entrepreneurs who have the ability but not the access.</p></li>
+      </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="wrap">
-    <h2>Elsewhere on this site</h2>
-    <ul class="nextpages">
-      <li><a href='/about'><b>Who we are</b><span>Leadership, entities, and how we handle money</span></a></li>
-      <li><a href='/kitchen'><b>The street kitchen</b><span>150 meals a day in El Calvario, three days a week</span></a></li>
-      <li><a href='/give'><b>Ways to give</b><span>Zelle, cheque, card, or a written proposal</span></a></li>
-    </ul>
-  </div>
-</section>
+  <!-- Flagship -->
+  <section id="campus">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Flagship</p>
+        <h2>The Real Transformation Center, Medell&iacute;n.</h2>
+        <p class="lede" style="margin-bottom:1.2rem">A permanent ministry campus &mdash; a home for discipleship, leadership training and community programmes that does not depend on rented rooms and borrowed time.</p>
+        <p class="big-number">$500,000</p>
+        <p class="muted">Down payment we are raising toward a property of approximately $3 million.</p>
+        <p class="muted">Permanent infrastructure: a place that will still be training leaders in Medell&iacute;n in twenty years, long after any single campaign has closed.</p>
+        <div class="cta-row">
+          <a class="btn" href="/give">Give toward the campus</a>
+          <a class="btn" href="/contact">Talk to us about a major gift</a>
+        </div>
+      </div>
+      <div class="stat"><b>$3M</b><span>approximate cost of the permanent campus in Medellín</span></div>
+    </div>
+  </section>
+
+  <!-- Accountability -->
+  <section class="alt" id="accountability">
+    <div class="wrap center">
+      <h2>Why our numbers are small and specific.</h2>
+      <p class="lede">We would rather publish the unit costs we actually know and let you do the arithmetic yourself.</p>
+      <div class="facts" style="text-align:left;max-width:52rem;margin-left:auto;margin-right:auto">
+        <div><b>$5</b><span>one hot meal in El Calvario</span></div>
+        <div><b>450</b><span>meals served each week</span></div>
+        <div><b>$50</b><span>a 10-kilo family relief package</span></div>
+        <div><b>$20,000</b><span>a complete rural Transformation Center</span></div>
+      </div>
+      <p class="muted" style="margin-top:2rem">Where we cannot count something yet, we say so rather than estimating. That is a slower way to raise money and a better way to keep a donor.</p>
+      <div class="cta-row" style="justify-content:center"><a class="textlink" href="/about#accountability">Read our accountability commitments</a></div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="cta-band" style="background:#fff">
+    <div class="wrap">
+      <h2>$5 puts a hot meal in front of someone tonight.</h2>
+      <p class="lede">Or $50 sends a family relief package, or $20,000 builds a school.</p>
+      <div class="cta-row">
+        <a class="btn" href="/give">Give now</a>
+        <a class="btn" href="/contact">Ask us a question</a>
+      </div>
+    </div>
+  </section>
+
 </main>
+
 <footer>
   <div class="wrap">
     <div class="cols">
@@ -329,7 +325,7 @@ footer .legal{border-top:1px solid #24406b;padding-top:1.4rem}
         <h4>Contact</h4>
         <a href='/contact'>Contact us</a>
         <a href="mailto:director@cloudfoundation.us">director@cloudfoundation.us</a>
-        <a href="tel:+19549001982">(786) 205-8800</a>
+        <a href="tel:+13055131382">(305) 513-1382</a>
       </div>
       <div>
         <h4>Mailing address</h4>
