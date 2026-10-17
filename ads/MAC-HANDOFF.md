@@ -1,6 +1,6 @@
 # Hand-off: finish the Ad Grants launch from the Mac
 
-Paste everything below the line into Claude Code running **locally on the Mac** (Claude desktop app → Code → choose this repo on your computer, not a cloud environment). If the Claude Chrome extension is connected, Claude can do the browser steps; you type passwords and 2FA codes.
+(Done 2026-10-15–17 except where noted in the PR; the branch is now based on the live redesign.) Paste everything below the line into Claude Code running **locally on the Mac** (Claude desktop app → Code → choose this repo on your computer, not a cloud environment). If the Claude Chrome extension is connected, Claude can do the browser steps; you type passwords and 2FA codes.
 
 ---
 
