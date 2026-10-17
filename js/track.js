@@ -14,7 +14,7 @@
  * conversions. Keep view_give_page as "secondary" in Google Ads.
  */
 (function () {
-  var GA4_ID = '';          // e.g. 'G-XXXXXXXXXX'
+  var GA4_ID = 'G-03ZK5QJ636';
   var ADS_ID = '';          // e.g. 'AW-123456789'
   var ADS_DONATE_LABEL = ''; // e.g. 'AbC-D_efG-h12_34-567'
 
