@@ -7,10 +7,10 @@
 <meta name="description" content="Read the whole Bible in 40 days: three 30-minute readings a day, morning prayer together and a wall to pray for one another.">
 <meta name="theme-color" content="#23232F">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="REAL 40">
+<meta name="apple-mobile-web-app-title" content="REAL">
 <link rel="manifest" href="/manifest.webmanifest">
-<link rel="icon" href="/icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="icon" href="/icon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -52,6 +52,7 @@ a{color:inherit}
 .top{display:flex;align-items:center;justify-content:space-between;padding:8px 0 4px}
 .mark{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.04em}
 .mark svg{width:30px;height:30px}
+.mark svg.logo{width:79px;height:20px}
 .iconbtn{width:44px;height:44px;display:grid;place-items:center;border-radius:50%}
 .iconbtn svg{width:20px;height:20px}
 .greet{margin:18px 0 0;color:var(--ink2);font-weight:600}
@@ -273,7 +274,7 @@ body.has-player .shell{padding-bottom:250px}
 
 <main class="shell" id="root">
   <section id="auth" class="auth hidden">
-    <div class="mark"><svg viewBox="0 0 32 32" aria-hidden="true"><g stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M16 3v26M3 16h26M6.8 6.8l18.4 18.4M25.2 6.8 6.8 25.2"/></g></svg>IGLESIA REAL</div>
+    <div class="mark"><svg class="logo" viewBox="92 218 300 76" role="img" aria-label="REAL"><path d="M100 286V226h30a16 16 0 0 1 0 32h-30M126 258l22 28M176 226h50M176 286h50M252 286l30-60 30 60M342 226v60h42" fill="none" stroke="currentColor" stroke-width="9"/><circle cx="190" cy="256" r="6.5" fill="currentColor"/></svg></div>
     <h1>40 days<span>to read the whole Bible</span></h1>
     <p class="sub" id="authSub">Three 30-minute readings a day, prayer together every morning and a wall to pray for one another. Join us and read along from today.</p>
     <p class="counter glass pill hidden" id="authCounter"></p>
@@ -320,7 +321,7 @@ body.has-player .shell{padding-bottom:250px}
 
   <section id="app" class="hidden">
     <header class="top">
-      <div class="mark"><svg viewBox="0 0 32 32" aria-hidden="true"><g stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M16 3v26M3 16h26M6.8 6.8l18.4 18.4M25.2 6.8 6.8 25.2"/></g></svg>REAL · 40</div>
+      <div class="mark"><svg class="logo" viewBox="92 218 300 76" role="img" aria-label="REAL"><path d="M100 286V226h30a16 16 0 0 1 0 32h-30M126 258l22 28M176 226h50M176 286h50M252 286l30-60 30 60M342 226v60h42" fill="none" stroke="currentColor" stroke-width="9"/><circle cx="190" cy="256" r="6.5" fill="currentColor"/></svg><span>40</span></div>
       <button class="iconbtn glass" id="themeBtn" aria-label="Change theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
     </header>
     <div id="vToday"></div>
@@ -515,7 +516,7 @@ function renderAuthMode(){
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){err.textContent="Enter a valid email.";return}
     if(!$("#wConsent").checked){err.textContent="Please accept the Data Privacy Policy to sign up.";return}
     try{await API.call("/waitlist",{method:"POST",body:{email,name:$("#wName").value.trim(),consent:true}});$("#waitBox").innerHTML='<p class="stepno">You\'re on the list!</p><p class="lede">We\'ll let you know when the October 2027 round opens.</p>';}catch(e){err.textContent=e.message}};
-  if(LS.get("real40:ref"))$("#authSub").textContent="You've been invited to read the whole Bible in 40 days. Three 30-minute readings a day, together as a church.";
+  if(LS.get("real40:ref"))$("#authSub").textContent="You've been invited to join people from around the world in 40 days of fasting and the Word: the whole Bible in 40 days, three 30-minute readings a day.";
 }
 async function loadPublic(){
   try{state.cfg=await API.call("/config");state.zoom=state.cfg.zoom;if(!state.profile)setMode(mode);}catch(e){}
@@ -605,7 +606,7 @@ function renderToday(){
   if(t<1&&d===1&&!state.peeked){
     const ms=START-new Date(),days=Math.floor(ms/864e5),hrs=Math.floor(ms/36e5)%24,mins=Math.floor(ms/6e4)%60;
     const left=1-t;v.append(el("h1",{class:"hero"},left+(left===1?" day":" days")+"<br>to go"));
-    v.append(el("p",{class:"ref"},"On October 7 we all start reading the whole Bible together, as a church."));
+    v.append(el("p",{class:"ref"},"On October 7, people from around the world begin the challenge of 40 days of fasting and the Word, reading the whole Bible together."));
     const c=el("div",{class:"count"});[[days,"days"],[hrs,"hours"],[mins,"min"]].forEach(([n,l])=>c.append(el("div",{class:"glass"},`<b>${n}</b><small>${l}</small>`)));v.append(c);
     const pv=el("div",{class:"glass card"},`<h4>Your first reading</h4><p class="principle">Genesis 1 – 30</p><p class="note">${PLAN[0][2]}</p>`);v.append(pv);
     v.append(el("button",{class:"primary",onclick:()=>{state.peeked=true;renderToday()}},"See Day 1"));
@@ -617,7 +618,7 @@ function renderToday(){
   renderDay(v,d,true);todayCommunity(v,d);
 }
 function catchUpCard(t){
-  const c=el("div",{class:"glass card"},`<h4>Joining mid-way?</h4><p>The church started on October 7, so today is Day ${Math.min(40,t)}. Start with today's reading and read alongside everyone. You can go back to earlier days in the Plan whenever you have time.</p>`);
+  const c=el("div",{class:"glass card"},`<h4>Joining mid-way?</h4><p>People from around the world joined the challenge of 40 days of fasting and the Word on October 7, so today is Day ${Math.min(40,t)}. Start with today's reading and read alongside everyone. You can go back to earlier days in the Plan whenever you have time.</p>`);
   c.append(el("button",{class:"rep",onclick:()=>{LS.set("real40:catchupSeen",1);renderToday()}},"Got it"));return c;
 }
 function renderDay(v,d,withNav){
@@ -846,8 +847,9 @@ function bgCanvas(w,h){const c=document.createElement("canvas");c.width=w;c.heig
   const g=x.createLinearGradient(0,0,w,h);g.addColorStop(0,"#9FE8FF");g.addColorStop(.5,"#D7C4FF");g.addColorStop(1,"#FFC4E1");x.fillStyle=g;x.fillRect(0,0,w,h);
   [[.1,.15,"#75FBFE"],[.9,.4,"#D7C4FF"],[.3,.9,"#FFE3B0"]].forEach(([a,b,col])=>{const r=x.createRadialGradient(a*w,b*h,0,a*w,b*h,w*.6);r.addColorStop(0,col+"cc");r.addColorStop(1,col+"00");x.fillStyle=r;x.fillRect(0,0,w,h)});
   x.fillStyle="rgba(255,255,255,.38)";const m=w*.07;x.beginPath();x.roundRect(m,m,w-2*m,h-2*m,64);x.fill();x.strokeStyle="rgba(255,255,255,.85)";x.lineWidth=3;x.stroke();
-  x.fillStyle="#23232F";x.strokeStyle="#23232F";x.lineWidth=w*.008;x.lineCap="round";const cx=m+70,cy=m+80,L=30;[0,45,90,135].forEach(a=>{const t=a*Math.PI/180;x.beginPath();x.moveTo(cx-Math.cos(t)*L,cy-Math.sin(t)*L);x.lineTo(cx+Math.cos(t)*L,cy+Math.sin(t)*L);x.stroke()});
-  x.font=`800 ${w*.03}px 'Bricolage Grotesque',Figtree,sans-serif`;x.fillText("IGLESIA REAL · 40 DAYS",cx+55,cy+w*.011);return [c,x,m];}
+  x.fillStyle="#23232F";x.strokeStyle="#23232F";const lx=m+44,ly=m+52,ls=.62;
+  x.save();x.translate(lx,ly);x.scale(ls,ls);x.translate(-92,-218);x.lineWidth=9;x.stroke(new Path2D("M100 286V226h30a16 16 0 0 1 0 32h-30M126 258l22 28M176 226h50M176 286h50M252 286l30-60 30 60M342 226v60h42"));x.beginPath();x.arc(190,256,6.5,0,7);x.fill();x.restore();
+  x.font=`800 ${w*.03}px 'Bricolage Grotesque',Figtree,sans-serif`;x.fillText("40 DAYS",lx+300*ls+24,ly+38*ls+w*.011);return [c,x,m];}
 async function shareProgress(d){
   await document.fonts.ready.catch(()=>{});const [c,x,m]=bgCanvas(1080,1350);
   x.fillStyle="#4A4A5C";x.font="700 44px Figtree,sans-serif";x.fillText("I'm reading the whole Bible",m+64,360);

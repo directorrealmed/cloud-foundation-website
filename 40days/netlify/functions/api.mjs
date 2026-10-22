@@ -1,7 +1,7 @@
 // JSON API for the 40 Days (English) app, served at /api/*.
 import {
   db, env, json, fail, dayNum, APP_URL, hashPassword, checkPassword, makeToken, readToken, hashId, randomId, randomCode,
-  getUser, saveUser, userKey, publicUser, isAdmin, allUsers, summarize, sendEmail, emailLayout, esc, conexionEmails,
+  getUser, saveUser, userKey, publicUser, isAdmin, allUsers, summarize, sendEmail, emailLayout, esc, conexionEmails, syncContact,
 } from "../lib/core.mjs";
 import { PLAN } from "../lib/plan.mjs";
 
@@ -59,7 +59,7 @@ async function signup(b, ctx) {
   };
   const { modified } = await store.setJSON(userKey(email), u, { onlyIfNew: true });
   if (!modified) { await store.delete(`codes/${code}`); return fail("There's already an account with this email. Log in instead.", 409); }
-  later(ctx, welcomeEmail(u));
+  later(ctx, Promise.all([welcomeEmail(u), syncContact(u)]));
   return json({ token, user: publicUser(u) });
 }
 async function login(b) {
@@ -250,7 +250,7 @@ async function welcomeEmail(u) {
   const d = Math.min(40, Math.max(1, dayNum()));
   const [ref, , focus] = PLAN[d - 1];
   const mid = dayNum() > 1
-    ? `<p>The church started on October 7, so today is <b>Day ${d}</b>: ${esc(ref)}. Start with today's reading and read alongside everyone; you can go back to earlier days whenever you have time.</p>`
+    ? `<p>People from around the world joined the challenge of 40 days of fasting and the Word on October 7, so today is <b>Day ${d}</b>: ${esc(ref)}. Start with today's reading and read alongside everyone; you can go back to earlier days whenever you have time.</p>`
     : `<p>We start on October 7 with Genesis 1 – 30.</p>`;
   await sendEmail({
     to: { email: u.email, name: u.name }, subject: "Welcome to 40 Days",
@@ -282,8 +282,8 @@ export default async (req, ctx) => {
     if (!u) return fail("Your session ended. Please log in again.", 401);
     if (a === "me") {
       if (m === "GET") return json({ user: publicUser(u) });
-      if (m === "PATCH") { if ("comms" in body) u.comms = !!body.comms; await saveUser(u); return json({ user: publicUser(u) }); }
-      if (m === "DELETE") return deleteMe(u, body);
+      if (m === "PATCH") { if ("comms" in body) u.comms = !!body.comms; await saveUser(u); later(ctx, syncContact(u)); return json({ user: publicUser(u) }); }
+      if (m === "DELETE") { const r = await deleteMe(u, body); if (r.ok) later(ctx, syncContact(u, { remove: true })); return r; }
     }
     if (a === "progress" && m === "PUT") {
       const prog = {};

@@ -116,3 +116,23 @@ export function emailLayout(title, inner, cta) {
 </div></body></html>`;
 }
 export const conexionEmails = () => listEnv("CONEXION_EMAILS");
+
+// ---------- Brevo contact lists (English sign-ups and English resources)
+const listId = (k) => Number(env(k)) || null;
+export async function syncContact(u, { remove = false } = {}) {
+  const key = env("BREVO_KEY"), all = listId("BREVO_LIST_ID"), res = listId("BREVO_LIST_RECURSOS");
+  if (!key || !all) return;
+  const lists = remove ? [] : [all, ...(u.comms && res ? [res] : [])];
+  const unlink = remove ? [all, res].filter(Boolean) : (!u.comms && res ? [res] : []);
+  const [first, ...rest] = u.name.split(" ");
+  const body = remove
+    ? { unlinkListIds: unlink }
+    : {
+        email: u.email, updateEnabled: true, listIds: lists, ...(unlink.length ? { unlinkListIds: unlink } : {}),
+        attributes: { FIRSTNAME: first, LASTNAME: rest.join(" "), PAIS: u.country || "", CIUDAD: u.city || "", IGLESIA: u.church || "", FECHA_REGISTRO: new Date(u.createdAt).toISOString().slice(0, 10) },
+      };
+  const r = remove
+    ? await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(u.email)}`, { method: "PUT", headers: { "api-key": key, "content-type": "application/json" }, body: JSON.stringify(body) })
+    : await fetch("https://api.brevo.com/v3/contacts", { method: "POST", headers: { "api-key": key, "content-type": "application/json" }, body: JSON.stringify(body) });
+  if (!r.ok && r.status !== 404) console.error("Brevo contact error", r.status, await r.text());
+}
