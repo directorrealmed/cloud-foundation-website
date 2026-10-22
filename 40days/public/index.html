@@ -9,8 +9,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="REAL">
 <link rel="manifest" href="/manifest.webmanifest">
-<link rel="icon" href="/icon.svg?v=3" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="icon" href="/icon.svg?v=4" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -274,7 +274,7 @@ body.has-player .shell{padding-bottom:250px}
 
 <main class="shell" id="root">
   <section id="auth" class="auth hidden">
-    <div class="mark"><svg class="logo" viewBox="92 218 300 76" role="img" aria-label="REAL"><path d="M100 286V226h30a16 16 0 0 1 0 32h-30M126 258l22 28M226 226H180.5V286H226M252 286l30-60 30 60M342 226v60h42" fill="none" stroke="currentColor" stroke-width="9"/><circle cx="203" cy="256" r="6.5" fill="currentColor"/></svg></div>
+    <div class="mark"><svg class="logo" viewBox="92 218 300 76" role="img" aria-label="REAL"><path d="M100 286V226h30a16 16 0 0 1 0 32h-30M126 258l22 28M226 226H180.5V286H226M252 286l30-60 30 60M262 266h40M342 226v60h42" fill="none" stroke="currentColor" stroke-width="9"/><circle cx="203" cy="256" r="6.5" fill="currentColor"/></svg></div>
     <h1>40 days<span>to read the whole Bible</span></h1>
     <p class="sub" id="authSub">Three 30-minute readings a day, prayer together every morning and a wall to pray for one another. Join us and read along from today.</p>
     <p class="counter glass pill hidden" id="authCounter"></p>
@@ -321,7 +321,7 @@ body.has-player .shell{padding-bottom:250px}
 
   <section id="app" class="hidden">
     <header class="top">
-      <div class="mark"><svg class="logo" viewBox="92 218 300 76" role="img" aria-label="REAL"><path d="M100 286V226h30a16 16 0 0 1 0 32h-30M126 258l22 28M226 226H180.5V286H226M252 286l30-60 30 60M342 226v60h42" fill="none" stroke="currentColor" stroke-width="9"/><circle cx="203" cy="256" r="6.5" fill="currentColor"/></svg><span>40</span></div>
+      <div class="mark"><svg class="logo" viewBox="92 218 300 76" role="img" aria-label="REAL"><path d="M100 286V226h30a16 16 0 0 1 0 32h-30M126 258l22 28M226 226H180.5V286H226M252 286l30-60 30 60M262 266h40M342 226v60h42" fill="none" stroke="currentColor" stroke-width="9"/><circle cx="203" cy="256" r="6.5" fill="currentColor"/></svg><span>40</span></div>
       <button class="iconbtn glass" id="themeBtn" aria-label="Change theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
     </header>
     <div id="vToday"></div>
@@ -848,7 +848,7 @@ function bgCanvas(w,h){const c=document.createElement("canvas");c.width=w;c.heig
   [[.1,.15,"#75FBFE"],[.9,.4,"#D7C4FF"],[.3,.9,"#FFE3B0"]].forEach(([a,b,col])=>{const r=x.createRadialGradient(a*w,b*h,0,a*w,b*h,w*.6);r.addColorStop(0,col+"cc");r.addColorStop(1,col+"00");x.fillStyle=r;x.fillRect(0,0,w,h)});
   x.fillStyle="rgba(255,255,255,.38)";const m=w*.07;x.beginPath();x.roundRect(m,m,w-2*m,h-2*m,64);x.fill();x.strokeStyle="rgba(255,255,255,.85)";x.lineWidth=3;x.stroke();
   x.fillStyle="#23232F";x.strokeStyle="#23232F";const lx=m+44,ly=m+52,ls=.62;
-  x.save();x.translate(lx,ly);x.scale(ls,ls);x.translate(-92,-218);x.lineWidth=9;x.stroke(new Path2D("M100 286V226h30a16 16 0 0 1 0 32h-30M126 258l22 28M226 226H180.5V286H226M252 286l30-60 30 60M342 226v60h42"));x.beginPath();x.arc(203,256,6.5,0,7);x.fill();x.restore();
+  x.save();x.translate(lx,ly);x.scale(ls,ls);x.translate(-92,-218);x.lineWidth=9;x.stroke(new Path2D("M100 286V226h30a16 16 0 0 1 0 32h-30M126 258l22 28M226 226H180.5V286H226M252 286l30-60 30 60M262 266h40M342 226v60h42"));x.beginPath();x.arc(203,256,6.5,0,7);x.fill();x.restore();
   x.font=`800 ${w*.03}px 'Bricolage Grotesque',Figtree,sans-serif`;x.fillText("40 DAYS",lx+300*ls+24,ly+38*ls+w*.011);return [c,x,m];}
 async function shareProgress(d){
   await document.fonts.ready.catch(()=>{});const [c,x,m]=bgCanvas(1080,1350);
