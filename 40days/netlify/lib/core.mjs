@@ -117,22 +117,23 @@ export function emailLayout(title, inner, cta) {
 }
 export const conexionEmails = () => listEnv("CONEXION_EMAILS");
 
-// ---------- Brevo contact lists (English sign-ups and English resources)
-const listId = (k) => Number(env(k)) || null;
+// ---------- Brevo contact list (English sign-ups; RECURSOS marks who accepts resources)
 export async function syncContact(u, { remove = false } = {}) {
-  const key = env("BREVO_KEY"), all = listId("BREVO_LIST_ID"), res = listId("BREVO_LIST_RECURSOS");
-  if (!key || !all) return;
-  const lists = remove ? [] : [all, ...(u.comms && res ? [res] : [])];
-  const unlink = remove ? [all, res].filter(Boolean) : (!u.comms && res ? [res] : []);
+  const key = env("BREVO_KEY"), list = Number(env("BREVO_LIST_ID")) || null;
+  if (!key || !list) return;
+  const headers = { "api-key": key, "content-type": "application/json" };
+  if (remove) {
+    const r = await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(u.email)}`, { method: "PUT", headers, body: JSON.stringify({ unlinkListIds: [list] }) });
+    if (!r.ok && r.status !== 404) console.error("Brevo contact error", r.status, await r.text());
+    return;
+  }
   const [first, ...rest] = u.name.split(" ");
-  const body = remove
-    ? { unlinkListIds: unlink }
-    : {
-        email: u.email, updateEnabled: true, listIds: lists, ...(unlink.length ? { unlinkListIds: unlink } : {}),
-        attributes: { FIRSTNAME: first, LASTNAME: rest.join(" "), PAIS: u.country || "", CIUDAD: u.city || "", IGLESIA: u.church || "", FECHA_REGISTRO: new Date(u.createdAt).toISOString().slice(0, 10) },
-      };
-  const r = remove
-    ? await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(u.email)}`, { method: "PUT", headers: { "api-key": key, "content-type": "application/json" }, body: JSON.stringify(body) })
-    : await fetch("https://api.brevo.com/v3/contacts", { method: "POST", headers: { "api-key": key, "content-type": "application/json" }, body: JSON.stringify(body) });
-  if (!r.ok && r.status !== 404) console.error("Brevo contact error", r.status, await r.text());
+  const r = await fetch("https://api.brevo.com/v3/contacts", {
+    method: "POST", headers,
+    body: JSON.stringify({
+      email: u.email, updateEnabled: true, listIds: [list],
+      attributes: { FIRSTNAME: first, LASTNAME: rest.join(" "), PAIS: u.country || "", CIUDAD: u.city || "", IGLESIA: u.church || "", FECHA_REGISTRO: new Date(u.createdAt).toISOString().slice(0, 10), RECURSOS: !!u.comms },
+    }),
+  });
+  if (!r.ok) console.error("Brevo contact error", r.status, await r.text());
 }

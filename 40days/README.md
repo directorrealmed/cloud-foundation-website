@@ -15,6 +15,6 @@ Data lives in the Netlify Blobs store `real40en`.
 
 Environment variables (Netlify project settings): `SESSION_SECRET`, `VAPID_PUBLIC`,
 `VAPID_PRIVATE`, `BREVO_KEY`, `BREVO_SENDER`, `ADMIN_EMAILS`, `CONEXION_EMAILS`,
-`WHATSAPP_CHANNEL`, `ZOOM_TIME`, `ZOOM_LINK`, `APP_URL`, `BREVO_LIST_ID` (English sign-ups, list 5), `BREVO_LIST_RECURSOS` (English resources opt-in, list 6).
+`WHATSAPP_CHANNEL`, `ZOOM_TIME`, `ZOOM_LINK`, `APP_URL`, `BREVO_LIST_ID` (English sign-ups, list 5; the RECURSOS attribute marks who accepts resources).
 
 Deploy from this folder (`netlify deploy --prod` once linked to `real-40-days`).
