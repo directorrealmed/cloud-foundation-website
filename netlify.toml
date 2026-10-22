@@ -38,3 +38,11 @@
   to = "/404.html"
   status = 404
   force = true
+
+# 40days/ is the source of a separate site (40days.realglobal.org, Netlify
+# project real-40-days): never serve it from this one.
+[[redirects]]
+  from = "/40days/*"
+  to = "/404.html"
+  status = 404
+  force = true

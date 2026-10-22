@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>40 Days · Iglesia Real</title>
+<meta name="description" content="Read the whole Bible in 40 days: three 30-minute readings a day, morning prayer together and a wall to pray for one another.">
+<meta name="theme-color" content="#23232F">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="REAL 40">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --ink:#23232F;--ink2:#4A4A5C;--muted:#6E6D7C;--cyan:#75FBFE;--gray:#C6C5CD;
+  --bg:#E6ECF5;--glass:rgba(255,255,255,.42);--glass-hi:rgba(255,255,255,.72);--glass-line:rgba(255,255,255,.75);
+  --shadow:0 10px 40px -12px rgba(35,35,47,.28);--solid:#fff;--accent:#0FA9B5;
+  --b1:#9FE8FF;--b2:#D7C4FF;--b3:#FFC4E1;--b4:#FFE3B0;
+  --display:"Bricolage Grotesque","Figtree",system-ui,sans-serif;--body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ink:#F2F3F8;--ink2:#C6C5CD;--muted:#9A99A8;--bg:#16161E;--glass:rgba(255,255,255,.07);--glass-hi:rgba(255,255,255,.14);--glass-line:rgba(255,255,255,.16);
+  --shadow:0 12px 44px -14px rgba(0,0,0,.7);--solid:#23232F;--accent:#75FBFE;
+  --b1:#0E6E7A;--b2:#3E2F7A;--b3:#6B2A55;--b4:#6A4B1A;}}
+:root[data-theme="dark"]{--ink:#F2F3F8;--ink2:#C6C5CD;--muted:#9A99A8;--bg:#16161E;--glass:rgba(255,255,255,.07);--glass-hi:rgba(255,255,255,.14);--glass-line:rgba(255,255,255,.16);
+  --shadow:0 12px 44px -14px rgba(0,0,0,.7);--solid:#23232F;--accent:#75FBFE;--b1:#0E6E7A;--b2:#3E2F7A;--b3:#6B2A55;--b4:#6A4B1A;}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:12px}
+a{color:inherit}
+/* iridescent field */
+.field{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.9;transition:background 1.2s ease}
+.o1{width:70vmax;height:70vmax;left:-25vmax;top:-20vmax;background:var(--b1)}
+.o2{width:55vmax;height:55vmax;right:-20vmax;top:10vh;background:var(--b2)}
+.o3{width:60vmax;height:60vmax;left:10vw;bottom:-30vmax;background:var(--b3)}
+.o4{width:30vmax;height:30vmax;right:5vw;bottom:10vh;background:var(--b4);opacity:.6}
+.grain{position:absolute;inset:0;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.shell{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:12px 18px 120px}
+.glass{background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(26px) saturate(170%);-webkit-backdrop-filter:blur(26px) saturate(170%);box-shadow:var(--shadow),inset 0 1px 0 var(--glass-hi);border-radius:28px}
+.pill{border-radius:999px}
+.hidden{display:none!important}
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;padding:8px 0 4px}
+.mark{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.04em}
+.mark svg{width:30px;height:30px}
+.iconbtn{width:44px;height:44px;display:grid;place-items:center;border-radius:50%}
+.iconbtn svg{width:20px;height:20px}
+.greet{margin:18px 0 0;color:var(--ink2);font-weight:600}
+h1.hero{font-family:var(--display);font-weight:800;font-size:clamp(64px,22vw,104px);line-height:.86;letter-spacing:-.045em;margin:6px 0 0;
+  background:linear-gradient(180deg,var(--ink) 20%,color-mix(in srgb,var(--ink) 35%,transparent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ref{font-family:var(--display);font-weight:600;font-size:20px;line-height:1.2;margin:12px 0 0;max-width:30ch}
+.phase{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:7px 14px;font-size:13px;font-weight:600}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+/* ring */
+.ringwrap{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;padding:18px;margin-top:22px}
+.ring{width:118px;height:118px;position:relative}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .track{stroke:color-mix(in srgb,var(--ink) 10%,transparent)}
+.ring .arc{transition:stroke-dashoffset .7s cubic-bezier(.2,.9,.2,1.1)}
+.ring .center{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-family:var(--display)}
+.ring .center b{font-size:34px;line-height:1;font-weight:800}
+.ring .center small{display:block;font-size:12px;color:var(--muted);font-family:var(--body);font-weight:600}
+.ringtext h3{margin:0;font-family:var(--display);font-size:19px;line-height:1.2}
+.ringtext p{margin:6px 0 0;color:var(--ink2);font-size:14px}
+.ring.done{animation:pop .6s ease}
+@keyframes pop{40%{transform:scale(1.08)}}
+/* cards */
+.card{padding:20px;margin-top:14px}
+.card h4{margin:0 0 6px;font-size:13px;font-weight:700;color:var(--muted)}
+.card p{margin:0}
+.principle{font-family:var(--display);font-size:22px;line-height:1.25;font-weight:600;letter-spacing:-.01em}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+/* sessions */
+.sess{padding:18px;margin-top:14px;position:relative;overflow:hidden}
+.sess.done{background:color-mix(in srgb,var(--accent) 16%,var(--glass))}
+.sesshead{display:flex;align-items:center;gap:12px}
+.sessicon{width:44px;height:44px;border-radius:16px;display:grid;place-items:center;background:var(--glass-hi);flex:none}
+.sessicon svg{width:22px;height:22px}
+.sesshead .t{flex:1;min-width:0}
+.sesshead .t b{display:block;font-family:var(--display);font-size:18px;line-height:1.2}
+.sesshead .t span{font-size:13px;color:var(--muted);font-weight:600}
+.check{width:48px;height:48px;border-radius:50%;flex:none;display:grid;place-items:center;border:2px solid color-mix(in srgb,var(--ink) 25%,transparent);transition:transform .2s,background .3s,border-color .3s}
+.check svg{width:24px;height:24px;stroke:var(--solid);stroke-width:3;fill:none;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .35s .05s}
+.check.on{background:var(--ink);border-color:var(--ink)}
+.check.on svg{stroke-dashoffset:0}
+.check:active{transform:scale(.88)}
+.range{margin:14px 0 10px;font-weight:600;font-size:15px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:8px 14px;font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;background:var(--glass-hi);border:1px solid var(--glass-line);border-radius:999px}
+.chip:hover{border-color:var(--accent)}
+.listen{margin-top:12px;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;border-radius:18px;background:var(--ink);color:var(--solid);font-weight:700;text-decoration:none}
+.listen svg{width:18px;height:18px}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.extra{padding:16px;display:flex;flex-direction:column;gap:10px;text-align:left;border-radius:24px}
+.extra b{font-family:var(--display);font-size:16px;line-height:1.2}
+.extra small{color:var(--muted);font-size:12px;font-weight:600}
+.extra .mini{width:30px;height:30px;border-radius:50%;border:2px solid color-mix(in srgb,var(--ink) 25%,transparent);display:grid;place-items:center}
+.extra.on .mini{background:var(--ink);border-color:var(--ink)}
+.extra .mini svg{width:16px;height:16px;stroke:var(--solid);stroke-width:3;fill:none;opacity:0}
+.extra.on .mini svg{opacity:1}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-top:20px;gap:10px}
+.nav button{padding:12px 16px;font-weight:600;font-size:14px}
+.nav button[disabled]{opacity:.35;cursor:default}
+/* countdown */
+.count{display:flex;gap:10px;margin-top:18px}
+.count div{flex:1;padding:14px 8px;text-align:center;border-radius:22px}
+.count b{display:block;font-family:var(--display);font-size:30px;line-height:1;font-weight:800}
+.count small{font-size:12px;color:var(--muted);font-weight:600}
+/* tabbar */
+.tabbar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:5;display:flex;gap:4px;padding:6px;width:min(420px,calc(100% - 28px))}
+.tab{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 2px;border-radius:999px;font-size:11px;font-weight:700;color:var(--muted);transition:background .25s,color .25s}
+.tab svg{width:22px;height:22px}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--solid)}
+/* plan */
+.sectitle{font-family:var(--display);font-weight:800;font-size:44px;line-height:.95;letter-spacing:-.035em;margin:18px 0 6px}
+.lede{color:var(--ink2);margin:0 0 8px;max-width:40ch}
+.phasecard{padding:18px;margin-top:14px}
+.phasecard h3{margin:0;font-family:var(--display);font-size:19px;line-height:1.2}
+.phasecard p{margin:4px 0 14px;color:var(--muted);font-size:13px;font-weight:600}
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.daybtn{aspect-ratio:1;border-radius:18px;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:18px;background:var(--glass-hi);border:1px solid var(--glass-line);position:relative}
+.daybtn.today{outline:2px solid var(--accent);outline-offset:2px}
+.daybtn.done{background:var(--ink);color:var(--solid)}
+.daybtn .pips{position:absolute;bottom:6px;display:flex;gap:3px}
+.daybtn .pips i{width:4px;height:4px;border-radius:50%;background:color-mix(in srgb,currentColor 25%,transparent)}
+.daybtn .pips i.on{background:var(--accent)}
+.daybtn.done .pips{display:none}
+/* wall */
+.filters{display:flex;gap:8px;overflow-x:auto;margin:14px 0 4px;padding-bottom:4px;scrollbar-width:none}
+.filters button{flex:none;padding:9px 16px;font-weight:600;font-size:14px}
+.filters button[aria-pressed="true"]{background:var(--cyan);color:#23232F;border-color:transparent}
+.wall{columns:2;column-gap:12px;margin-top:10px}
+.prayer{break-inside:avoid;padding:16px;margin:0 0 12px;display:block;width:100%}
+.prayer .cat{display:inline-block;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--glass-hi);margin-bottom:10px}
+.prayer p{margin:0;font-size:15px;line-height:1.45;overflow-wrap:anywhere}
+.prayer .meta{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-top:12px;gap:6px;font-size:12px;color:var(--muted);font-weight:600}
+.prayer .by{flex:1 1 100%;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pray{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:var(--glass-hi);border:1px solid var(--glass-line);font-weight:700;font-size:13px;flex:none;position:relative}
+.pray svg{width:16px;height:16px}
+.pray.on{background:var(--ink);color:var(--solid);border-color:var(--ink)}
+.del{font-size:12px;color:var(--muted);text-decoration:underline;margin-top:8px;padding:0}
+.empty{padding:28px 20px;text-align:center;margin-top:12px}
+.empty b{font-family:var(--display);font-size:20px;display:block}
+.fab{position:fixed;right:max(18px,calc(50% - 222px));bottom:calc(96px + env(safe-area-inset-bottom,0px));z-index:5;display:flex;align-items:center;gap:8px;padding:14px 20px;border-radius:999px;background:var(--ink);color:var(--solid);font-weight:700;box-shadow:var(--shadow)}
+.fab svg{width:18px;height:18px}
+.float{position:absolute;pointer-events:none;font-size:18px;animation:up 1s ease-out forwards}
+@keyframes up{to{transform:translateY(-46px) scale(1.3);opacity:0}}
+/* sheet */
+.scrim{position:fixed;inset:0;z-index:10;background:rgba(20,20,30,.3);display:flex;align-items:flex-end;justify-content:center}
+.sheet{width:min(480px,100%);max-height:88%;overflow-y:auto;border-radius:32px 32px 0 0;padding:22px 20px calc(24px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--bg) 70%,transparent);animation:rise .35s cubic-bezier(.2,.9,.2,1)}
+@keyframes rise{from{transform:translateY(100%)}}
+.grab{width:44px;height:5px;border-radius:9px;background:color-mix(in srgb,var(--ink) 25%,transparent);margin:-6px auto 14px}
+.sheet h2{font-family:var(--display);font-size:28px;line-height:1.1;margin:0 0 14px;letter-spacing:-.02em}
+label.f{display:block;font-size:13px;font-weight:700;color:var(--ink2);margin:14px 0 6px}
+.input{width:100%;padding:15px 16px;border-radius:18px;background:var(--glass-hi);border:1px solid var(--glass-line);outline:none;font-size:16px}
+.input:focus{border-color:var(--accent)}
+textarea.input{min-height:120px;resize:vertical}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{padding:10px 14px;font-weight:600;font-size:14px}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--solid);border-color:var(--ink)}
+.primary{width:100%;margin-top:20px;padding:16px;border-radius:20px;background:var(--ink);color:var(--solid);font-weight:700;font-size:16px}
+.primary[disabled]{opacity:.5}
+.ghost{width:100%;margin-top:10px;padding:14px;font-weight:600;color:var(--ink2)}
+.err{color:#C2185B;font-size:14px;font-weight:600;margin:10px 0 0;min-height:1.2em}
+:root[data-theme="dark"] .err{color:#FF8FC0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .err{color:#FF8FC0}}
+.stepno{font-size:13px;font-weight:700;color:var(--muted);margin:14px 0 0}
+.f small,.consent small{font-weight:600;color:var(--muted)}
+p.f{margin:16px 0 8px}
+.row2f{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+select.input{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 15px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:34px}
+.counter{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;font-size:14px;font-weight:700;margin:0 0 18px}
+.counter::before{content:"";width:8px;height:8px;border-radius:50%;background:#2BD67B;box-shadow:0 0 0 4px rgba(43,214,123,.2)}
+.cta2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.cta2 button,.cta2 a{padding:14px 10px;border-radius:18px;font-weight:700;font-size:14px;text-align:center;text-decoration:none}
+.btn-dark{background:var(--ink);color:var(--solid)}
+.btn-glass{background:var(--glass-hi);border:1px solid var(--glass-line)}
+.gift{display:flex;gap:14px;align-items:center}
+.gift .ico{width:52px;height:52px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--b2));flex:none;font-size:24px}
+.codebig{font-family:var(--display);font-weight:800;font-size:44px;letter-spacing:.12em;line-height:1;margin:6px 0}
+.member{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--glass-line)}
+.member:first-child{border-top:0}
+.member .av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--glass-hi);flex:none}
+.member.me .av{background:var(--ink);color:var(--solid)}
+.member .nm{flex:1;min-width:0}
+.member .nm b{display:block;font-size:15px}
+.member .nm small{color:var(--muted);font-size:12px;font-weight:600}
+.pips3{display:flex;gap:4px}
+.pips3 i{width:10px;height:10px;border-radius:50%;background:color-mix(in srgb,var(--ink) 12%,transparent)}
+.pips3 i.on{background:var(--accent)}
+.rep{font-size:12px;color:var(--muted);padding:0;margin-top:8px;text-decoration:underline}
+.toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0}
+.toggle span{font-weight:600}
+.sw{appearance:none;-webkit-appearance:none;width:50px;height:30px;border-radius:30px;background:color-mix(in srgb,var(--ink) 18%,transparent);position:relative;flex:none;cursor:pointer;transition:background .2s}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.25);transition:transform .2s}
+.sw:checked{background:#2BD67B}.sw:checked::after{transform:translateX(20px)}.sw:disabled{opacity:.4}
+.consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:13px;line-height:1.45;color:var(--ink2);cursor:pointer}
+.consent input{width:20px;height:20px;flex:none;margin-top:1px;accent-color:var(--ink)}
+.consent a,.fine a{font-weight:700;color:var(--ink)}
+.fine{font-size:12px;line-height:1.5;color:var(--muted);margin:16px 2px 0}
+.danger{width:100%;margin-top:10px;padding:14px;font-weight:700;color:#C2185B}
+.switch{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:14px;color:var(--ink2)}
+.switch input{width:20px;height:20px;accent-color:var(--ink)}
+/* auth */
+.auth{min-height:calc(100vh - 40px);display:flex;flex-direction:column;justify-content:center;padding:30px 0}
+.auth h1{font-family:var(--display);font-weight:800;font-size:clamp(72px,24vw,112px);line-height:.84;letter-spacing:-.05em;margin:26px 0 0}
+.auth h1 span{display:block;font-size:.34em;letter-spacing:-.02em;line-height:1.05;margin-top:10px;font-weight:600}
+.auth .sub{margin:16px 0 26px;color:var(--ink2);max-width:34ch}
+.authcard{padding:22px}
+.authtabs{display:flex;padding:5px;gap:4px;margin-bottom:6px;background:color-mix(in srgb,var(--ink) 6%,transparent);border-radius:999px}
+.authtabs button{flex:1;padding:11px;border-radius:999px;font-weight:700;font-size:14px;color:var(--muted)}
+.authtabs button[aria-selected="true"]{background:var(--solid);color:var(--ink);box-shadow:0 2px 10px rgba(0,0,0,.08)}
+/* profile */
+.me{display:flex;align-items:center;gap:14px;padding:18px;margin-top:18px}
+.avatar{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:24px;background:linear-gradient(135deg,var(--cyan),var(--b2));color:#23232F;flex:none}
+.me b{font-family:var(--display);font-size:22px;display:block;line-height:1.1}
+.me span{color:var(--muted);font-size:14px;overflow-wrap:anywhere}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.stat{padding:16px 10px;text-align:center;border-radius:24px}
+.stat b{display:block;font-family:var(--display);font-size:32px;line-height:1;font-weight:800}
+.stat small{font-size:12px;color:var(--muted);font-weight:600}
+.grid40{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin-top:6px}
+.grid40 i{aspect-ratio:1;border-radius:50%;background:color-mix(in srgb,var(--ink) 10%,transparent)}
+.grid40 i.part{background:color-mix(in srgb,var(--accent) 45%,transparent)}
+.grid40 i.done{background:var(--ink)}
+.tips{margin:0;padding-left:18px;color:var(--ink2);font-size:15px}
+.tips li{margin:6px 0}
+.verse{font-family:var(--display);font-size:19px;line-height:1.3;font-weight:600}
+.note{font-size:13px;color:var(--muted);margin-top:8px}
+.toast{position:fixed;left:50%;top:calc(16px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:20;padding:12px 18px;font-weight:700;font-size:14px;animation:rise2 .3s ease}
+@keyframes rise2{from{transform:translate(-50%,-20px);opacity:0}}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:30;overflow:hidden}
+.confetti i{position:absolute;top:40%;left:50%;width:10px;height:14px;border-radius:3px;animation:burst 1.4s cubic-bezier(.1,.7,.3,1) forwards}
+@keyframes burst{to{transform:translate(var(--x),var(--y)) rotate(var(--r));opacity:0}}
+.player{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:6;width:min(420px,calc(100% - 28px));padding:10px 12px 12px;border-radius:26px}
+.player .bar{height:5px;border-radius:4px;background:color-mix(in srgb,var(--ink) 12%,transparent);overflow:hidden;margin:10px 6px 6px;cursor:pointer}
+.player .ctrls{justify-content:center;gap:22px}
+.player .bar i{display:block;height:100%;width:0;background:var(--accent)}
+.player .row{display:flex;align-items:center;gap:6px}
+.player .now{flex:1;min-width:0;padding-left:6px}
+.player .now b{display:block;font-family:var(--display);font-size:16px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.player .now small{color:var(--muted);font-size:12px;font-weight:600;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pbtn{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;flex:none}
+.pbtn svg{width:20px;height:20px}
+.pbtn.big{width:48px;height:48px;background:var(--ink);color:var(--solid)}
+.pbtn.speed{font-weight:800;font-size:12px;width:auto;padding:0 10px;border-radius:999px;background:var(--glass-hi)}
+.chip.playing{background:var(--ink);color:var(--solid);border-color:var(--ink)}
+.yv{display:block;text-align:center;margin-top:10px;font-size:13px;font-weight:600;color:var(--muted)}
+body.has-player .shell{padding-bottom:250px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:360px){.wall{columns:1}}
+</style>
+<!-- Google tag (gtag.js) - Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18483393710"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18483393710');
+</script></head>
+<body>
+<div class="field" aria-hidden="true"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="orb o4"></div><div class="grain"></div></div>
+
+<main class="shell" id="root">
+  <section id="auth" class="auth hidden">
+    <div class="mark"><svg viewBox="0 0 32 32" aria-hidden="true"><g stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M16 3v26M3 16h26M6.8 6.8l18.4 18.4M25.2 6.8 6.8 25.2"/></g></svg>IGLESIA REAL</div>
+    <h1>40 days<span>to read the whole Bible</span></h1>
+    <p class="sub" id="authSub">Three 30-minute readings a day, prayer together every morning and a wall to pray for one another. Join us and read along from today.</p>
+    <p class="counter glass pill hidden" id="authCounter"></p>
+    <div class="glass authcard">
+      <div class="authtabs" role="tablist">
+        <button role="tab" id="tabUp" aria-selected="true">Sign up</button>
+        <button role="tab" id="tabIn" aria-selected="false">Log in</button>
+      </div>
+      <form id="authForm" novalidate>
+        <div id="nameField"><label class="f" for="aName">Your name</label><input class="input" id="aName" autocomplete="name" placeholder="First and last name"></div>
+        <label class="f" for="aEmail">Email</label><input class="input" id="aEmail" type="email" autocomplete="email" placeholder="you@email.com">
+        <label class="f" for="aPass">Password</label><input class="input" id="aPass" type="password" autocomplete="new-password" placeholder="At least 6 characters">
+        <div id="upFields">
+          <label class="f" for="aWa">WhatsApp</label><input class="input" id="aWa" type="tel" autocomplete="tel" placeholder="+1 555 000 0000">
+          <div class="row2f">
+            <div><label class="f" for="aCountry">Country</label><select class="input" id="aCountry"></select></div>
+            <div><label class="f" for="aCity">City</label><input class="input" id="aCity" list="cities" autocomplete="address-level2" placeholder="Your city"><datalist id="cities"></datalist></div>
+          </div>
+          <p class="f" id="churchLbl">Do you attend a church?</p>
+          <div class="seg" role="radiogroup" aria-labelledby="churchLbl" id="aChurch">
+            <button type="button" class="glass pill" data-v="real" aria-pressed="false">Iglesia Real</button>
+            <button type="button" class="glass pill" data-v="other" aria-pressed="false">Another church</button>
+            <button type="button" class="glass pill" data-v="none" aria-pressed="false">Not yet</button>
+          </div>
+          <label class="consent"><input type="checkbox" id="aConsent"><span>I am 18 or older (or have permission from a parent or guardian) and I agree to the processing of my data under Iglesia Real's <a href='/privacy' rel='noopener' target='_blank'>Data Privacy Policy</a>.</span></label>
+          <label class="consent"><input type="checkbox" id="aComms"><span>Send me resources and invitations from Iglesia Real. <small>(Optional)</small></span></label>
+        </div>
+        <p class="err" id="aErr" role="alert"></p>
+        <button class="primary" id="aBtn" type="submit">Create my account</button>
+      <button type="button" class="ghost hidden" id="aForgot">Forgot your password?</button>
+      </form>
+      <div id="waitBox" class="hidden">
+        <p class="stepno">This round of 40 Days has ended</p>
+        <p class="lede">The next one starts in <b>October 2027</b>. Leave your email and we'll let you know.</p>
+        <label class="f" for="wName">Name</label><input class="input" id="wName" autocomplete="name">
+        <label class="f" for="wEmail">Email</label><input class="input" id="wEmail" type="email" autocomplete="email">
+        <label class="consent"><input type="checkbox" id="wConsent"><span>I agree to the processing of my data under the <a href='/privacy' rel='noopener' target='_blank'>Data Privacy Policy</a>.</span></label>
+        <p class="err" id="wErr" role="alert"></p>
+        <button class="primary" id="wBtn" type="button">Notify me in 2027</button>
+      </div>
+      <p class="fine">We use your data for the 40-day plan and, if you'd like, so our team can walk with you. We never sell or share your data. You can correct it or delete your account at any time.</p>
+    </div>
+  </section>
+
+  <section id="app" class="hidden">
+    <header class="top">
+      <div class="mark"><svg viewBox="0 0 32 32" aria-hidden="true"><g stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M16 3v26M3 16h26M6.8 6.8l18.4 18.4M25.2 6.8 6.8 25.2"/></g></svg>REAL · 40</div>
+      <button class="iconbtn glass" id="themeBtn" aria-label="Change theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    </header>
+    <div id="vToday"></div>
+    <div id="vPlan" class="hidden"></div>
+    <div id="vWall" class="hidden"></div>
+    <div id="vProfile" class="hidden"></div>
+  </section>
+</main>
+
+<nav class="tabbar glass pill hidden" id="tabbar" role="tablist" aria-label="Sections">
+  <button class="tab" role="tab" data-v="Today" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Today</button>
+  <button class="tab" role="tab" data-v="Plan" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v16H6.5A2.5 2.5 0 0 0 4 21.5 2.5 2.5 0 0 0 6.5 24"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg>Plan</button>
+  <button class="tab" role="tab" data-v="Wall" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.4-9.3-9A5.2 5.2 0 0 1 12 6a5.2 5.2 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg>Wall</button>
+  <button class="tab" role="tab" data-v="Profile" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Profile</button>
+</nav>
+<button class="fab hidden" id="fab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Ask for prayer</button>
+<div class="player glass hidden" id="player" role="region" aria-label="Audio player">
+  <div class="row">
+    <div class="now"><b id="pNow">—</b><small id="pSub">Loading…</small></div>
+    <button class="pbtn speed" id="pSpeed" aria-label="Speed">1x</button>
+    <button class="pbtn" id="pClose" aria-label="Close player"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="bar" id="pBar"><i></i></div>
+  <div class="row ctrls">
+    <button class="pbtn" id="pPrev" aria-label="Previous chapter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+    <button class="pbtn big" id="pPlay" aria-label="Pause"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button>
+    <button class="pbtn" id="pNext" aria-label="Next chapter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+  </div>
+</div>
+<div id="layer"></div>
+<script>
+const PLAN=[
+["Genesis 1 – 30","GEN 1-30","From the glory of Creation to the messy reality of the Patriarchs. God establishes His covenant through Abraham, Isaac and Jacob in spite of human failure.","God's covenant promises don't depend on human perfection, but on His unshakable faithfulness."],
+["Genesis 31 – 50; Exodus 1 – 10","GEN 31-50;EXO 1-10","God preserves His people through Joseph's life, which leads to oppression in Egypt. God hears His people's cry and raises up Moses to confront the powers of the earth.","What the enemy plans for evil, God transforms and works out for the redemption of His people."],
+["Exodus 11 – 40","EXO 11-40","The exodus from Egypt, the Passover, the giving of the Law at Sinai and the building of the Tabernacle. God sets His people free so He can dwell among them.","Redemption leads to relationship: God rescues us so His holy presence can live with us."],
+["Leviticus 1 – 27; Numbers 1 – 3","LEV 1-27;NUM 1-3","Holiness, the laws of sacrifice and the priesthood. Leviticus shows how a sinful people can live near a holy God, leading into the census of Israel.","Holiness isn't legalism; it's the path grace provides to experience closeness with God."],
+["Numbers 4 – 33","NUM 4-33","The journey through the wilderness, unbelief and God's loving discipline. A whole generation misses the Promised Land because of fear.","Unbelief turns a short journey into a long wilderness, but God stays faithful to His word."],
+["Numbers 34 – 36; Deuteronomy 1 – 27","NUM 34-36;DEU 1-27","Moses' farewell speeches to the new generation, reminding them of the law, their history and the blessings of obedience.","Spiritual memory is the antidote to growing cold: remembering God's goodness strengthens obedience today."],
+["Deuteronomy 28 – 34; Joshua 1 – 23","DEU 28-34;JOS 1-23","The death of Moses, the call of Joshua, the crossing of the Jordan, the fall of Jericho and the conquest of the Promised Land.","True courage and success come from meditating on the Word and obeying with all your heart."],
+["Joshua 24; Judges 1 – 21; Ruth 1 – 4; 1 Samuel 1 – 4","JOS 24;JDG 1-21;RUT 1-4;1SA 1-4","The dark cycle of disobedience in Judges stands in contrast to Ruth's loyalty and the faith surrounding the birth of the prophet Samuel.","Even in moral and cultural decline, God works quietly through faithful, believing lives."],
+["1 Samuel 5 – 31; 2 Samuel 1 – 3","1SA 5-31;2SA 1-3","Saul's failed reign and the choosing of David, a man after God's own heart, shaped in the wilderness and under persecution.","God doesn't look at outward appearance but at the heart, and He lifts up those who learn humility."],
+["2 Samuel 4 – 24; 1 Kings 1 – 9","2SA 4-24;1KI 1-9","David's reign, his fall and restoration, the handover to Solomon and the glorious building of the First Temple.","Genuine repentance restores fellowship with God, even when our choices still have consequences."],
+["1 Kings 10 – 22; 2 Kings 1 – 17","1KI 10-22;2KI 1-17","The kingdom divides, spiritual decline sets in, Elijah and Elisha prophesy, and the Northern Kingdom falls to Assyria.","Compromise with sin brings ruin, but God always sends warnings to call us back to repentance."],
+["2 Kings 18 – 25; 1 Chronicles 1 – 22","2KI 18-25;1CH 1-22","Judah's last godly kings (Hezekiah, Josiah), the exile to Babylon and the genealogies that reaffirm the people's identity.","God keeps a faithful remnant and preserves His purpose even in times of national judgment."],
+["1 Chronicles 23 – 29; 2 Chronicles 1 – 23","1CH 23-29;2CH 1-23","David organizes worship, Solomon receives wisdom and the Temple is dedicated as the center of national life.","Putting God first in worship invites His presence and blessing over the whole community."],
+["2 Chronicles 24 – 36; Ezra 1 – 10; Nehemiah 1 – 7","2CH 24-36;EZR 1-10;NEH 1-7","The end of the Babylonian exile, Cyrus's decree, the rebuilding of the Temple with Zerubbabel and Ezra, and of the walls with Nehemiah.","God moves even earthly circumstances and rulers to fulfill His promises of restoration."],
+["Nehemiah 8 – 13; Esther 1 – 10; Job 1 – 14","NEH 8-13;EST 1-10;JOB 1-14","Covenant renewal in Jerusalem, God's unseen providence in Esther and the start of Job's profound drama of suffering.","God is sovereignly at work to protect His people, even when His hand seems invisible."],
+["Job 15 – 42; Psalms 1 – 2","JOB 15-42;PSA 1-2","God answers Job from the whirlwind, Job is restored, and the Psalms open with the righteous and the wicked.","We don't need every answer about suffering to fully trust God's wisdom."],
+["Psalms 3 – 32","PSA 3-32","David's honest prayers in times of trial: cries for rescue, complete trust and the joy of forgiveness.","Being open and honestly confessing before God opens the door to His grace and comfort."],
+["Psalms 33 – 62","PSA 33-62","Songs of praise for the whole congregation, national victory, safe refuge in the storm and spiritual thirst in the desert.","Praise is a spiritual weapon that lifts our eyes off our problems and onto God's power."],
+["Psalms 63 – 92","PSA 63-92","Declarations of God's great works in history and the beauty of living in His presence from generation to generation.","Remembering His mighty works in the past builds an unshakable faith for the challenges ahead."],
+["Psalms 93 – 122","PSA 93-122","Royal psalms proclaiming “The Lord reigns,” calls to joyful worship and the Songs of Ascent on the way to Jerusalem.","God reigns over all creation; true peace is found in the shelter of His throne."],
+["Psalms 123 – 150; Proverbs 1 – 2","PSA 123-150;PRO 1-2","The Psalms end in an explosion of praise from all creation (Psalm 150) and Proverbs begins its practical wisdom.","The beginning of all true wisdom is the reverent fear of the Lord."],
+["Proverbs 3 – 31; Ecclesiastes 1","PRO 3-31;ECC 1","Principles for everyday life (money, speech, purity, relationships) and a philosophical look at life without God.","Walking in wisdom brings life and protection, while earthly success without God is meaningless."],
+["Ecclesiastes 2 – 12; Song of Songs 1 – 8; Isaiah 1 – 11","ECC 2-12;SNG 1-8;ISA 1-11","Ecclesiastes concludes (fear God), the Song of Songs celebrates the beauty of married love, and Isaiah opens his sublime vision of the Messiah.","Human love and the purpose of life find their true meaning only in the Creator."],
+["Isaiah 12 – 41","ISA 12-41","Judgments on the nations, comforting promises for Israel (“Do not fear, for I am with you”) and King Hezekiah's faith.","Human kingdoms fall, but the Word of God stands forever and gives peace to those who trust."],
+["Isaiah 42 – 66; Jeremiah 1 – 5","ISA 42-66;JER 1-5","Isaiah's songs of the Suffering Servant that point to Christ, moving into the call of the prophet Jeremiah.","Jesus Christ came as the Suffering Servant to carry our pain and bring us salvation."],
+["Jeremiah 6 – 35","JER 6-35","Jeremiah's warnings to Judah, false religious security and the promise of a New Covenant written on the heart.","Outward rituals can't replace the true inner transformation of the heart."],
+["Jeremiah 36 – 52; Lamentations 1 – 5; Ezekiel 1 – 8","JER 36-52;LAM 1-5;EZK 1-8","The fall of Jerusalem, the grief of Lamentations and the stunning visions of God's glory given to Ezekiel in Babylon.","God's mercies are new every morning, even among ruins and affliction."],
+["Ezekiel 9 – 38","EZK 9-38","The promise that God's glory will return, the rebuke of bad shepherds and the vision of the valley of dry bones.","The Spirit of God has the power to breathe life into spiritually dead situations."],
+["Ezekiel 39 – 48; Daniel 1 – 12; Hosea 1 – 8","EZK 39-48;DAN 1-12;HOS 1-8","Daniel's integrity in hostile cultures and Hosea's life picturing God's passionate, redeeming love for the unfaithful.","Keep your faith intact under outside pressure; God pursues His people with unconditional love."],
+["Hosea 9 – 14; Joel; Amos; Obadiah; Jonah; Micah","HOS 9-14;JOL;AMO;OBA;JON;MIC","The Minor Prophets: the outpouring of the Spirit (Joel), social justice (Amos), mercy toward Nineveh (Jonah) and Bethlehem (Micah).","God calls for a faith that shows itself in justice, humility and compassion toward others."],
+["Nahum to Malachi; Matthew 1 – 5","NAM;HAB;ZEP;HAG;ZEC;MAL;MAT 1-5","The close of the Old Testament, the 400 years of silence and the arrival of the Messiah in Matthew with the Sermon on the Mount.","Jesus is the perfect fulfillment of every promise and prophecy in Scripture."],
+["Matthew 6 – 28; Mark 1 – 7","MAT 6-28;MRK 1-7","Jesus' miracles, parables, death and Resurrection in Matthew, leading into the fast pace of Mark.","The Kingdom of God advances through selfless service, active faith and the victory of the resurrection."],
+["Mark 8 – 16; Luke 1 – 21","MRK 8-16;LUK 1-21","The road to the cross in Mark, and Luke's Gospel highlighting Jesus' compassion for the needy and the outcast.","Jesus came to seek and save the lost, offering grace without borders."],
+["Luke 22 – 24; John 1 – 21; Acts 1 – 6","LUK 22-24;JHN;ACT 1-6","The theological depth of John (“I Am”), the glory of the Risen One and the birth of the early Church in Acts.","Jesus is the Word made flesh who gives us eternal life and empowers His Church through the Holy Spirit."],
+["Acts 7 – 28; Romans 1 – 8","ACT 7-28;ROM 1-8","The Gospel spreads to the Gentiles through Paul, and Romans gives its masterpiece on justification by faith.","We are justified by grace alone through faith; there is now no condemnation in Christ."],
+["Romans 9 – 16; 1 Corinthians 1 – 16; 2 Corinthians 1 – 6","ROM 9-16;1CO;2CO 1-6","God's sovereignty, the unity of the body of Christ, pastoral correction and the supremacy of love in the letters to Corinth.","God's power is made perfect in our weakness; gifts are worth nothing without love."],
+["2 Corinthians 7 – 13; Galatians; Ephesians; Philippians; Colossians; 1 Thessalonians 1 – 3","2CO 7-13;GAL;EPH;PHP;COL;1TH 1-3","Freedom in Christ (Galatians), the armor of God (Ephesians), joy in trials (Philippians) and the supremacy of Christ (Colossians).","Your identity stands firm on Christ's finished work; live from His fullness."],
+["1 Thessalonians 4 – 5 to Hebrews 11","1TH 4-5;2TH;1TI;2TI;TIT;PHM;HEB 1-11","The Second Coming, pastoral instruction to Timothy and Titus, and the superiority of Christ's priesthood in Hebrews.","Jesus Christ is our great High Priest; let's hold firmly to our faith without wavering."],
+["Hebrews 12 – 13; James; 1 & 2 Peter; 1, 2 & 3 John; Jude; Revelation 1 – 5","HEB 12-13;JAS;1PE;2PE;1JN;2JN;3JN;JUD;REV 1-5","Practical faith, endurance in suffering, discerning the truth and the heavenly vision of the Lamb on the throne.","Run the race of faith with your eyes fixed on Jesus, the Lamb worthy of all worship."],
+["Revelation 6 – 22","REV 6-22","The final victory over evil, the return of the King of Kings, the new heavens, the new earth and the New Jerusalem.","Jesus wins. Evil has an expiration date, and God will wipe away every tear and make all things new."]
+];
+const BOOKS={GEN:["Genesis",50],EXO:["Exodus",40],LEV:["Leviticus",27],NUM:["Numbers",36],DEU:["Deuteronomy",34],JOS:["Joshua",24],JDG:["Judges",21],RUT:["Ruth",4],"1SA":["1 Samuel",31],"2SA":["2 Samuel",24],"1KI":["1 Kings",22],"2KI":["2 Kings",25],"1CH":["1 Chronicles",29],"2CH":["2 Chronicles",36],EZR:["Ezra",10],NEH:["Nehemiah",13],EST:["Esther",10],JOB:["Job",42],PSA:["Psalms",150],PRO:["Proverbs",31],ECC:["Ecclesiastes",12],SNG:["Song of Songs",8],ISA:["Isaiah",66],JER:["Jeremiah",52],LAM:["Lamentations",5],EZK:["Ezekiel",48],DAN:["Daniel",12],HOS:["Hosea",14],JOL:["Joel",3],AMO:["Amos",9],OBA:["Obadiah",1],JON:["Jonah",4],MIC:["Micah",7],NAM:["Nahum",3],HAB:["Habakkuk",3],ZEP:["Zephaniah",3],HAG:["Haggai",2],ZEC:["Zechariah",14],MAL:["Malachi",4],MAT:["Matthew",28],MRK:["Mark",16],LUK:["Luke",24],JHN:["John",21],ACT:["Acts",28],ROM:["Romans",16],"1CO":["1 Corinthians",16],"2CO":["2 Corinthians",13],GAL:["Galatians",6],EPH:["Ephesians",6],PHP:["Philippians",4],COL:["Colossians",4],"1TH":["1 Thessalonians",5],"2TH":["2 Thessalonians",3],"1TI":["1 Timothy",6],"2TI":["2 Timothy",4],TIT:["Titus",3],PHM:["Philemon",1],HEB:["Hebrews",13],JAS:["James",5],"1PE":["1 Peter",5],"2PE":["2 Peter",3],"1JN":["1 John",5],"2JN":["2 John",1],"3JN":["3 John",1],JUD:["Jude",1],REV:["Revelation",22]};
+const START=new Date(2026,9,7);
+const PHASES=[["The Pentateuch and the beginnings of history","b1"],["Divided kingdom, exile and wisdom","b2"],["The poetic books and the prophets","b3"],["The New Testament and the final victory","b4"]];
+const PHASE_HUES=[["#9FE8FF","#C8F7FF","#D7C4FF","#FFE3F1"],["#D7C4FF","#B9D4FF","#FFC4E1","#EAD9FF"],["#FFC4E1","#FFD9B8","#D7C4FF","#FFEFC9"],["#FFE3B0","#9FE8FF","#FFC4E1","#FFF2C6"]];
+const PHASE_HUES_DARK=[["#0E6E7A","#12405A","#3E2F7A","#1D2A48"],["#3E2F7A","#1F3A6B","#6B2A55","#2C2250"],["#6B2A55","#6A3A1A","#3E2F7A","#3A2A18"],["#6A4B1A","#0E6E7A","#6B2A55","#4A3A12"]];
+const VERSIONS={NIV:111,KJV:1,ESV:59,NLT:116};
+const SESS=[["m","Morning","Start your day with the Word before any other voice.",'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 18a5 5 0 0 0-10 0M12 2v7M4.2 10.2l1.4 1.4M1 18h2M21 18h2M18.4 11.6l1.4-1.4M23 22H1M8 6l4-4 4 4"/></svg>'],
+["d","Midday","Pause in the middle of your day to come back into God's presence.",'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>'],
+["n","Night","Close your day reading, reflecting and giving thanks.",'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>']];
+const CATS=["Request","Gratitude","Testimony"];
+const CHECK='<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const HEART='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.4-9.3-9A5.2 5.2 0 0 1 12 6a5.2 5.2 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg>';
+const PLAY='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg>';
+const NUM=n=>n.toLocaleString("en-US");
+
+// ---------- plan helpers
+function chapters(segs){const out=[];segs.split(";").forEach(s=>{const[b,r]=s.split(" ");let a=1,e=BOOKS[b][1];if(r){const p=r.split("-").map(Number);a=p[0];e=p[1]||p[0];}for(let c=a;c<=e;c++)out.push([b,c]);});return out;}
+function split3(list){const n=list.length,base=Math.floor(n/3),rem=n%3,res=[];let i=0;for(let k=0;k<3;k++){const size=base+(k<rem?1:0);res.push(list.slice(i,i+size));i+=size;}return res;}
+function label(list){const groups=[];list.forEach(([b,c])=>{const g=groups[groups.length-1];if(g&&g.b===b&&g.e===c-1)g.e=c;else groups.push({b,s:c,e:c});});
+  return groups.map(g=>{const n=BOOKS[g.b][0];if(BOOKS[g.b][1]===1)return n;return g.s===g.e?`${n} ${g.s}`:`${n} ${g.s}–${g.e}`}).join("; ");}
+function audioUrl(b,c){const v=VERSIONS[state.version]?state.version:"NIV";return `https://www.bible.com/audio-bible/${VERSIONS[v]}/${b}.${c}.${v}`;}
+function todayNum(){const t=new Date();t.setHours(0,0,0,0);return Math.floor((t-START)/864e5)+1;}
+function phaseOf(d){return Math.min(3,Math.floor((d-1)/10));}
+
+// ---------- storage + API
+const LS={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
+let isOwner=false;
+const state={profile:null,progress:{},version:"NIV",view:"Today",day:1,prayers:[],filter:"All",zoom:{hora:"",link:""},cfg:null,stats:null,group:null};
+const API={
+  token:LS.get("real40:token"),
+  async call(path,{method="GET",body}={}){
+    let r;try{r=await fetch("/api"+path,{method,headers:{"content-type":"application/json",...(this.token?{authorization:"Bearer "+this.token}:{})},body:body?JSON.stringify(body):undefined});}
+    catch(e){const err=new Error("You're offline. Check your connection and try again.");err.status=0;throw err;}
+    let d={};try{d=await r.json()}catch(e){}
+    if(!r.ok){const err=new Error(d.error||"Something went wrong. Please try again.");err.status=r.status;throw err;}
+    return d;
+  }
+};
+let saveTimer=null,pending=false;
+function saveProfile(){state.profile={...state.profile,progress:state.progress,version:state.version};LS.set("real40:me",state.profile);pending=true;
+  clearTimeout(saveTimer);saveTimer=setTimeout(flush,600);}
+async function flush(){if(!pending||!API.token)return;pending=false;try{await API.call("/progress",{method:"PUT",body:{progress:state.progress,version:state.version}});}
+  catch(e){pending=true;if(e.status===401)return logout("Your session ended. Please log in again.");setTimeout(flush,8000);}}
+addEventListener("online",flush);
+addEventListener("visibilitychange",()=>{if(document.visibilityState==="hidden")flush();else if(state.profile)refreshWall();});
+
+// ---------- password reset
+function forgotSheet(){
+  sheet((s,close)=>{
+    s.append(el("h3",{},"Reset your password"),el("p",{class:"note"},"Enter the email you signed up with and we'll send you a link to create a new password."));
+    const inp=el("input",{class:"input",type:"email",autocomplete:"email",placeholder:"you@email.com","aria-label":"Email"});inp.value=$("#aEmail").value.trim();
+    const err=el("p",{class:"err",role:"alert"});const btn=el("button",{class:"primary"},"Send me the link");
+    btn.onclick=async()=>{err.textContent="";const email=inp.value.trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){err.textContent="Enter a valid email.";return;}
+      btn.disabled=true;btn.textContent="Sending…";
+      try{await API.call("/forgot",{method:"POST",body:{email}});
+        s.innerHTML="";s.append(el("div",{class:"grab"}),el("h3",{},"Check your email"),el("p",{class:"note"},`If there's an account for <b>${esc(email)}</b>, you'll get a link in a few minutes. It works for 1 hour. If you don't see it, check your spam or promotions folder.`),el("button",{class:"ghost",onclick:close},"Close"));}
+      catch(x){err.textContent=x.message;btn.disabled=false;btn.textContent="Send me the link";}};
+    inp.onkeydown=e=>{if(e.key==="Enter")btn.onclick();};
+    s.append(inp,err,btn,el("button",{class:"ghost",onclick:close},"Cancel"));setTimeout(()=>inp.focus(),50);
+  });
+}
+function resetSheet(token,onCancel){
+  let ok=false;
+  sheet((s,close)=>{
+    s.append(el("h3",{},"Create a new password"));
+    const p1=el("input",{class:"input",type:"password",autocomplete:"new-password",placeholder:"At least 6 characters","aria-label":"New password"});
+    const p2=el("input",{class:"input",type:"password",autocomplete:"new-password",placeholder:"Type it again","aria-label":"Repeat the password",style:"margin-top:10px"});
+    const err=el("p",{class:"err",role:"alert"});const btn=el("button",{class:"primary"},"Save and log in");
+    btn.onclick=async()=>{err.textContent="";
+      if(p1.value.length<6){err.textContent="Your password needs at least 6 characters.";return;}
+      if(p1.value!==p2.value){err.textContent="The two passwords don't match.";return;}
+      btn.disabled=true;btn.textContent="Saving…";
+      try{const d=await API.call("/reset",{method:"POST",body:{token,password:p1.value}});
+        ok=true;API.token=d.token;LS.set("real40:token",d.token);LS.set("real40:lastEmail",d.user.email);close();enter(d.user,false);toast("Done: your password was changed.");}
+      catch(x){err.textContent=x.message;btn.disabled=false;btn.textContent="Save and log in";}};
+    p2.onkeydown=e=>{if(e.key==="Enter")btn.onclick();};
+    s.append(p1,p2,err,btn,el("button",{class:"ghost",onclick:close},"Cancel"));setTimeout(()=>p1.focus(),50);
+  },()=>{if(!ok)onCancel();});
+}
+async function boot(){
+  const saved=LS.get("real40:theme");if(saved)document.documentElement.dataset.theme=saved;
+  renderAuthMode();loadPublic();
+  const rt=urlParams.get("reset");
+  if(rt){history.replaceState(null,"",location.pathname);setMode("in");show("auth");resetSheet(rt,()=>location.reload());return;}
+  if(API.token){
+    try{const {user}=await API.call("/me");enter(user);return;}
+    catch(e){if(e.status!==401){const cached=LS.get("real40:me");if(cached){enter(cached);toast("Offline: your progress will sync when you're back.");return;}}}
+    API.token=null;LS.del("real40:token");
+  }
+  const last=LS.get("real40:lastEmail");if(last){setMode("in");$("#aEmail").value=last;}
+  show("auth");
+}
+function logout(msg){API.token=null;LS.del("real40:token");LS.del("real40:me");state.profile=null;stopAudio();setMode("in");$("#aPass").value="";const le=LS.get("real40:lastEmail");if(le)$("#aEmail").value=le;show("auth");if(msg)$("#aErr").textContent=msg;}
+const $=s=>document.querySelector(s);
+function el(tag,attrs={},html){const e=document.createElement(tag);for(const k in attrs){if(k==="class")e.className=attrs[k];else if(k.startsWith("on"))e.addEventListener(k.slice(2),attrs[k]);else e.setAttribute(k,attrs[k]);}if(html!=null)e.innerHTML=html;return e;}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function show(which){$("#auth").classList.toggle("hidden",which!=="auth");$("#app").classList.toggle("hidden",which!=="app");$("#tabbar").classList.toggle("hidden",which!=="app");}
+
+// ---------- auth
+const COUNTRIES=["United States","Canada","United Kingdom","Ireland","Australia","New Zealand","South Africa","Nigeria","Kenya","Ghana","Uganda","India","Philippines","Jamaica","Colombia","Mexico","Spain","Germany","Netherlands","Other country"];
+const CO_CITIES=["Medellín","Bello","Itagüí","Envigado","Sabaneta","La Estrella","Caldas","Copacabana","Girardota","Barbosa","Rionegro","Bogotá","Cali","Barranquilla","Cartagena","Bucaramanga","Pereira","Manizales","Santa Marta"];
+let mode="up",church="";
+const urlParams=new URLSearchParams(location.search);
+if(urlParams.get("ref"))LS.set("real40:ref",urlParams.get("ref").toUpperCase().slice(0,12));
+if(urlParams.get("group"))LS.set("real40:joinGroup",urlParams.get("group").toUpperCase().slice(0,10));
+function setMode(m){mode=m;$("#tabUp").setAttribute("aria-selected",m==="up");$("#tabIn").setAttribute("aria-selected",m==="in");
+  $("#nameField").classList.toggle("hidden",m==="in");$("#upFields").classList.toggle("hidden",m==="in");
+  $("#aPass").autocomplete=m==="up"?"new-password":"current-password";$("#aErr").textContent="";$("#aBtn").textContent=m==="up"?"Create my account":"Log in";$("#aForgot").classList.toggle("hidden",m!=="in");
+  const ended=state.cfg&&state.cfg.ended;$("#authForm").classList.toggle("hidden",ended&&m==="up");$("#waitBox").classList.toggle("hidden",!(ended&&m==="up"));
+  $("#tabUp").textContent=ended?"Next round":"Sign up";}
+function renderAuthMode(){
+  $("#tabUp").onclick=()=>setMode("up");$("#tabIn").onclick=()=>setMode("in");$("#aForgot").onclick=forgotSheet;
+  $("#aCountry").innerHTML=COUNTRIES.map(c=>`<option>${c}</option>`).join("");
+  const fillCities=()=>{$("#cities").innerHTML=$("#aCountry").value==="Colombia"?CO_CITIES.map(c=>`<option value="${c}">`).join(""):"";};
+  $("#aCountry").onchange=fillCities;fillCities();
+  $("#aChurch").querySelectorAll("button").forEach(b=>b.onclick=()=>{$("#aChurch").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));church=b.dataset.v;});
+  $("#wBtn").onclick=async()=>{const err=$("#wErr");err.textContent="";const email=$("#wEmail").value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){err.textContent="Enter a valid email.";return}
+    if(!$("#wConsent").checked){err.textContent="Please accept the Data Privacy Policy to sign up.";return}
+    try{await API.call("/waitlist",{method:"POST",body:{email,name:$("#wName").value.trim(),consent:true}});$("#waitBox").innerHTML='<p class="stepno">You\'re on the list!</p><p class="lede">We\'ll let you know when the October 2027 round opens.</p>';}catch(e){err.textContent=e.message}};
+  if(LS.get("real40:ref"))$("#authSub").textContent="You've been invited to read the whole Bible in 40 days. Three 30-minute readings a day, together as a church.";
+}
+async function loadPublic(){
+  try{state.cfg=await API.call("/config");state.zoom=state.cfg.zoom;if(!state.profile)setMode(mode);}catch(e){}
+  try{const s=await API.call("/stats");state.stats=s;if(s.people>=10){const c=$("#authCounter");c.textContent=`${NUM(s.people)} people in ${s.countries} ${s.countries===1?"country":"countries"} are already reading`;c.classList.remove("hidden");}}catch(e){}
+}
+$("#authForm").addEventListener("submit",async e=>{
+  e.preventDefault();const err=$("#aErr");err.textContent="";
+  const name=$("#aName").value.trim(),email=$("#aEmail").value.trim().toLowerCase(),pass=$("#aPass").value;
+  if(mode==="up"&&!name){err.textContent="Enter your name.";return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){err.textContent="Enter a valid email.";return}
+  if(pass.length<6){err.textContent="Your password needs at least 6 characters.";return}
+  let payload={email,password:pass};
+  if(mode==="up"){
+    const country=$("#aCountry").value,city=$("#aCity").value.trim();
+    if(!city){err.textContent="Enter your city.";return}
+    if(!church){err.textContent="Let us know if you attend a church.";return}
+    if(!$("#aConsent").checked){err.textContent="To create your account, please check the consent box.";return}
+    payload={...payload,name,consent:true,age_ok:true,whatsapp:$("#aWa").value.trim(),country,city,church,comms:$("#aComms").checked,ref:LS.get("real40:ref")||undefined};
+  }
+  const btn=$("#aBtn"),m=mode;btn.disabled=true;btn.textContent=m==="up"?"Creating your account…":"Logging in…";
+  try{
+    const d=await API.call(m==="up"?"/signup":"/login",{method:"POST",body:payload});
+    API.token=d.token;LS.set("real40:token",d.token);LS.set("real40:lastEmail",email);$("#aPass").value="";LS.del("real40:ref");enter(d.user,m==="up");
+  }catch(x){err.textContent=x.message;if(x.status===409){setMode("in");err.textContent=x.message;}}
+  finally{btn.disabled=false;btn.textContent=mode==="up"?"Create my account":"Log in";}
+});
+function enter(u,isNew){
+  state.profile=u;state.progress=u.progress||{};state.version=VERSIONS[u.version]?u.version:"NIV";isOwner=!!u.admin;LS.set("real40:me",u);
+  const t=todayNum();state.day=Math.min(40,Math.max(1,t));
+  const qd=Number(urlParams.get("day"));if(qd>=1&&qd<=40){state.day=qd;state.peeked=true;}
+  show("app");go(["Wall","Plan","Profile"].includes(urlParams.get("view"))?urlParams.get("view"):"Today");startWall();checkAudio();refreshStats();
+  if(isNew)toast(`Welcome, ${u.name.split(" ")[0]}!`);
+  if(!u.consent&&!isNew)askConsent();
+  const jg=LS.get("real40:joinGroup");if(jg){LS.del("real40:joinGroup");joinGroup(jg,true);}
+}
+async function refreshStats(){try{state.stats=await API.call("/stats");if(state.view==="Today"){const c=$("#hoyCounter");if(c)c.textContent=counterText();}}catch(e){}}
+setInterval(()=>{if(state.profile&&document.visibilityState==="visible")refreshStats()},120000);
+function counterText(){const s=state.stats;if(!s)return"";return `${NUM(s.people)} people · ${s.countries} ${s.countries===1?"country":"countries"} · ${NUM(s.chapters)} chapters read`;}
+async function refreshMe(){try{const {user}=await API.call("/me");state.profile={...state.profile,...user,progress:state.progress};LS.set("real40:me",state.profile);}catch(e){}}
+function askConsent(){
+  sheet((s,close)=>{
+    s.append(el("h2",{},"Your personal data"));
+    s.append(el("p",{class:"lede"},`To keep using the app we need your permission to process your data (name, email, progress and prayer requests) under Iglesia Real's <a href="/privacy" target="_blank" rel="noopener">Data Privacy Policy</a>.`));
+    const err=el("p",{class:"err",role:"alert"});s.append(err);
+    const ok=el("button",{class:"primary"},"I agree");ok.onclick=async()=>{ok.disabled=true;try{await API.call("/consent",{method:"POST"});state.profile={...state.profile,consent:true};LS.set("real40:me",state.profile);close();}catch(e){ok.disabled=false;err.textContent=e.message}};
+    s.append(ok);
+    s.append(el("button",{class:"ghost",onclick:()=>{close();logout();}},"I don't agree, log me out"));
+  },()=>{if(state.profile&&!state.profile.consent)setTimeout(askConsent,50)});
+}
+function deleteAccount(){
+  sheet((s,close)=>{
+    s.append(el("h2",{},"Delete my account"));
+    s.append(el("p",{class:"lede"},"This deletes your account, your progress and the requests you posted. It can't be undone."));
+    s.append(el("label",{class:"f",for:"dPass"},"Enter your password to confirm"));
+    const pw=el("input",{class:"input",id:"dPass",type:"password",autocomplete:"current-password"});s.append(pw);
+    const err=el("p",{class:"err",role:"alert"});s.append(err);
+    const del=el("button",{class:"primary",style:"background:#C2185B;color:#fff"},"Delete permanently");
+    del.onclick=async()=>{del.disabled=true;try{await API.call("/me",{method:"DELETE",body:{password:pw.value}});close();LS.del("real40:lastEmail");logout();$("#aEmail").value="";setMode("up");toast("Your account was deleted.");}catch(e){del.disabled=false;err.textContent=e.message}};
+    s.append(del);s.append(el("button",{class:"ghost",onclick:close},"Cancel"));
+  });
+}
+
+// ---------- nav
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>go(b.dataset.v));
+function go(v){state.view=v;["Today","Plan","Wall","Profile"].forEach(x=>$("#v"+x).classList.toggle("hidden",x!==v));
+  document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",b.dataset.v===v));
+  $("#fab").classList.toggle("hidden",v!=="Wall");render();if(v==="Wall")refreshWall();window.scrollTo({top:0});}
+function render(){paintField();({Today:renderToday,Plan:renderPlan,Wall:renderWall,Profile:renderProfile})[state.view]();}
+function isDark(){const t=document.documentElement.dataset.theme;return t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches}
+function paintField(){const ph=phaseOf(state.day),hues=(isDark()?PHASE_HUES_DARK:PHASE_HUES)[ph];document.querySelectorAll(".orb").forEach((o,i)=>o.style.background=hues[i]);}
+$("#themeBtn").onclick=()=>{const next=isDark()?"light":"dark";document.documentElement.dataset.theme=next;LS.set("real40:theme",next);paintField();};
+
+// ---------- progress
+function dp(d){return state.progress[d]||{};}
+function sessCount(d){const p=dp(d);return ["m","d","n"].filter(k=>p[k]).length;}
+function dayDone(d){return sessCount(d)===3;}
+function toggle(d,k){const p={...dp(d)};const wasDone=dayDone(d);p[k]=!p[k];state.progress={...state.progress,[d]:p};saveProfile();
+  if(!wasDone&&dayDone(d)){confetti();toast(`Day ${d} complete. Keep it up!`);}}
+function streak(){let t=Math.min(40,todayNum()),s=0;if(t<1)return 0;if(!dayDone(t))t--;while(t>=1&&dayDone(t)){s++;t--;}return s;}
+function chaptersRead(){let n=0;for(let d=1;d<=40;d++){const parts=split3(chapters(PLAN[d-1][1]));["m","d","n"].forEach((k,i)=>{if(dp(d)[k])n+=parts[i].length});}return n;}
+
+// ---------- TODAY
+function greeting(){const h=new Date().getHours();return h<12?"Good morning":h<18?"Good afternoon":"Good evening";}
+function renderToday(){
+  const v=$("#vToday");v.innerHTML="";const t=todayNum(),d=state.day,first=state.profile.name.split(" ")[0];
+  v.append(el("p",{class:"greet"},`${greeting()}, ${esc(first)}`));
+  if(t<1&&d===1&&!state.peeked){
+    const ms=START-new Date(),days=Math.floor(ms/864e5),hrs=Math.floor(ms/36e5)%24,mins=Math.floor(ms/6e4)%60;
+    const left=1-t;v.append(el("h1",{class:"hero"},left+(left===1?" day":" days")+"<br>to go"));
+    v.append(el("p",{class:"ref"},"On October 7 we all start reading the whole Bible together, as a church."));
+    const c=el("div",{class:"count"});[[days,"days"],[hrs,"hours"],[mins,"min"]].forEach(([n,l])=>c.append(el("div",{class:"glass"},`<b>${n}</b><small>${l}</small>`)));v.append(c);
+    const pv=el("div",{class:"glass card"},`<h4>Your first reading</h4><p class="principle">Genesis 1 – 30</p><p class="note">${PLAN[0][2]}</p>`);v.append(pv);
+    v.append(el("button",{class:"primary",onclick:()=>{state.peeked=true;renderToday()}},"See Day 1"));
+    if(state.zoom.hora||state.zoom.link){const z=el("div",{class:"glass card"},`<h4>Morning prayer on Zoom</h4><p class="principle">${esc(state.zoom.hora||"Every morning")}</p><p class="note">We pray together and walk through the day's reading.</p>`);
+      if(state.zoom.link)z.append(el("a",{class:"listen",href:state.zoom.link,target:"_blank",rel:"noopener"},"Join the prayer Zoom"));v.append(z);}
+    renderExtrasInfo(v);todayCommunity(v,0);return;
+  }
+  if(t>1&&!anyDayDone()&&!LS.get("real40:catchupSeen"))v.append(catchUpCard(t));
+  renderDay(v,d,true);todayCommunity(v,d);
+}
+function catchUpCard(t){
+  const c=el("div",{class:"glass card"},`<h4>Joining mid-way?</h4><p>The church started on October 7, so today is Day ${Math.min(40,t)}. Start with today's reading and read alongside everyone. You can go back to earlier days in the Plan whenever you have time.</p>`);
+  c.append(el("button",{class:"rep",onclick:()=>{LS.set("real40:catchupSeen",1);renderToday()}},"Got it"));return c;
+}
+function renderDay(v,d,withNav){
+  const [ref,segs,focus,principle]=PLAN[d-1],parts=split3(chapters(segs)),ph=phaseOf(d),cnt=sessCount(d);
+  v.append(el("h1",{class:"hero"},`Day ${d}`));
+  v.append(el("p",{class:"ref"},esc(ref)));
+  v.append(el("span",{class:"phase glass pill"},`<i class="dot"></i>Phase ${ph+1} · ${PHASES[ph][0]}`));
+  // ring
+  const R=48,C=2*Math.PI*R,seg=C/3,gap=10;
+  let arcs="";["m","d","n"].forEach((k,i)=>{const on=dp(d)[k];arcs+=`<circle class="arc" cx="59" cy="59" r="${R}" fill="none" stroke="${on?"var(--accent)":"transparent"}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${seg-gap} ${C}" stroke-dashoffset="${on?-i*seg:-i*seg+ (seg-gap)}" style="stroke-dashoffset:${-i*seg}"/>`;});
+  let tracks="";[0,1,2].forEach(i=>tracks+=`<circle class="track" cx="59" cy="59" r="${R}" fill="none" stroke-width="12" stroke-linecap="round" stroke-dasharray="${seg-gap} ${C}" style="stroke-dashoffset:${-i*seg}"/>`);
+  const msg=cnt===3?["Day complete!","You finished all three readings today. God honors your faithfulness."]:cnt===0?["Three readings, 30 minutes each","Tap each reading's circle when you finish it."]:[`${cnt} of 3 done`,`${3-cnt===1?"One reading":"Two readings"} left to complete the day.`];
+  v.append(el("div",{class:"glass ringwrap"},`<div class="ring ${cnt===3?"done":""}"><svg viewBox="0 0 118 118">${tracks}${arcs}</svg><div class="center"><div><b>${cnt}/3</b><small>readings</small></div></div></div><div class="ringtext"><h3>${msg[0]}</h3><p>${msg[1]}</p></div>`));
+  v.append(el("div",{class:"glass card"},`<h4>Teaching focus</h4><p>${esc(focus)}</p>`));
+  v.append(el("div",{class:"glass card"},`<h4>Biblical principle</h4><p class="principle">${esc(principle)}</p>`));
+  // sessions
+  SESS.forEach(([k,name,hint,icon],i)=>{
+    const list=parts[i],on=!!dp(d)[k];
+    const s=el("div",{class:"glass sess"+(on?" done":"")});
+    const head=el("div",{class:"sesshead"},`<div class="sessicon">${icon}</div><div class="t"><b>${name}</b><span>30 min · ${list.length} chapters</span></div>`);
+    const ck=el("button",{class:"check"+(on?" on":""),"aria-pressed":on,"aria-label":`Mark the ${name.toLowerCase()} reading as read`,onclick:()=>{toggle(d,k);rerenderDay(d)}},CHECK);
+    head.append(ck);s.append(head);
+    s.append(el("p",{class:"range"},esc(label(list))));
+    const chips=el("div",{class:"chips",role:"list"});
+    list.forEach(([b,c],j)=>{const firstOfBook=j===0||list[j-1][0]!==b;const txt=BOOKS[b][1]===1?BOOKS[b][0]:firstOfBook?`${BOOKS[b][0]} ${c}`:String(c);
+      const playing=!!(player.cur&&player.cur[0]===b&&player.cur[1]===c);
+      const a=el("a",{class:"chip"+(playing?" playing":""),href:audioUrl(b,c),target:"_blank",rel:"noopener",role:"listitem","aria-label":`Listen to ${BOOKS[b][0]} ${c}`},esc(txt));
+      a.addEventListener("click",e=>{if(player.available){e.preventDefault();playQueue(list,j,name)}});chips.append(a)});
+    s.append(chips);
+    const L=el("a",{class:"listen",href:audioUrl(...list[0]),target:"_blank",rel:"noopener"},`${PLAY}${player.available?"Listen to the reading":"Listen on YouVersion"}`);
+    L.addEventListener("click",e=>{if(player.available){e.preventDefault();playQueue(list,0,name)}});s.append(L);
+    if(player.available)s.append(el("a",{class:"yv",href:audioUrl(...list[0]),target:"_blank",rel:"noopener"},`Open in YouVersion (${state.version})`));
+
+    v.append(s);
+  });
+  // extras
+  const ex=el("div",{class:"extras"});
+  [["z","Zoom prayer",state.zoom.hora?`Every morning · ${esc(state.zoom.hora)}`:"Every morning with the church"],["a","Social media fast","Today I only used social media when necessary"]].forEach(([k,t,sub])=>{
+    const on=!!dp(d)[k];ex.append(el("button",{class:"glass extra"+(on?" on":""),"aria-pressed":on,onclick:()=>{toggle(d,k);rerenderDay(d)}},`<span class="mini">${CHECK}</span><b>${t}</b><small>${sub}</small>`));});
+  v.append(ex);
+  if(state.zoom.link)v.append(el("a",{class:"listen",href:state.zoom.link,target:"_blank",rel:"noopener",style:"background:var(--glass-hi);color:var(--ink);border:1px solid var(--glass-line)"},"Join the prayer Zoom"));
+  if(withNav){
+    const n=el("div",{class:"nav"});
+    const prev=el("button",{class:"glass pill",onclick:()=>{state.day--;state.peeked=true;render();window.scrollTo({top:0})}},"‹ Previous day");if(d<=1)prev.disabled=true;
+    const today=Math.min(40,Math.max(1,todayNum()));
+    const mid=el("button",{class:"glass pill",onclick:()=>{state.day=today;render()}},"Today");if(d===today)mid.classList.add("hidden");
+    const next=el("button",{class:"glass pill",onclick:()=>{state.day++;state.peeked=true;render();window.scrollTo({top:0})}},"Next day ›");if(d>=40)next.disabled=true;
+    n.append(prev,mid,next);v.append(n);
+  }
+}
+function rerenderDay(d){const y=window.scrollY;if(sheetDay===d){openDay(d,true)}else renderToday();window.scrollTo({top:y});}
+function renderExtrasInfo(v){
+  const c=el("div",{class:"glass card"},`<h4>How it works</h4><ul class="tips"><li>Each day has about 30 chapters split into morning, midday and night.</li><li>Tap a chapter to listen on YouVersion while you follow the text.</li><li>Check off each reading when you finish and watch your ring fill up.</li><li>Join the morning prayer Zoom and take on the social media fast.</li></ul>`);v.append(c);
+}
+
+// ---------- PLAN
+let sheetDay=null;
+function renderPlan(){
+  const v=$("#vPlan");v.innerHTML="";const t=todayNum();
+  v.append(el("h2",{class:"sectitle"},"The plan"));
+  v.append(el("p",{class:"lede"},"Forty days, four phases, the whole Word of God. Tap a day to see its readings."));
+  PHASES.forEach(([name],i)=>{
+    const c=el("div",{class:"glass phasecard"},`<h3>Phase ${i+1}: ${name}</h3><p>Days ${i*10+1} – ${i*10+10}</p>`);
+    const g=el("div",{class:"days"});
+    for(let d=i*10+1;d<=i*10+10;d++){const p=dp(d);
+      const b=el("button",{class:"daybtn"+(dayDone(d)?" done":"")+(d===t?" today":""),"aria-label":`Day ${d}${dayDone(d)?", complete":""}`,onclick:()=>openDay(d)},`${d}<span class="pips"><i class="${p.m?"on":""}"></i><i class="${p.d?"on":""}"></i><i class="${p.n?"on":""}"></i></span>`);g.append(b);}
+    c.append(g);v.append(c);
+  });
+}
+function sheet(build,onClose){const layer=$("#layer");layer.innerHTML="";const scrim=el("div",{class:"scrim",onclick:e=>{if(e.target===scrim)close()}});const s=el("div",{class:"sheet glass",role:"dialog","aria-modal":"true"});s.append(el("div",{class:"grab"}));build(s,close);scrim.append(s);layer.append(scrim);
+  function close(){layer.innerHTML="";document.removeEventListener("keydown",esc_);onClose&&onClose();}function esc_(e){if(e.key==="Escape")close()}document.addEventListener("keydown",esc_);return close;}
+function openDay(d,keepScroll){const prevScroll=keepScroll&&$(".sheet")?$(".sheet").scrollTop:0;sheetDay=d;
+  sheet(s=>{renderDay(s,d,false);s.append(el("button",{class:"ghost",onclick:()=>{state.day=d;state.peeked=true;$("#layer").innerHTML="";sheetDay=null;go("Today")}},"Open in Today"))},()=>{sheetDay=null;if(state.view==="Plan")renderPlan()});
+  if(keepScroll){$(".sheet").style.animation="none";$(".sheet").scrollTop=prevScroll;}}
+
+// ---------- WALL
+let wallTimer=null;
+async function refreshWall(){try{const d=await API.call("/prayers");state.prayers=d.prayers;if(state.view==="Wall"&&!amenBusy)renderWall();}catch(e){if(e.status===401)logout("Your session ended. Please log in again.");}}
+async function startWall(){refreshWall();clearInterval(wallTimer);wallTimer=setInterval(()=>{if(state.view==="Wall"&&document.visibilityState==="visible")refreshWall()},30000);
+  try{state.cfg=await API.call("/config");state.zoom=state.cfg.zoom;if(state.view==="Today")renderToday();}catch(e){}}
+function ago(ts){const m=Math.floor((Date.now()-ts)/6e4);if(m<1)return"just now";if(m<60)return`${m} min ago`;const h=Math.floor(m/60);if(h<24)return`${h} h ago`;const d=Math.floor(h/24);return d===1?"yesterday":`${d} days ago`;}
+function renderWall(){
+  const v=$("#vWall");v.innerHTML="";
+  v.append(el("h2",{class:"sectitle"},"Prayer wall"));
+  v.append(el("p",{class:"lede"},"Share what's on your heart and pray for one another. Tap “Pray” when you pray for someone."));
+  const f=el("div",{class:"filters"});["All","Requests","Gratitude","Testimonies"].forEach((lab,i)=>{const val=i===0?"All":CATS[i-1];f.append(el("button",{class:"glass pill","aria-pressed":state.filter===val,onclick:()=>{state.filter=val;renderWall()}},lab))});v.append(f);
+  const list=state.prayers.filter(p=>state.filter==="All"||p.cat===state.filter);
+  if(!list.length){v.append(el("div",{class:"glass empty"},`<b>No requests here yet</b><p class="note">Be the first to share. Tap “Ask for prayer”.</p>`));return}
+  const w=el("div",{class:"wall"});
+  list.forEach(p=>{
+    const count=p.count||0,mine=!!p.praying;
+    const c=el("article",{class:"glass prayer"});
+    c.append(el("span",{class:"cat"},esc(p.cat||"Request")));
+    const txt=el("p");txt.textContent=p.text;c.append(txt);
+    const meta=el("div",{class:"meta"});const by=el("span",{class:"by"});by.textContent=`${p.firma||"Anonymous"} · ${ago(p.createdAt)}`;meta.append(by);
+    const btn=el("button",{class:"pray"+(mine?" on":""),"aria-pressed":mine,"aria-label":mine?"You're praying. Tap to undo":"Pray for this request"},`${HEART}<span>${count||""} ${mine?"Praying":"Pray"}</span>`);
+    btn.onclick=()=>amen(p,btn);meta.append(btn);c.append(meta);
+    if(p.mine||isOwner)c.append(el("button",{class:"del",onclick:()=>delPrayer(p)},"Delete"));
+    else if(!p.reported)c.append(el("button",{class:"rep",onclick:async()=>{if(!confirm("Report this post as inappropriate? Our team will review it."))return;try{await API.call(`/prayers/${p.id}/report`,{method:"POST"});state.prayers=state.prayers.map(x=>x.id===p.id?{...x,reported:true}:x);toast("Thank you. We'll review it.");renderWall()}catch(e){toast(e.message)}}},"Report"));
+    w.append(c);
+  });v.append(w);
+}
+let amenBusy=false;
+async function amen(p,btn){
+  if(amenBusy)return;amenBusy=true;const was=!!p.praying;
+  if(!was){const f=el("span",{class:"float"},"🙏");btn.append(f);setTimeout(()=>f.remove(),1000);}
+  state.prayers=state.prayers.map(x=>x.id===p.id?{...x,praying:!was,count:Math.max(0,(x.count||0)+(was?-1:1))}:x);
+  setTimeout(renderWall,260);
+  try{const r=await API.call(`/prayers/${p.id}/pray`,{method:"POST"});state.prayers=state.prayers.map(x=>x.id===p.id?{...x,praying:r.praying,count:r.count}:x);}
+  catch(e){state.prayers=state.prayers.map(x=>x.id===p.id?{...x,praying:was,count:p.count}:x);toast(e.message);}
+  finally{setTimeout(()=>{amenBusy=false;renderWall()},280);}
+}
+async function delPrayer(p){if(!confirm("Delete this request from the wall?"))return;
+  try{await API.call("/prayers/"+p.id,{method:"DELETE"});state.prayers=state.prayers.filter(x=>x.id!==p.id);renderWall();toast("Request deleted")}catch(e){toast(e.message)}}
+$("#fab").onclick=()=>{
+  let cat="Request",anon=false;
+  sheet((s,close)=>{
+    s.append(el("h2",{},"Ask for prayer"));
+    const seg=el("div",{class:"seg",role:"group","aria-label":"Type"});CATS.forEach(c=>{const b=el("button",{class:"glass pill","aria-pressed":c===cat,onclick:()=>{cat=c;seg.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x.textContent===c))}},c);seg.append(b)});s.append(seg);
+    s.append(el("label",{class:"f",for:"pText"},"What can we pray about?"));
+    const ta=el("textarea",{class:"input",id:"pText",maxlength:"500",placeholder:"Write your request, gratitude or testimony…"});s.append(ta);
+    const sw=el("label",{class:"switch"});const cb=el("input",{type:"checkbox"});cb.onchange=()=>anon=cb.checked;sw.append(cb,document.createTextNode("Post anonymously"));s.append(sw);
+    const err=el("p",{class:"err",role:"alert"});s.append(err);
+    const pub=el("button",{class:"primary"},"Post to the wall");
+    pub.onclick=async()=>{const text=ta.value.trim();if(text.length<3){err.textContent="Write your request before posting.";return}
+      pub.disabled=true;
+      try{await API.call("/prayers",{method:"POST",body:{text,cat,anon}});close();state.filter="All";await refreshWall();renderWall();toast("Posted to the wall")}
+      catch(e){pub.disabled=false;err.textContent=e.message}};
+    s.append(pub);setTimeout(()=>ta.focus(),300);
+  });
+};
+
+// ---------- PROFILE
+function renderProfile(){
+  const v=$("#vProfile");v.innerHTML="";const p=state.profile;let done=0;for(let d=1;d<=40;d++)if(dayDone(d))done++;
+  v.append(el("h2",{class:"sectitle"},"My journey"));
+  const me=el("div",{class:"glass me"});me.append(el("div",{class:"avatar"},esc(p.name.trim()[0]||"R").toUpperCase()));const t=el("div");const b=el("b");b.textContent=p.name;const sp=el("span");sp.textContent=p.email;t.append(b,sp);me.append(t);v.append(me);
+  const st=el("div",{class:"stats"});[[done,"days"],[streak(),"streak"],[chaptersRead(),"chapters"]].forEach(([n,l])=>st.append(el("div",{class:"glass stat"},`<b>${n}</b><small>${l}</small>`)));v.append(st);
+  const g=el("div",{class:"glass card"},`<h4>My 40-day progress · ${Math.round(chaptersRead()/1189*100)}% of the Bible</h4>`);const grid=el("div",{class:"grid40"});
+  for(let d=1;d<=40;d++){const c=sessCount(d);grid.append(el("i",{class:c===3?"done":c?"part":"",title:`Day ${d}`}));}g.append(grid);v.append(g);
+  const ver=el("div",{class:"glass card"},`<h4>Bible version for listening on YouVersion</h4>`);const seg=el("div",{class:"seg"});
+  Object.keys(VERSIONS).forEach(k=>seg.append(el("button",{class:"glass pill","aria-pressed":state.version===k,onclick:()=>{state.version=k;saveProfile();renderProfile()}},k)));ver.append(seg);v.append(ver);
+  const u=state.profile,cfg=state.cfg||{};
+  if(dayDone(40))v.append(finishCard());
+  const row=(label,sub,fn)=>{const r=el("button",{class:"glass card",style:"display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left",onclick:fn},`<span><b style="font-family:var(--display);font-size:17px;display:block">${label}</b><span class="note">${sub}</span></span><span aria-hidden="true" style="font-size:22px;color:var(--muted)">›</span>`);return r};
+  v.append(row("Read with others","Optional · with your family or friends",groupSheet));
+  const nt=el("div",{class:"glass card"},`<h4>Notifications</h4>`);
+  const pt=el("label",{class:"toggle"},`<span>Reading reminders</span>`);const pc=el("input",{type:"checkbox",class:"sw"});pc.disabled=!pushSupported();pushOn().then(on=>pc.checked=on);
+  pc.onchange=()=>pc.checked?enablePush():disablePush();pt.append(pc);nt.append(pt);
+  if(!pushSupported())nt.append(el("p",{class:"note"},/iPhone|iPad/.test(navigator.userAgent)?"On iPhone: tap Share › “Add to Home Screen” and open the app from there.":"Your browser doesn't support reminders."));
+  const ct=el("label",{class:"toggle"},`<span>Resources and invitations from Iglesia Real</span>`);const cc=el("input",{type:"checkbox",class:"sw"});cc.checked=!!u.comms;
+  cc.onchange=async()=>{try{const d=await API.call("/me",{method:"PATCH",body:{comms:cc.checked}});state.profile={...state.profile,...d.user,progress:state.progress}}catch(e){cc.checked=!cc.checked;toast(e.message)}};ct.append(cc);nt.append(ct);v.append(nt);
+  const ac=el("div",{class:"glass card"},`<h4>Can we walk with you?</h4><p class="note">Someone from our team will reach out to you.</p>`);const ab=el("div",{class:"cta2"});
+  ab.append(el("button",{class:"btn-glass",onclick:()=>intentSheet("pray")},u.wants_prayer?"✓ We're praying with you":"Pray for me"),el("button",{class:"btn-glass",onclick:()=>intentSheet("jesus")},u.wants_jesus?"✓ You took the step":"I want to receive Jesus"));ac.append(ab);v.append(ac);
+  const lk=el("div",{class:"cta2",style:"margin-top:14px"});lk.append(el("button",{class:"btn-glass",onclick:shareInvite},"Invite someone"),el("a",{class:"btn-glass",href:cfg.whatsapp_channel||"https://whatsapp.com/channel/0029VbDER4s90x2uvKjyKf0a",target:"_blank",rel:"noopener"},"WhatsApp channel"));v.append(lk);
+  if(u.admin)v.append(el("button",{class:"yv",style:"margin-top:16px",onclick:downloadSignups},"Team: download sign-ups (CSV) ›"));
+  v.append(el("div",{class:"glass card"},`<h4>Tips to finish strong</h4><ul class="tips"><li><b>Split up your time.</b> If you fall behind, catch up in the next session without getting discouraged.</li><li><b>Use the audio.</b> Listen at 1.25x while you follow the text with your eyes.</li><li><b>Keep the big picture.</b> Look for the great map of redemption, not every detail.</li><li><b>Social media fast.</b> Don't check your phone before your first reading or after your last.</li><li><b>When you feel the urge</b> to open social media, turn it into a short prayer or read a psalm.</li></ul>`));
+  v.append(el("div",{class:"glass card"},`<p class="verse">“All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness.”</p><p class="note">2 Timothy 3:16</p>`));
+  v.append(el("button",{class:"ghost glass pill",style:"margin-top:18px",onclick:()=>{flush();logout();}},"Log out"));
+  v.append(el("button",{class:"danger",onclick:deleteAccount},"Delete my account"));
+  v.append(el("p",{class:"note",style:"text-align:center"},`<a href="/privacy" target="_blank" rel="noopener">Data Privacy Policy</a>`));
+}
+async function downloadSignups(){
+  try{const r=await fetch("/api/admin/export",{headers:{authorization:"Bearer "+API.token}});if(!r.ok)throw new Error("Couldn't download the list.");
+    const b=await r.blob();const a=el("a",{href:URL.createObjectURL(b),download:"40days-signups.csv"});document.body.append(a);a.click();a.remove();}catch(e){toast(e.message)}
+}
+
+// ---------- community: Today cards
+function todayCommunity(v,d){
+  const u=state.profile;
+  if(d>=1&&dayDone(d)){
+    const c=el("div",{class:"glass card"},`<h4>Day ${d} complete</h4><p class="principle">${esc(progressLine())}</p>`);
+    c.append(el("button",{class:"listen",onclick:()=>shareProgress(d)},"Share my progress"));
+    const extra=nextStep(d);if(extra)c.append(extra);
+    const ring=v.querySelector(".ringwrap");ring?ring.after(c):v.append(c);
+  }
+  if(dayDone(40)||Date.now()>START.getTime()+40*864e5)v.append(finishCard());
+}
+function nextStep(d){
+  const u=state.profile,box=el("div",{style:"margin-top:14px;padding-top:14px;border-top:1px solid var(--glass-line)"});
+  if(pushSupported()&&Notification.permission!=="granted"&&!LS.get("real40:pushDismissed")){
+    box.append(el("p",{},"Want us to remind you about your readings in the morning, at midday and at night?"));
+    const b=el("div",{class:"cta2"});b.append(el("button",{class:"btn-dark",onclick:()=>enablePush()},"Yes, remind me"),el("button",{class:"btn-glass",onclick:()=>{LS.set("real40:pushDismissed",1);renderToday()}},"No, thanks"));box.append(b);return box;}
+  if(u.church==="none"&&!u.wants_prayer&&!u.wants_jesus&&d>=3&&!LS.get("real40:stepDismissed")){
+    box.append(el("p",{},"Can we walk with you? If you'd like, someone from our team will reach out."));
+    const b=el("div",{class:"cta2"});b.append(el("button",{class:"btn-glass",onclick:()=>intentSheet("pray")},"Pray for me"),el("button",{class:"btn-glass",onclick:()=>intentSheet("jesus")},"I want to receive Jesus"));box.append(b);
+    box.append(el("button",{class:"rep",onclick:()=>{LS.set("real40:stepDismissed",1);renderToday()}},"Not now"));return box;}
+  return null;
+}
+function progressLine(){let last=0;for(let d=40;d>=1;d--)if(dayDone(d)){last=d;break}
+  const firstBook=BOOKS[chapters(PLAN[0][1])[0][0]][0];const segs=chapters(PLAN[Math.max(0,last-1)][1]);const lastBook=BOOKS[segs[segs.length-1][0]][0];
+  return `${NUM(chaptersRead())} chapters read · ${firstBook===lastBook?"in "+firstBook:firstBook+" → "+lastBook}`;}
+function anyDayDone(){for(let d=1;d<=40;d++)if(sessCount(d))return true;return false;}
+function intentSheet(kind){
+  const u=state.profile;
+  sheet((s,close)=>{
+    if(kind==="pray"){s.append(el("h2",{},"We'd love to pray with you"));s.append(el("p",{class:"lede"},"Tell us briefly what you'd like prayer for. Only our prayer and Connection team will see it."));}
+    else{s.append(el("h2",{},"The most important step"));s.append(el("p",{class:"lede"},"Jesus died and rose again to give you new life. If you want to receive Him, you can pray like this: “Lord Jesus, I believe You died for me and rose again. I open my heart to You. Forgive my sins and guide my life. Today I receive You as my Lord and Savior. Amen.”"));
+      s.append(el("p",{class:"note"},"When you confirm, someone from our team will reach out to walk with you in your first steps."));}
+    const ta=el("textarea",{class:"input",maxlength:"500",placeholder:kind==="pray"?"My request is…":"Anything you'd like to tell us? (optional)"});s.append(ta);
+    let wa=null;if(!u.whatsapp){s.append(el("label",{class:"f",for:"iWa"},"Your WhatsApp, so we can reach you"));wa=el("input",{class:"input",id:"iWa",type:"tel",placeholder:"+1 555 000 0000"});s.append(wa);}
+    const err=el("p",{class:"err",role:"alert"});s.append(err);
+    const ok=el("button",{class:"primary"},kind==="pray"?"Send my request":"Yes, today I receive Jesus");
+    ok.onclick=async()=>{ok.disabled=true;try{const d=await API.call("/intent",{method:"POST",body:{kind,note:ta.value.trim(),whatsapp:wa?wa.value.trim():undefined}});state.profile={...state.profile,...d.user,progress:state.progress};close();
+      if(kind==="jesus"){confetti();toast("Welcome to the family of God!");}else toast("We got your request. We're praying with you.");render();}catch(e){ok.disabled=false;err.textContent=e.message}};
+    s.append(ok);s.append(el("button",{class:"ghost",onclick:close},"Cancel"));
+  });
+}
+function finishCard(){
+  const c=el("div",{class:"glass card"},`<h4>40 Days</h4><p class="principle">${dayDone(40)?"You read the whole Bible!":"Thank you for reading with us"}</p><p class="note">Download your certificate and share it. The next round will be in October 2027.</p>`);
+  const b=el("div",{class:"cta2"});b.append(el("button",{class:"btn-dark",onclick:certificate},"My certificate"),el("button",{class:"btn-glass",onclick:shareWaitlist},"Invite to 2027"));c.append(b);
+  return c;
+}
+// ---------- sharing
+const inviteUrl=()=>`${location.origin}/?ref=${state.profile.code}`;
+async function shareText(title,text,url,file){
+  try{if(file&&navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title,text:text+" "+url});return}
+    if(navigator.share){await navigator.share({title,text,url});return}}catch(e){if(e.name==="AbortError")return}
+  try{await navigator.clipboard.writeText(text+" "+url);toast("Link copied. Paste it anywhere.")}catch(e){prompt("Copy this link:",url)}
+  if(file){const a=el("a",{href:URL.createObjectURL(file),download:file.name});document.body.append(a);a.click();a.remove();}
+}
+function shareInvite(){shareText("40 Days · Iglesia Real","Read the whole Bible in 40 days with me. Join here:",inviteUrl());}
+function shareWaitlist(){shareText("40 Days · October 2027","I just read the whole Bible in 40 days. The next round is in October 2027, sign up:",location.origin+"/");}
+function wrap(ctx,text,x,y,maxW,lh){const words=text.split(" ");let line="",lines=[];for(const w of words){const t=line?line+" "+w:w;if(ctx.measureText(t).width>maxW&&line){lines.push(line);line=w}else line=t}lines.push(line);lines.forEach((l,i)=>ctx.fillText(l,x,y+i*lh));return lines.length*lh;}
+function bgCanvas(w,h){const c=document.createElement("canvas");c.width=w;c.height=h;const x=c.getContext("2d");
+  const g=x.createLinearGradient(0,0,w,h);g.addColorStop(0,"#9FE8FF");g.addColorStop(.5,"#D7C4FF");g.addColorStop(1,"#FFC4E1");x.fillStyle=g;x.fillRect(0,0,w,h);
+  [[.1,.15,"#75FBFE"],[.9,.4,"#D7C4FF"],[.3,.9,"#FFE3B0"]].forEach(([a,b,col])=>{const r=x.createRadialGradient(a*w,b*h,0,a*w,b*h,w*.6);r.addColorStop(0,col+"cc");r.addColorStop(1,col+"00");x.fillStyle=r;x.fillRect(0,0,w,h)});
+  x.fillStyle="rgba(255,255,255,.38)";const m=w*.07;x.beginPath();x.roundRect(m,m,w-2*m,h-2*m,64);x.fill();x.strokeStyle="rgba(255,255,255,.85)";x.lineWidth=3;x.stroke();
+  x.fillStyle="#23232F";x.strokeStyle="#23232F";x.lineWidth=w*.008;x.lineCap="round";const cx=m+70,cy=m+80,L=30;[0,45,90,135].forEach(a=>{const t=a*Math.PI/180;x.beginPath();x.moveTo(cx-Math.cos(t)*L,cy-Math.sin(t)*L);x.lineTo(cx+Math.cos(t)*L,cy+Math.sin(t)*L);x.stroke()});
+  x.font=`800 ${w*.03}px 'Bricolage Grotesque',Figtree,sans-serif`;x.fillText("IGLESIA REAL · 40 DAYS",cx+55,cy+w*.011);return [c,x,m];}
+async function shareProgress(d){
+  await document.fonts.ready.catch(()=>{});const [c,x,m]=bgCanvas(1080,1350);
+  x.fillStyle="#4A4A5C";x.font="700 44px Figtree,sans-serif";x.fillText("I'm reading the whole Bible",m+64,360);
+  x.fillStyle="#23232F";x.font="800 190px 'Bricolage Grotesque',Figtree,sans-serif";x.fillText(`Day ${d}`,m+56,560);
+  x.font="600 46px Figtree,sans-serif";wrap(x,progressLine(),m+64,650,1080-2*m-130,60);
+  x.font="700 58px 'Bricolage Grotesque',Figtree,sans-serif";wrap(x,"“"+PLAN[d-1][3]+"”",m+64,820,1080-2*m-130,72);
+  x.font="600 34px Figtree,sans-serif";x.fillStyle="#4A4A5C";x.fillText(location.host,m+64,1350-m-80);
+  c.toBlob(b=>shareText(`Day ${d} · 40 Days`,`I finished Day ${d} of 40 Days! I'm reading the whole Bible with Iglesia Real.`,inviteUrl(),new File([b],`40days-day-${d}.png`,{type:"image/png"})),"image/png");
+}
+async function certificate(){
+  await document.fonts.ready.catch(()=>{});const [c,x,m]=bgCanvas(1080,1350);const name=state.profile.name;
+  x.fillStyle="#4A4A5C";x.font="700 40px Figtree,sans-serif";x.fillText("Certificate of reading",m+64,380);
+  x.fillStyle="#23232F";x.font="800 92px 'Bricolage Grotesque',Figtree,sans-serif";const h=wrap(x,name,m+64,500,1080-2*m-130,100);
+  x.font="600 50px Figtree,sans-serif";x.fillStyle="#23232F";wrap(x,dayDone(40)?"read the whole Bible in 40 days: 66 books, 1,189 chapters.":`read ${NUM(chaptersRead())} chapters of the Bible in 40 days.`,m+64,530+h,1080-2*m-130,66);
+  x.font="600 34px Figtree,sans-serif";x.fillStyle="#4A4A5C";x.fillText("October 7 – November 15, 2026 · Medellín, Colombia",m+64,1350-m-150);
+  x.fillText("“All Scripture is God-breathed.” 2 Timothy 3:16",m+64,1350-m-95);
+  c.toBlob(b=>shareText("I read the whole Bible in 40 days","I read the whole Bible in 40 days with Iglesia Real! The next round is in October 2027:",location.origin+"/",new File([b],"40-days-certificate.png",{type:"image/png"})),"image/png");
+}
+// ---------- push reminders
+const pushSupported=()=>"serviceWorker" in navigator&&"PushManager" in window&&"Notification" in window&&!!(state.cfg&&state.cfg.vapid);
+if("serviceWorker" in navigator)navigator.serviceWorker.register("/sw.js").catch(()=>{});
+function b64ToUint8(s){const p="=".repeat((4-s.length%4)%4);const b=atob((s+p).replace(/-/g,"+").replace(/_/g,"/"));return Uint8Array.from([...b].map(c=>c.charCodeAt(0)));}
+async function enablePush(){
+  if(!pushSupported()){toast(/iPhone|iPad/.test(navigator.userAgent)?"On iPhone, first add the app to your Home Screen.":"Your browser doesn't support reminders.");return}
+  try{const perm=await Notification.requestPermission();if(perm!=="granted"){toast("Reminders are off. You can turn them on later in Profile.");return}
+    const reg=await navigator.serviceWorker.ready;const sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64ToUint8(state.cfg.vapid)});
+    await API.call("/push/subscribe",{method:"POST",body:{sub:sub.toJSON()}});toast("Reminders on");render();}catch(e){toast("Couldn't turn on reminders.")}
+}
+async function disablePush(){try{const reg=await navigator.serviceWorker.ready;const sub=await reg.pushManager.getSubscription();if(sub){await API.call("/push/unsubscribe",{method:"POST",body:{endpoint:sub.endpoint}});await sub.unsubscribe();}toast("Reminders off");render();}catch(e){toast("Couldn't change that.")}}
+async function pushOn(){try{if(!pushSupported()||Notification.permission!=="granted")return false;const reg=await navigator.serviceWorker.ready;return !!(await reg.pushManager.getSubscription());}catch(e){return false}}
+// ---------- reading group
+function groupSheet(){sheet((s)=>{const box=el("div");s.append(box);fillGroup(box);});}
+async function fillGroup(v){
+  v.innerHTML="";v.append(el("h2",{},"Read with others"));
+  v.append(el("p",{class:"lede"},"Optional: read with your family or friends and see how everyone is doing."));
+  let d;try{d=await API.call("/groups/mine");}catch(e){v.append(el("p",{class:"err"},esc(e.message)));return}
+  if(!d.group){
+    const n=el("input",{class:"input",placeholder:"Group name, e.g. The Smith Family",maxlength:"60"});const b1=el("button",{class:"primary"},"Create group");
+    b1.onclick=async()=>{b1.disabled=true;try{await API.call("/groups",{method:"POST",body:{name:n.value.trim()}});fillGroup(v)}catch(e){toast(e.message);b1.disabled=false}};v.append(n,b1);
+    const more=el("details",{style:"margin-top:18px"},`<summary style="cursor:pointer;font-weight:600;color:var(--ink2)">I have a group code</summary>`);
+    const cd=el("input",{class:"input",placeholder:"Code",maxlength:"5",style:"text-transform:uppercase;letter-spacing:.2em;margin-top:10px"});const b2=el("button",{class:"primary"},"Join");
+    b2.onclick=async()=>{if(await joinGroup(cd.value.trim()))fillGroup(v)};more.append(cd,b2);v.append(more);return;
+  }
+  const g=d.group,done=d.members.filter(x=>x.today.m&&x.today.d&&x.today.n).length;
+  v.append(el("p",{class:"principle",style:"margin:4px 0 2px"},esc(g.name)));
+  v.append(el("p",{class:"note"},`${done} of ${d.members.length} finished today · code ${esc(g.code)}`));
+  const l=el("div",{style:"margin-top:8px"});
+  d.members.forEach(x=>{const r=el("div",{class:"member"+(x.me?" me":"")});r.append(el("span",{class:"av"},esc((x.name||"?")[0].toUpperCase())));
+    const nm=el("div",{class:"nm"});const bb=el("b");bb.textContent=x.me?x.name+" (you)":x.name;nm.append(bb,el("small",{},`${x.days} ${x.days===1?"day":"days"} complete`));r.append(nm);
+    r.append(el("span",{class:"pips3","aria-label":"Today's readings"},["m","d","n"].map(k=>`<i class="${x.today[k]?"on":""}"></i>`).join("")));l.append(r)});v.append(l);
+  v.append(el("button",{class:"listen",onclick:()=>shareText(g.name,`Read the Bible with us in “${g.name}”:`,`${location.origin}/?group=${g.code}&ref=${state.profile.code}`)},"Add someone"));
+  v.append(el("button",{class:"rep",style:"display:block;margin:14px auto 0",onclick:async()=>{if(!confirm("Leave this group?"))return;await API.call("/groups/leave",{method:"POST"});fillGroup(v)}},"Leave group"));
+}
+async function joinGroup(code,auto){
+  if(!code){toast("Enter the group code.");return false}
+  try{const d=await API.call("/groups/join",{method:"POST",body:{code}});toast(`You joined “${d.group.name}”`);if(auto)groupSheet();return true}catch(e){toast(e.message);return false}
+}
+
+// ---------- fx
+function toast(msg){const t=el("div",{class:"toast glass pill",role:"status"});t.textContent=msg;document.body.append(t);setTimeout(()=>t.remove(),2400);}
+function confetti(){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;const c=el("div",{class:"confetti"});const cols=["#75FBFE","#D7C4FF","#FFC4E1","#FFE3B0","#23232F"];
+  for(let i=0;i<60;i++){const a=Math.random()*Math.PI*2,r=140+Math.random()*260;const p=el("i");p.style.background=cols[i%5];p.style.setProperty("--x",Math.cos(a)*r+"px");p.style.setProperty("--y",Math.sin(a)*r+160+"px");p.style.setProperty("--r",Math.random()*720+"deg");p.style.animationDelay=Math.random()*.15+"s";c.append(p);}
+  document.body.append(c);setTimeout(()=>c.remove(),1800);}
+// ---------- in-app player (off unless /api/audio is available; chapters open in YouVersion otherwise)
+const player={available:false,queue:null,idx:0,cur:null,label:"",audio:new Audio(),speeds:[1,1.25,1.5,2],sp:0};
+player.audio.preload="auto";
+async function checkAudio(){try{const r=await fetch("/api/audio?b=JHN&c=1");player.available=r.ok;}catch(e){player.available=false}if(state.view==="Today")refreshChips();}
+async function playQueue(list,i,label){player.queue=list;player.label=label;await playAt(i);}
+async function playAt(i){
+  const list=player.queue;if(!list||i<0||i>=list.length)return;
+  player.idx=i;player.cur=list[i];const [b,c]=list[i],cur=player.cur;
+  $("#player").classList.remove("hidden");document.body.classList.add("has-player");
+  $("#pNow").textContent=`${BOOKS[b][0]} ${c}`;$("#pSub").textContent=`${player.label} · loading…`;refreshChips();
+  try{const {url}=await API.call(`/audio?b=${b}&c=${c}`);if(player.cur!==cur)return;player.audio.src=url;player.audio.playbackRate=player.speeds[player.sp];await player.audio.play();
+    $("#pSub").textContent=`${player.label} · chapter ${i+1} of ${list.length}`;
+    if("mediaSession" in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:`${BOOKS[b][0]} ${c}`,artist:"40 Days · Iglesia Real",album:player.label});
+      navigator.mediaSession.setActionHandler("previoustrack",()=>playAt(player.idx-1));navigator.mediaSession.setActionHandler("nexttrack",()=>playAt(player.idx+1));}
+  }catch(e){if(player.cur===cur)$("#pSub").textContent="Couldn't load. Tap ▶ to try again.";}
+  setPlayIcon();
+}
+function setPlayIcon(){const p=!player.audio.paused;$("#pPlay").innerHTML=p?'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>':'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg>';$("#pPlay").setAttribute("aria-label",p?"Pause":"Play");}
+function refreshChips(){if(state.view==="Today"&&state.profile){const y=scrollY;renderToday();scrollTo({top:y})}else if(sheetDay){openDay(sheetDay,true)}}
+function stopAudio(){player.audio.pause();player.audio.removeAttribute("src");player.queue=null;player.cur=null;$("#player").classList.add("hidden");document.body.classList.remove("has-player");}
+player.audio.addEventListener("ended",()=>{if(player.queue&&player.idx+1<player.queue.length)playAt(player.idx+1);else{setPlayIcon();$("#pSub").textContent="Reading finished. Mark it as read!";}});
+player.audio.addEventListener("play",setPlayIcon);player.audio.addEventListener("pause",setPlayIcon);
+player.audio.addEventListener("timeupdate",()=>{const a=player.audio;$("#pBar i").style.width=(a.duration?a.currentTime/a.duration*100:0)+"%";});
+$("#pPlay").onclick=()=>{if(!player.audio.getAttribute("src"))return playAt(player.idx);player.audio.paused?player.audio.play().catch(()=>playAt(player.idx)):player.audio.pause();};
+$("#pPrev").onclick=()=>playAt(player.idx-1);$("#pNext").onclick=()=>playAt(player.idx+1);
+$("#pSpeed").onclick=()=>{player.sp=(player.sp+1)%player.speeds.length;player.audio.playbackRate=player.speeds[player.sp];$("#pSpeed").textContent=player.speeds[player.sp]+"x";};
+$("#pClose").onclick=()=>{stopAudio();refreshChips();};
+$("#pBar").onclick=e=>{const a=player.audio;if(!a.duration)return;const r=e.currentTarget.getBoundingClientRect();a.currentTime=(e.clientX-r.left)/r.width*a.duration;};
+addEventListener("offline",()=>toast("You're offline. Your check marks will save when you're back."));
+
+boot();
+try{matchMedia("(prefers-color-scheme: dark)").addEventListener("change",paintField)}catch(e){}
+</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-RG7H72XW5T"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-RG7H72XW5T');
+(function(){
+  var f=window.fetch;
+  if(f){window.fetch=function(i,o){
+    var u=typeof i==='string'?i:(i&&i.url)||'';
+    return f.apply(this,arguments).then(function(r){
+      try{if(r.ok&&/\/signup(\?|$)/.test(u)){gtag('event','sign_up',{method:'40days'});gtag('event','generate_lead',{form:'40days_signup'});}}catch(e){}
+      return r;});};}
+  document.addEventListener('click',function(e){
+    var b=e.target.closest&&e.target.closest('button,a');if(!b)return;
+    var t=(b.textContent||'').trim();
+    if(/Notify me in 2027/.test(t))gtag('event','waitlist_2027');
+    if(b.href&&/wa\.me|whatsapp/i.test(b.href))gtag('event','contact_whatsapp');
+  },true);
+})();
+</script></body></html>

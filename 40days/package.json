@@ -1,0 +1,10 @@
+{
+  "name": "real-40-days",
+  "private": true,
+  "type": "module",
+  "description": "40 Days (English): read the whole Bible in 40 days with Iglesia Real.",
+  "dependencies": {
+    "@netlify/blobs": "^10.0.0",
+    "web-push": "^3.6.7"
+  }
+}
