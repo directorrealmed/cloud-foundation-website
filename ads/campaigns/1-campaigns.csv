@@ -1,7 +1,7 @@
-Campaign,Campaign Type,Networks,Budget,Budget type,Bid Strategy Type,Languages,Location,Location targeting method,Campaign Status
-01 Brand | Cloud Foundation,Search,Google search,329,Daily,Maximize conversions,en,United States,Location of presence,Paused
-02 Hunger | Street Kitchen Cali,Search,Google search,329,Daily,Maximize conversions,en,United States,Location of presence,Paused
-03 Education | Transformation Centers,Search,Google search,329,Daily,Maximize conversions,en,United States,Location of presence,Paused
-04 Relief | Colombia Earthquake,Search,Google search,329,Daily,Maximize conversions,en,United States,Location of presence,Paused
-05 Volunteer | Serve,Search,Google search,329,Daily,Maximize conversions,en,United States,Location of presence,Paused
-06 Faith | Missions Colombia,Search,Google search,329,Daily,Maximize conversions,en,United States,Location of presence,Paused
+Campaign,Campaign Type,Networks,Budget,Budget type,Bid Strategy Type,Languages,Location,Location targeting method,Campaign Status,EU political ads
+01 Brand | Cloud Foundation,Search,Google search,329,Daily,Maximize conversions,en,United States,Location of presence,Paused,No
+02 Hunger | Street Kitchen Cali,Search,Google search,329,Daily,Maximize conversions,en,United States,Location of presence,Paused,No
+03 Education | Transformation Centers,Search,Google search,329,Daily,Maximize conversions,en,United States,Location of presence,Paused,No
+04 Relief | Colombia Earthquake,Search,Google search,329,Daily,Maximize conversions,en,United States,Location of presence,Paused,No
+05 Volunteer | Serve,Search,Google search,329,Daily,Maximize conversions,en,United States,Location of presence,Paused,No
+06 Faith | Missions Colombia,Search,Google search,329,Daily,Maximize conversions,en,United States,Location of presence,Paused,No

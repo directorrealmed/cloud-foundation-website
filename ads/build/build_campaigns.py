@@ -299,7 +299,7 @@ def main():
     for c in CAMPAIGNS:
         check(len(c["groups"]) >= 2, f"{c['name']} needs >= 2 ad groups")
         camp_rows.append([c["name"], "Search", "Google search", DAILY_BUDGET, "Daily",
-                          "Maximize conversions", "en", c["geo"], "Location of presence", "Paused"])
+                          "Maximize conversions", "en", c["geo"], "Location of presence", "Paused", "No"])
         for g in c["groups"]:
             url = SITE + g["url"]
             for p in g["path"]:
@@ -329,7 +329,8 @@ def main():
             neg_rows.append([list_name, t, "Phrase"])
 
     write("1-campaigns.csv", ["Campaign", "Campaign Type", "Networks", "Budget", "Budget type",
-                              "Bid Strategy Type", "Languages", "Location", "Location targeting method", "Campaign Status"],
+                              "Bid Strategy Type", "Languages", "Location", "Location targeting method", "Campaign Status",
+                              "EU political ads"],
           camp_rows)
     write("2-keywords.csv", ["Campaign", "Ad group", "Keyword", "Criterion Type", "Final URL", "Status"], kw_rows)
     write("3-negative-keyword-lists.csv", ["Shared set name", "Keyword", "Match type"], neg_rows)
