@@ -43,7 +43,7 @@ CAMPAIGNS = [
                              '"cloud foundation hialeah"', '"cloud foundation 501c3"'],
                 "a": ["Cloud Foundation Inc.", "Official Site", "Feeding & Schooling Colombia",
                       "$5 Feeds One Person in Cali", "$20,000 Builds a School"],
-                "b": ["Cloud Foundation Inc.", "Small Charity, Specific Gifts", "Every Gift Buys Something Real",
+                "b": ["Cloud Foundation Inc.", "Specific Gifts, Named Costs", "Every Gift Buys Something Real",
                       "Food, School & Relief", "Working in Colombia"],
                 "d": ["Cloud Foundation funds food, schooling, training and relief in Colombia.",
                       "A hot meal costs $5. A complete school building costs $20,000. Pick one."],
@@ -203,7 +203,7 @@ CAMPAIGNS = [
                              '"virtual volunteer opportunities"', '"skilled volunteer nonprofit"', '"volunteer from home nonprofit"'],
                 "a": ["Volunteer From Home", "Grant Writing Volunteers", "Spanish Translators Needed",
                       "Design, Web & Accounting", "Skilled Volunteering"],
-                "b": ["Use Your Skills for Good", "Remote Roles, Real Impact", "Help a Small Charity Grow",
+                "b": ["Use Your Skills for Good", "Remote Roles, Real Impact", "Help Young Leaders Grow",
                       "Translate, Write, Design", "We Read Every Application"],
                 "d": ["Grant writing, translation, design, accounting and legal help — all from home.",
                       "A short, specific note about what you can do is all it takes to start."],
@@ -299,7 +299,7 @@ def main():
     for c in CAMPAIGNS:
         check(len(c["groups"]) >= 2, f"{c['name']} needs >= 2 ad groups")
         camp_rows.append([c["name"], "Search", "Google search", DAILY_BUDGET, "Daily",
-                          "Maximize conversions", "en", c["geo"], "Location of presence", "Enabled"])
+                          "Maximize conversions", "en", c["geo"], "Location of presence", "Paused", "No"])
         for g in c["groups"]:
             url = SITE + g["url"]
             for p in g["path"]:
@@ -329,7 +329,8 @@ def main():
             neg_rows.append([list_name, t, "Phrase"])
 
     write("1-campaigns.csv", ["Campaign", "Campaign Type", "Networks", "Budget", "Budget type",
-                              "Bid Strategy Type", "Languages", "Location", "Location targeting method", "Campaign Status"],
+                              "Bid Strategy Type", "Languages", "Location", "Location targeting method", "Campaign Status",
+                              "EU political ads"],
           camp_rows)
     write("2-keywords.csv", ["Campaign", "Ad group", "Keyword", "Criterion Type", "Final URL", "Status"], kw_rows)
     write("3-negative-keyword-lists.csv", ["Shared set name", "Keyword", "Match type"], neg_rows)
